@@ -27,6 +27,9 @@ lazy val root = (project in file("."))
       "org.typelevel" %% "cats-core" % "2.0.0",
       "org.openapi4j" % "openapi-parser" % "0.5",
       "org.openapi4j" % "openapi-schema-validator" % "0.5",
-      "org.openapi4j" % "openapi-operation-validator" % "0.5"
+      "org.openapi4j" % "openapi-operation-validator" % "0.5",
+      "org.apache.logging.log4j" % "log4j-api" % "2.13.0",
+      "org.apache.logging.log4j" % "log4j-core" % "2.13.0",
+      "ch.qos.logback" % "logback-classic" % "1.1.0",
     )
   )
