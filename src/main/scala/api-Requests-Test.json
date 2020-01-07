@@ -1,0 +1,2039 @@
+
+{
+    "system": "realworld-api-test",
+    "has": {
+        "server": "/",
+        "version": "0.0.1"
+    },
+    "POST_api-users-login": {
+        "has": {
+            "server": "/",
+            "version": "0.0.1"
+        },
+        "testCases": [
+            {
+                "id": 0,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "No"
+                    }
+                }
+            },
+            {
+                "id": 1,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "No"
+                    },
+                    "Body.Media-Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserEmailValue,application-jsonUserPassword,application-jsonUserPasswordValue,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "No"
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserEmailValue,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 5,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserPassword,application-jsonUserPasswordValue,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "No"
+                    }
+                }
+            },
+            {
+                "id": 6,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "failure": true,
+                        "value": "Other"
+                    },
+                    "Body.application-json.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 7,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 8,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "failure": true,
+                        "value": "Not object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 9,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 10,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "failure": true,
+                        "value": "Not object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 11,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 12,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "failure": true,
+                        "value": "Not string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 13,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserEmailValue,application-jsonUserPassword,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 14,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserEmailValue,application-jsonUserPassword,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "failure": true,
+                        "value": "Not string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            }
+        ]
+    },
+    "POST_api-user": {
+        "has": {
+            "server": "/",
+            "version": "0.0.1"
+        },
+        "testCases": [
+            {
+                "id": 0,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "No"
+                    }
+                }
+            },
+            {
+                "id": 1,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "No"
+                    },
+                    "Body.Media-Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 2,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 3,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserEmailValue,application-jsonUserPassword,application-jsonUserPasswordValue,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserUsernameValue,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "No"
+                    }
+                }
+            },
+            {
+                "id": 4,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserUsernameValue,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 5,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserEmailValue,application-jsonUserPassword,application-jsonUserPasswordValue,application-jsonUserProperties,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "value": "0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "No"
+                    }
+                }
+            },
+            {
+                "id": 6,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "failure": true,
+                        "value": "Other"
+                    },
+                    "Body.application-json.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 7,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 8,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "failure": true,
+                        "value": "Not object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "NA": true
+                    }
+                }
+            },
+            {
+                "id": 9,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 10,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "failure": true,
+                        "value": "Not object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 11,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 12,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "failure": true,
+                        "value": "Not string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 13,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserUsernameValue,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 14,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserEmail,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserUsernameValue,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "failure": true,
+                        "value": "Not string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 15,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserPassword,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserUsernameValue,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "failure": true,
+                        "value": "null"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            },
+            {
+                "id": 16,
+                "has": {
+                    "server": "/",
+                    "version": "0.0.1",
+                    "properties": "application-json,application-jsonProperties,application-jsonUser,application-jsonUserPassword,application-jsonUserProperties,application-jsonUserUsername,application-jsonUserUsernameValue,application-jsonUserValue,application-jsonValue,Content"
+                },
+                "request": {
+                    "Body.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.Media-Type": {
+                        "has": {
+                            "mediaType": "application/json"
+                        },
+                        "value": "application-json"
+                    },
+                    "Body.application-json.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Type": {
+                        "value": "object"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Property-Count": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Type": {
+                        "value": "string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.username.Value.Length": {
+                        "value": "> 0"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Defined": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Type": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.email.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Defined": {
+                        "value": "Yes"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Type": {
+                        "failure": true,
+                        "value": "Not string"
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.password.Value.Length": {
+                        "NA": true
+                    },
+                    "Body.application-json.Value.Properties.user.Value.Properties.Additional": {
+                        "value": "No"
+                    },
+                    "Body.application-json.Value.Properties.Additional": {
+                        "value": "Yes"
+                    }
+                }
+            }
+        ]
+    }
+}
