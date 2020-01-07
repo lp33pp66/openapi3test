@@ -1,0 +1,131 @@
+openapi: 3.0.0
+info:
+  title: "realworld api test"
+  version: "0.0.1"
+  contact:
+    name: Contact Name
+    email: contact@example.com
+    url: http://localhost:8080/api
+tags:
+  - name: Metadata
+    description: Metadata related requests
+servers:
+  - url: http://localhost:8080/api
+paths:
+  /users/login:
+    post:
+      operationId: Authentication
+      summary: auth account
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthReq'
+      responses:
+        '200':
+          description: 'success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRes'
+        '422':
+          description: 'error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+  /users:
+    post:
+      operationId: Registration
+      summary: regist
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistReq'
+      responses:
+        '200':
+          description: 'success'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRes'
+        '422':
+          description: 'error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Errors'
+  /user:
+    get:
+      summary: currentuser
+      responses:
+        '200':
+          description: 'get currentUser'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRes'
+components:
+  schemas:
+    AuthReq:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/AuthData'
+    AuthData:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: example@ex.com
+        password: user
+    RegistReq:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/RegistData'
+    RegistData:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        username: exampleName
+        email: example@ex.com
+        password: user
+    UserRes:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserData'
+    UserData:
+      type: object
+      properties:
+        email:
+          type: string
+        token:
+          type: string
+        username:
+          type: string
+        bio:
+          type: string
+        image:
+          type: string
+    Errors:
+      type: object
+      properties:
+        errors:
+          type: object
+          properties:
+            body:
+              type: array
+              items:
+                type: string

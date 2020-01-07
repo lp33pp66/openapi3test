@@ -1,0 +1,30 @@
+*.tmp
+# IDEA
+*.iml
+*.ipr
+*.iws
+.idea/
+local.properties
+# Maven
+target/
+
+.history
+# Eclipse
+.settings/
+.project
+.classpath
+
+*.properties
+
+# vim
+.*.swp
+.*.swo
+
+# sbt caches
+.ivy2/
+.coursier/
+
+.bloop/
+.metals/
+
+out/
