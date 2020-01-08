@@ -12,15 +12,15 @@ tags:
 servers:
   - url: http://localhost:8080/api
 paths:
-  /users/login:
+  /users:
     post:
-      operationId: Authentication
-      summary: auth account
+      operationId: Registration
+      summary: regist
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AuthReq'
+              $ref: '#/components/schemas/RegistReq'
       responses:
         '200':
           description: 'success'
@@ -34,15 +34,15 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Errors'
-  /users:
+  /users/login:
     post:
-      operationId: Registration
-      summary: regist
+      operationId: Authentication
+      summary: auth account
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegistReq'
+              $ref: '#/components/schemas/AuthReq'
       responses:
         '200':
           description: 'success'

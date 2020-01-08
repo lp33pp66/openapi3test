@@ -1,3 +1,4 @@
+import java.io.File
 import java.net.URL
 
 import akka.event.Logging.LogEvent
@@ -11,24 +12,24 @@ import org.openapi4j.schema.validator.v3.SchemaValidator
 object OpenApiTest {
   def main(args: Array[String]): Unit = {
     //  val specPath = new File("../../../../main/scala/api/api.yml")
-    val specPath = new URL("https://raw.githubusercontent.com/lp33pp66/openapi3test/master/src/main/scala/api.yml")
-    val api = new OpenApi3Parser().parse(specPath, false)
+    val specPath = new URL("https://raw.githubusercontent.com/OAI/OpenAPI-Specification/master/examples/v3.0/petstore-expanded.yaml")
+    val api = new OpenApi3Parser().parse(specPath, true)
     val results = OpenApi3Validator.instance.validate(api)
 
 
-    println(api.getPaths)
-    println("123: " + results.toString)
+    println(api.getComponents.getSchemas)
+    println("123: " + results)
 
-    //    // validation with exception
-    //    val schemaNode: JsonNode = ??? // your schema tree node
-    //    val contentNode: JsonNode = ??? // your data
-    //    val schemaValidator: SchemaValidator = new SchemaValidator("my_schema", schemaNode)
-    //    try {
-    //      schemaValidator.validate(contentNode)
-    //    } catch {
-    //      case ex: ValidationException => ex.getResults
-    //    }
-    //
+        // validation with exception
+        val schemaNode: JsonNode = ??? // your schema tree node
+        val contentNode: JsonNode = ??? // your data
+        val schemaValidator: SchemaValidator = new SchemaValidator("my_schema", schemaNode)
+        try {
+          schemaValidator.validate(contentNode)
+        } catch {
+          case ex: ValidationException => ex.getResults
+        }
+
     //    //validation without ex
     //    val results1 = new ValidationResults
     //    schemaValidator.validate(contentNode, results1)
