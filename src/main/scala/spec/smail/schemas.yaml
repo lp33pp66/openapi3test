@@ -1,0 +1,541 @@
+Success:
+  type: object
+  properties:
+    success:
+      type: boolean
+  example:
+    success: true
+FlakeId:
+  type: object
+  properties:
+    id:
+      type: string
+      format: flakeId
+  example:
+    id: '85985175388815360'
+FlakeIdArray:
+  type: array
+  items:
+    type: string
+    format: flakeId
+  example:
+    - '85985175388815360'
+    - '85985318578159616'
+    - '85985318528159112'
+WrappedFlakeIdArray:
+  type: object
+  properties:
+    id:
+      $ref: '#/FlakeIdArray'
+  example:
+    id:
+      - '85985175388815360'
+      - '85985318578159616'
+      - '85985318528159112'
+LdapReferenceSource:
+  type: object
+  required:
+    - server
+    - account
+    - password
+    - base_dn
+    - reference_attribute
+  properties:
+    server:
+      type: string
+      description: 'Server name, required for protocol other then local.'
+    port:
+      type: integer
+      description: >-
+        Server port, optional, will use default RFC port for each protocol
+        if not provided
+    account:
+      type: string
+      description: >-
+        LDAP user account which will used for LDAP search, required for LDAP.
+    password:
+      type: string
+      description: >-
+        LDAP user password which will used for LDAP search.
+    base_dn:
+      type: string
+      description: >-
+        LDAP base DN setting of the search.
+    reference_attribute:
+      type: string
+      description: >-
+        User specified attribute which will be used as the filter condition.
+  example:
+    server: 192.168.1.254
+    port: 389
+    account: adm
+    password: arborabc
+    base_dn: 'OU=A,OU=B,DC=qc,DC=softnext,DC=com,DC=tw'
+    protocol: ldap_reference
+    enabled: true
+LdapSource:
+  type: object
+  required:
+    - server
+  properties:
+    server:
+      type: string
+      description: 'Server name, required for protocol other then local.'
+    port:
+      type: integer
+      description: >-
+        Server port, optional, will use default RFC port for each protocol
+        if not provided
+    user_dn_prefix:
+      type: string
+      description: >-
+        LDAP bind DN template prefix, required for LDAP. When using LDAP,
+        server will auth against LDAP server using `user_dn_prefix` +
+        `username` + `user_dn_suffix` to bind
+    user_dn_suffix:
+      type: string
+      description: >-
+        LDAP bind DN template suffix, required for LDAP. When using LDAP,
+        server will auth against LDAP server using `user_dn_prefix` +
+        `username` + `user_dn_suffix` to bind
+  example:
+    server: 192.168.1.254
+    port: 389
+    user_dn_prefix: CN=
+    user_dn_suffix: ',dc=developementcenter,dc=abc,dc=com'
+    protocol: ldap
+    enabled: true
+MessageStoreSource:
+  type: object
+  required:
+    - server
+  properties:
+    server:
+      type: string
+      description: 'Server name, required for protocol other then local.'
+    port:
+      type: integer
+      description: >-
+        Server port, optional, will use default RFC port for each protocol
+        if not provided
+  example:
+    server: 192.168.1.254
+    port: 389
+    protocol: pop3
+    enabled: true
+DomainAuthSource:
+  type: object
+  oneOf:
+    - $ref: '#/MessageStoreSource'
+    - $ref: '#/LdapSource'
+    - $ref: '#/LdapReferenceSource'
+  required:
+    - protocol
+    - enabled
+  properties:
+    protocol:
+      type: string
+      enum:
+        - local
+        - ldap
+        - ldap_reference
+        - pop3
+        - pop3s
+        - imap
+        - imaps
+    enabled:
+      type: boolean
+Emails:
+  type: array
+  items:
+    type: string
+    format: email
+  example:
+    - e1@example.com
+    - e2@example.com
+RecipientRewriteFrom:
+  type: object
+  properties:
+    alias:
+      type: string
+FilterProcessorId:
+    type: object
+    discriminator:
+      propertyName: type
+    properties:
+      type:
+        type: string
+    required:
+      - type
+ImapPop3Config:
+  type: object
+  required:
+    - use_pop3
+    - server_address
+    - server_port
+    - use_ssl
+    - ssl_trust_all
+    - account
+    - password
+    - start_hour
+    - start_minute
+    - end_hour
+    - end_minute
+    - period_seconds
+    - receiving_limits
+    - delete_after_received
+    - time_zone
+    - domain_configs
+    - tag
+    - num_of_workers
+  properties:
+    use_pop3:
+      type: boolean
+    server_address:
+      type: string
+    server_port:
+      type: integer
+    use_ssl:
+      type: boolean
+    ssl_trust_all:
+      type: boolean
+    account:
+      type: string
+    password:
+      type: string
+    start_hour:
+      type: integer
+    start_minute:
+      type: integer
+    end_hour:
+      type: integer
+    end_minute:
+      type: integer
+    period_seconds:
+      type: integer
+    receiving_limits:
+      type: integer
+    delete_after_received:
+      type: boolean
+    time_zone:
+      type: string
+    domain_configs:
+      oneOf:
+        - $ref: '#/ImportToDomainConfig'
+        - $ref: '#/ImportToSystemConfig'
+    tag:
+      type: string
+    num_of_workers:
+      type: integer
+  example:
+    use_pop3: false
+    server_address: 127.0.0.1
+    server_port: 143
+    use_ssl: false
+    ssl_trust_all: false
+    account: admin
+    password: '1234'
+    start_hour: 0
+    start_minute: 0
+    end_hour: 0
+    end_minute: 0
+    period_seconds: 15
+    time_zone: Etc/UTC
+    receiving_limits: 1000
+    delete_after_received: true
+    domain_configs:
+      from_domain:
+        auto_domain: false
+      to_domain:
+        auto_domain: true
+        unknown_domain: '517012822308159489'
+    tag: 'source tag'
+    num_of_workers: 1
+ImportToDomainConfig:
+  type: object
+  required:
+    - domain
+  properties:
+    domain:
+      description: domain the imported eml will be assigned to
+      type: string
+      format: flake id
+ImportToSystemConfig:
+  type: object
+  required:
+    - from_domain
+    - to_domain
+  properties:
+    from_domain:
+      description: config for sender part
+      type: object
+      required:
+        - auto_domain
+      properties:
+        auto_domain:
+          description: whether automatically assign eml to known domain
+          type: boolean
+        unknown_domain:
+          description: if given, unknown domain will always to assigned to given domain
+          type: string
+          format: flake id
+    to_domain:
+      description: config for recipient part
+      type: object
+      required:
+        - auto_domain
+      properties:
+        auto_domain:
+          description: whether automatically assign eml to known domain
+          type: boolean
+        unknown_domain:
+          description: if given, unknown domain will always to assigned to given domain
+          type: string
+          format: flake id
+MailFlowDirection:
+  description: >-
+    notice that any should be ommitted when used as items of multi-selection
+    checkbox
+  type: string
+  enum:
+    - inbound
+    - outbound
+    - internal
+    - external
+    - other
+LogicQuantifier:
+  type: string
+  enum:
+    - any
+    - all
+    - noneof
+RangeQuantifier:
+  type: string
+  enum:
+    - within
+    - outside
+ScheduleId:
+  type: object
+  properties:
+    id:
+      type: string
+      format: uuid
+    domain:
+      type: string
+      format: flakeId
+MatchString:
+  type: object
+  properties:
+    type:
+      type: string
+      enum:
+        - sender
+        - recipient
+        - subject
+        - attach_name
+        - attach_content
+        - content
+    quantifier:
+      $ref: '#/LogicQuantifier'
+    patterns:
+      type: array
+      items:
+        type: string
+MatchGroup:
+  type: object
+  properties:
+    type:
+      type: string
+      enum:
+        - sender_group
+        - recipient_group
+    quantifier:
+      $ref: '#/LogicQuantifier'
+    patterns:
+      type: array
+      items:
+        type: string
+        format: flakeId
+MatchSizeRange:
+  type: object
+  properties:
+    type:
+      type: string
+      enum:
+        - mail_size
+        - recipient_size
+    quantifier:
+      $ref: '#/RangeQuantifier'
+    lower_bound:
+      type: number
+      format: integer
+    upper_bound:
+      type: number
+      format: integer
+MatchDateRange:
+  type: object
+  properties:
+    type:
+      type: string
+      enum:
+        - date_range
+    quantifier:
+      $ref: '#/RangeQuantifier'
+    mail_date_after:
+      type: string
+      format: integer
+    mail_date_before:
+      type: string
+      format: integer
+MatchFlowDirection:
+  type: object
+  properties:
+    type:
+      type: string
+      enum:
+        - flow_direction
+    quantifier:
+      $ref: '#/LogicQuantifier'
+    domain:
+      type: string
+      format: flakeId
+    direction:
+      type: array
+      items:
+        $ref: '#/MailFlowDirection'
+ImportMatcherConfig:
+  type: object
+  oneOf:
+    - $ref: '#/MatchString'
+    - $ref: '#/MatchGroup'
+    - $ref: '#/MatchSizeRange'
+    - $ref: '#/MatchDateRange'
+    - $ref: '#/MatchFlowDirection'
+ImportFilterRule:
+  type: object
+  properties:
+    name:
+      type: string
+    conditions:
+      type: array
+      items:
+        $ref: '#/ImportMatcherConfig'
+ImportMailFilter:
+  type: object
+  properties:
+    mode:
+      type: string
+      enum:
+        - positive
+        - negative
+    rules:
+      type: array
+      items:
+        $ref: '#/ImportFilterRule'
+ScheduleImportConfig:
+  required:
+    - enabled
+    - config
+    - name
+  type: object
+  properties:
+    enabled:
+      type: boolean
+    name:
+      type: string
+    pre_filter:
+      $ref: '#/ImportMailFilter'
+    config:
+      $ref: '#/ImapPop3Config'
+  example:
+    enabled: true
+    config:
+      use_pop3: true
+      server_address: 192.168.204.186
+      server_port: 110
+      use_ssl: false
+      account: backup
+      password: arborabc
+      start_hour: 0
+      start_minute: 0
+      end_hour: 0
+      end_minute: 0
+      time_zone: Etc/UTC
+      receiving_limits: 0
+      delete_after_received: false
+    pre_filter:
+      conditions: []
+ScheduleImportConfigWithId:
+  type: object
+  allOf:
+    - $ref: '#/ScheduleImportConfig'
+    - type: object
+      properties:
+        id:
+          $ref: '#/ScheduleId'
+ScheduleImportResponse:
+  type: array
+  items:
+    type: object
+    properties:
+      config:
+        $ref: '#/ScheduleImportConfigWithId'
+      status:
+        $ref: '#/AsyncImportJobInfo'
+AsyncImportJobInfo:
+    type: object
+    properties:
+      start_time:
+        type: string
+        format: integer
+      end_time:
+        type: string
+        format: integer
+      state:
+        type: string
+        enum:
+          - NONE
+          - FAILED
+          - IN_PROGRESS
+          - SUCCESS
+          - ABORTED
+      retrieved:
+        type: number
+        format: integer
+      remaining:
+        type: number
+        format: integer
+      detail:
+        type: string
+    example:
+      start_time: '20140702142914'
+      end_time: '20140702142944'
+      state: SUCCESS
+      retrieved: 1000
+      remaining: 1000
+      detail: ''
+UserDefinedSchedule:
+  type: object
+  properties:
+    interval:
+      type: string
+    date:
+      type: integer
+    weekday:
+      type: integer
+    hour:
+      type: integer
+    time_zone:
+      type: string
+Error:
+  type: object
+  description: >-
+    Generic error response, the specified type of `error_detail` should be
+    looked up by `error_code`
+  properties:
+    error_code:
+      type: integer
+    error:
+      type: string
+    error_detail:
+      type: object

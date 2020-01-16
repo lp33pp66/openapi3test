@@ -1,0 +1,53 @@
+aliasNamePath:
+  name: alias_name
+  in: path
+  description: name of alias
+  required: true
+  schema:
+    type: string
+accountIdPath:
+  name: account_id
+  in: path
+  description: Id of a account
+  required: true
+  schema:
+    type: string
+    format: flakeId
+groupIdPath:
+  name: group_id
+  in: path
+  description: Id of a group
+  required: true
+  schema:
+    type: string
+    format: flakeId
+domainIdPath:
+  name: domain_id
+  in: path
+  description: Id of domain
+  required: true
+  schema:
+    type: string
+    format: flakeId
+scheduleIdPath:
+  name: schedule_id
+  in: path
+  description: id of schedule job
+  required: true
+  schema:
+    type: string
+messageIdPath:
+  name: message_id
+  in: path
+  description: Id of a message
+  required: true
+  schema:
+    type: string
+emailPath:
+  name: email
+  in: path
+  description: email
+  required: true
+  schema:
+    type: string
+    format: email

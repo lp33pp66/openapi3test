@@ -1,0 +1,403 @@
+/log/access:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Logs'
+    description: Return user access log within specified time range
+    tags:
+      - Log
+    parameters:
+      - name: begin-time
+        in: query
+        description: 'Begin timestamp, default is 0.'
+        required: false
+        schema:
+          type: number
+      - name: end-time
+        in: query
+        description: 'End timestamp, default is current timestamp.'
+        required: false
+        schema:
+          type: number
+      - name: subject
+        in: query
+        description: 'Account id, allow multiple occurrences, e.g. 4194308.'
+        required: false
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: 'email, allow multiple occurrences, e.g. foo@example.com.'
+        required: false
+        schema:
+          type: string
+      - name: verb
+        in: query
+        description: 'Action, e.g. login, allow multiple occurrences, view, list, create.'
+        required: false
+        schema:
+          type: string
+      - name: obj
+        in: query
+        description: >-
+          Target service, allow multiple occurrences, e.g. domain,
+          account/role, search, smtp/network list.
+        required: false
+        schema:
+          type: string
+      - name: obj-reverse
+        in: query
+        description: 'Peform obj exlusive filtering, default is false'
+        required: false
+        schema:
+          type: boolean
+'/log/access/{account_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Logs'
+    description: Return user access log for specified subject
+    tags:
+      - Log
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - name: begin-time
+        in: query
+        description: 'Begin timestamp, default is 0.'
+        required: false
+        schema:
+          type: number
+      - name: end-time
+        in: query
+        description: 'End timestamp, default is current timestamp.'
+        required: false
+        schema:
+          type: number
+      - name: email
+        in: query
+        description: 'email, allow multiple occurrences, e.g. foo@example.com.'
+        required: false
+        schema:
+          type: string
+      - name: verb
+        in: query
+        description: 'Action, e.g. login, allow multiple occurrences, view, list, create.'
+        required: false
+        schema:
+          type: string
+      - name: obj
+        in: query
+        description: >-
+          Target service, allow multiple occurrences, e.g. domain,
+          account/role, search, smtp/network list.
+        required: false
+        schema:
+          type: string
+      - name: obj-reverse
+        in: query
+        description: 'Peform obj exlusive filtering, default is false'
+        required: false
+        schema:
+          type: boolean
+/log/archive:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ArchiveLogs'
+    description: Return archive event log within specified time range
+    tags:
+      - Log
+    parameters:
+      - name: begin-time
+        in: query
+        description: 'Begin timestamp, default is 0.'
+        required: false
+        schema:
+          type: number
+      - name: end-time
+        in: query
+        description: 'End timestamp, default is current timestamp.'
+        required: false
+        schema:
+          type: number
+      - name: domain
+        in: query
+        description: 'Domain id, allow multiple occurrences, e.g. 379461882848739328.'
+        required: false
+        schema:
+          type: string
+      - name: resource
+        in: query
+        description: Resource name
+        required: false
+        schema:
+          type: string
+      - name: mail-type
+        in: query
+        description: >-
+          Archive mail types, e.g. normal, spam, threat, virus, other, imported, allow
+          multiple occurrences
+        required: false
+        schema:
+          type: string
+      - name: success
+        in: query
+        description: 'Is archive result successful, will show both if not assigned'
+        required: false
+        schema:
+          type: boolean
+      - name: show-fails
+        in: query
+        description: 'Show archive fail details, default is false'
+        required: false
+        schema:
+          type: boolean
+/log/security:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SecurityLogs'
+    description: Return security event log within specified time range
+    tags:
+      - Log
+    parameters:
+      - name: begin-time
+        in: query
+        description: 'Begin timestamp, default is 0.'
+        required: false
+        schema:
+          type: number
+      - name: end-time
+        in: query
+        description: 'End timestamp, default is current timestamp.'
+        required: false
+        schema:
+          type: number
+      - name: user
+        in: query
+        description: 'Account id of target user, allow multiple occurrences, e.g. 4194308.'
+        required: false
+        schema:
+          type: string
+      - name: event
+        in: query
+        description: >-
+          Security event type, e.g. loginSuccess, loginFailed, logout,
+          changePassword
+        required: false
+        schema:
+          type: string
+      - name: subject
+        in: query
+        description: >-
+          Account id of subject user, allow multiple occurrences, e.g.
+          4194308.
+        required: false
+        schema:
+          type: string
+/log/logging:
+  get:
+    tags:
+      - Log
+    description: Return list of currently created logger
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: logger name
+                  level:
+                    type: string
+                    description: current log level
+                  config_name:
+                    type: string
+                    description: current log level parent source
+'/log/logging/{logger_name}':
+  post:
+    tags:
+      - Log
+    description: set log level for specified logger
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+    parameters:
+      - name: level
+        in: query
+        description: new log level
+        required: true
+        schema:
+          type: string
+      - name: logger_name
+        in: path
+        description: logger name
+        required: true
+        schema:
+          type: string
+schemas:
+  ArchiveLogs:
+    type: array
+    items:
+      type: object
+      required:
+        - timestamp
+        - day_before
+        - schedule
+        - mail_type
+        - domain
+        - resource
+        - protocol
+        - host
+        - port
+        - remote_path
+        - local_path
+        - success
+        - message
+      properties:
+        timestamp:
+          type: string
+          format: integer
+        day_before:
+          type: integer
+        mail_type:
+          type: object
+          properties:
+            sent:
+              type: boolean
+            quarantine:
+              type: boolean
+            bounced:
+              type: boolean
+            discarded:
+              type: boolean
+            other:
+              type: boolean
+            imported:
+              type: boolean
+        schedule:
+          type: string
+        domain:
+          type: string
+          format: flakeId
+        resource:
+          type: string
+        protocol:
+          type: string
+        host:
+          type: string
+        port:
+          type: integer
+        remote_path:
+          type: string
+        local_path:
+          type: string
+        success:
+          type: boolean
+        message:
+          type: string
+        store_fails:
+          type: array
+          items:
+            type: string
+            format: flakeId
+        remove_fails:
+          type: array
+          items:
+            type: string
+            format: flakeId
+    example:
+      - timestamp: 1434499200000
+        day_before: 7
+        mail_type:
+          sent: true
+          quarantine: false
+          bounced: false
+          discarded: false
+          other: false
+          imported: false
+        schedule: '0 0 0 1 * ?'
+        domain: '361790564951130112'
+        resource: mp archive
+        protocol: local
+        host: ''
+        port: 0
+        remote_path: ''
+        local_path: /data/archive
+        success: true
+        message: ''
+        store_fails:
+          - '361790563911120341'
+          - '361790563911120342'
+        remove_fails: []
+  Logs:
+    type: array
+    items:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: integer
+        ip:
+          type: string
+        subject:
+          type: string
+        verb:
+          type: string
+        obj:
+          type: string
+        display_name:
+          type: string
+        emails:
+          type: string
+    example:
+      - timestamp: 1434499200000
+        ip: 192.168.80.10
+        subject: AccountId(4194308)
+        verb: view
+        obj: report
+        display_name: "Display Name"
+        emails: "<foo@example.com>, <bar@example.com>"
+  SecurityLogs:
+    type: array
+    items:
+      type: object
+      properties:
+        user:
+          type: string
+        event:
+          type: string
+        subject:
+          type: string
+        ip:
+          type: string
+        timestamp:
+          type: string
+          format: integer
+    example:
+      - user: 4194308
+        event: loginSuccess
+        subject: 4194308
+        ip: 192.168.80.10
+        timestamp: 1434499200000

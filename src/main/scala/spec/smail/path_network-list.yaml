@@ -1,0 +1,273 @@
+/network-list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/SmtpNetworkListEnum'
+              example:
+                - AllowedBounceDomain
+                - BlackList
+                - DkimAppliedDomains
+                - DosExceptionList
+                - RblExceptionList
+                - RelayDomains
+                - RestrictDomains
+                - SpfAppliedDomains
+                - WhiteList
+                - TempFailExceptionList
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return current network lists
+    tags:
+      - SMTP
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Add/remove data from specified list.
+      Data type can be "address" or "domain"
+    tags:
+      - SMTP
+    parameters:
+      - name: delete
+        in: query
+        description: choose add or delete
+        required: false
+        schema:
+          type: boolean
+          default: false
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/SmtpNetworkListUpdate'
+      required: true
+'/network-list/{list_type}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SmtpNetworkList'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return network lists with specified *list_type*
+    tags:
+      - SMTP
+    parameters:
+      - name: list_type
+        in: path
+        description: >-
+          list name, currently support BlackList, WhiteList, RestrictDomains,
+          RelayDomains, AllowedBounceDomain
+        required: true
+        schema:
+          type: string
+          enum:
+            - AllowedBounceDomain
+            - BlackList
+            - DkimAppliedDomains
+            - DosExceptionList
+            - RblExceptionList
+            - RelayDomains
+            - RestrictDomains
+            - SpfAppliedDomains
+            - WhiteList
+            - TempFailExceptionList
+'/network-list/domain/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/DomainNetworkListEnum'
+              example:
+                - AllowedBounceSource
+                - BlackList
+                - WhiteList
+                - MassMailExceptionList
+                - RelayDomains
+    description: Return current network lists
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Add/remove data from specified list.
+    description: |
+      Add/remove data from specified list.
+      Data type can be "address" or "domain"
+    tags:
+      - Domain
+    parameters:
+      - name: delete
+        in: query
+        description: choose add or delete
+        required: false
+        schema:
+          type: boolean
+          default: false
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/DomainNetworkListUpdate'
+      required: true
+'/network-list/domain/{domain_id}/{list_type}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SmtpNetworkList'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return network lists with specified *list_type*
+    tags:
+      - Domain
+    parameters:
+      - name: list_type
+        in: path
+        description: >-
+          list name, currently support BlackList, WhiteList,
+          MassMailExceptionList, AllowedBounceSource
+        required: true
+        schema:
+          type: string
+          enum:
+            - BlackList
+            - WhiteList
+            - MassMailExceptionList
+            - AllowedBounceSource
+            - RelayDomains
+      - $ref: 'parameters.yaml#/domainIdPath'
+schemas:
+  DomainNetworkListEnum:
+    type: string
+    enum:
+      - AllowedBounceSource
+      - BlackList
+      - WhiteList
+      - MassMailExceptionList
+      - RelayDomains
+  DomainNetworkListUpdate:
+    type: object
+    properties:
+      updates:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              $ref: '#/schemas/DomainNetworkListEnum'
+            data_type:
+              type: string
+              enum:
+                - address
+                - domain
+            value:
+              type: string
+    example:
+      updates:
+        - name: Whitelist
+          data_type: address
+          value: 1.2.3.4
+        - name: Blacklist
+          data_type: domain
+          value: test.com
+  SmtpNetworkListEnum:
+    type: string
+    enum:
+      - AllowedBounceDomain
+      - BlackList
+      - DkimAppliedDomains
+      - RblExceptionList
+      - RelayDomains
+      - RestrictDomains
+      - SpfAppliedDomains
+      - WhiteList
+      - TempFailExceptionList
+  SmtpNetworkListUpdate:
+    type: object
+    properties:
+      updates:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              $ref: '#/schemas/SmtpNetworkListEnum'
+            data_type:
+              type: string
+              enum:
+                - address
+                - domain
+            value:
+              type: string
+    example:
+      updates:
+        - name: RelayDomains
+          data_type: address
+          value: 1.2.3.4
+        - name: RelayDomains
+          data_type: domain
+          value: test.com
+  SmtpNetworkList:
+    type: object
+    properties:
+      address:
+        type: array
+        items:
+          type: string
+      domain:
+        type: array
+        items:
+          type: string
+    example:
+      address:
+        - 1.2.3.4
+      domain:
+        - test.com
+        - test2.com

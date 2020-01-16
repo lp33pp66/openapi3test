@@ -1,0 +1,470 @@
+openapi: 3.0.0
+servers: []
+info:
+  title: Mail Platform API
+  version: 0.0.1
+  description: |
+    Mail Platform API
+    # Beyond OpenAPI
+    [Reference](reference.html) for API which cannot modeled after OpenAPI.
+tags:
+  - name: Initialize
+  - name: Auth
+  - name: Domain
+  - name: Host
+  - name: Account
+  - name: Group
+  - name: Role
+  - name: Search
+  - name: Message
+  - name: Store
+  - name: Filter
+  - name: License
+  - name: Log
+  - name: SMTP
+  - name: Delivery
+  - name: Update
+  - name: Audit
+  - name: Quarantine
+  - name: Report
+  - name: System
+  - name: Preference
+  - name: FunctionControl
+  - name: Cryptograph
+  - name: User
+x-tagGroups:
+  - name: Endpoints
+    tags:
+      - Initialize
+      - Auth
+      - Domain
+      - Host
+      - Account
+      - Group
+      - Role
+      - Search
+      - Message
+      - Store
+      - Filter
+      - License
+      - Log
+      - SMTP
+      - Delivery
+      - Update
+      - Audit
+      - Quarantine
+      - Report
+      - System
+      - Preference
+      - FunctionControl
+      - Cryptograph
+      - User
+paths:
+  /initialize:
+    $ref: 'path_initialize.yaml#/~1initialize'
+  /login:
+    $ref: 'path_auth.yaml#/~1login'
+  /logout:
+    $ref: 'path_auth.yaml#/~1logout'
+  /change-password:
+    $ref: 'path_auth.yaml#/~1change-password'
+  /license:
+    $ref: 'path_license.yaml#/~1license'
+  /license/feature:
+    $ref: 'path_license.yaml#/~1license~1feature'
+  /domain/list:
+    $ref: 'path_domain.yaml#/~1domain~1list'
+  /domain:
+    $ref: 'path_domain.yaml#/~1domain'
+  /domain/group/{group_id}:
+    $ref: 'path_domain.yaml#/~1domain~1group~1{group_id}'
+  /domain/group/{group_id}/name:
+    $ref: 'path_domain.yaml#/~1domain~1group~1{group_id}~1name'
+  /domain/{domain_id}:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}'
+  /domain/{domain_id}/reset:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1reset'
+  /domain/{domain_id}/auth-sources:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1auth-sources'
+  /domain/{domain_id}/mass-mail:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1mass-mail'
+  /domain/{domain_id}/mass-mail/blockage:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1mass-mail~1blockage'
+  /domain/{domain_id}/mass-mail/sender-whitelist:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1mass-mail~1sender-whitelist'
+  /domain/{domain_id}/mass-mail/sender-whitelist/{email}:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1mass-mail~1sender-whitelist~1{email}'
+  /domain/{domain_id}/user-aliases:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1user-aliases'
+  /domain/{domain_id}/user-aliases/{alias_name}:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1user-aliases~1{alias_name}'
+  /domain/{domain_id}/user-aliases/{alias_name}/available:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1user-aliases~1{alias_name}~1available'
+  /domain/{domain_id}/schedule-import:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1schedule-import'
+  /domain/{domain_id}/schedule-import/{schedule_id}:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1schedule-import~1{schedule_id}'
+  /domain/{domain_id}/schedule-import/{schedule_id}/import:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1schedule-import~1{schedule_id}~1import'
+  /domain/{domain_id}/trap:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1trap'
+  /domain/{domain_id}/trap/blockage:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1trap~1blockage'
+  /domain/{domain_id}/threat/behavior:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1threat~1behavior'
+  /host/list:
+    $ref: 'path_host.yaml#/~1host~1list'
+  /host:
+    $ref: 'path_host.yaml#/~1host'
+  /host/{host_name}:
+    $ref: 'path_host.yaml#/~1host~1{host_name}'
+  /host/{host_name}/email:
+    $ref: 'path_host.yaml#/~1host~1{host_name}~1email'
+  /host/{host_name}/email/{email}:
+    $ref: 'path_host.yaml#/~1host~1{host_name}~1email~1{email}'
+  /account/list:
+    $ref: 'path_account.yaml#/~1account~1list'
+  /account/list/{domain_id}:
+    $ref: 'path_account.yaml#/~1account~1list~1{domain_id}'
+  /account:
+    $ref: 'path_account.yaml#/~1account'
+  /account/{account_id}:
+    $ref: 'path_account.yaml#/~1account~1{account_id}'
+  /account/email/{email}:
+    $ref: 'path_account.yaml#/~1account~1email~1{email}'
+  /account/name/{name}:
+    $ref: 'path_account.yaml#/~1account~1name~1{name}'
+  /account/name/exists:
+    $ref: 'path_account.yaml#/~1account~1name~1exists'
+  /account/{account_id}/group-expansion:
+    $ref: 'path_account.yaml#/~1account~1{account_id}~1group-expansion'
+  /account/{account_id}/role:
+    $ref: 'path_account.yaml#/~1account~1{account_id}~1role'
+  /account/export/csv:
+    $ref: 'path_account.yaml#/~1account~1export~1csv'
+  /account/import/csv/{root}:
+    $ref: 'path_account.yaml#/~1account~1import~1csv~1{root}'
+  /account/domain-aliases:
+    $ref: 'path_account.yaml#/~1account~1domain-aliases'
+  /account/domain-aliases/{from}:
+    $ref: 'path_account.yaml#/~1account~1domain-aliases~1{from}'
+  /group/list:
+    $ref: 'path_group.yaml#/~1group~1list'
+  /group/list/{domain_id}':
+    $ref: 'path_group.yaml#/~1group~1list~1{domain_id}'
+  /group:
+    $ref: 'path_group.yaml#/~1group'
+  /group/{group_id}':
+    $ref: 'path_group.yaml#/~1group~1{group_id}'
+  /group/email/{email}':
+    $ref: 'path_group.yaml#/~1group~1email~1{email}'
+  /group/{group_id}/email':
+    $ref: 'path_group.yaml#/~1group~1{group_id}~1email'
+  /group/{group_id}/aliases':
+    $ref: 'path_group.yaml#/~1group~1{group_id}~1aliases'
+  /group/{group_id}/aliases/{alias_name}':
+    $ref: 'path_group.yaml#/~1group~1{group_id}~1aliases~1{alias_name}'
+  /group/{group_id}/manager':
+    $ref: 'path_group.yaml#/~1group~1{group_id}~1manager'
+  /group/{group_id}/rename':
+    $ref: 'path_group.yaml#/~1group~1{group_id}~1rename'
+  /role/list:
+    $ref: 'path_role.yaml#/~1role~1list'
+  /role/list-privilege:
+    $ref: 'path_role.yaml#/~1role~1list-privilege'
+  /role:
+    $ref: 'path_role.yaml#/~1role'
+  /role/{role_id}':
+    $ref: 'path_role.yaml#/~1role~1{role_id}'
+  /role/{role_id}/users':
+    $ref: 'path_role.yaml#/~1role~1{role_id}~1users'
+  /role/{role_id}/permissions':
+    $ref: 'path_role.yaml#/~1role~1{role_id}~1permissions'
+  /role/{role_id}/all-permissions':
+    $ref: 'path_role.yaml#/~1role~1{role_id}~1all-permissions'
+  /role/{role_id}/ui-template':
+    $ref: 'path_role.yaml#/~1role~1{role_id}~1ui-template'
+  /role/{role_id}/{account_id}':
+    $ref: 'path_role.yaml#/~1role~1{role_id}~1{account_id}'
+  /search:
+    $ref: 'path_search.yaml#/~1search'
+  /search/scroll:
+    $ref: 'path_search.yaml#/~1search~1scroll'
+  /search/aggregation:
+    $ref: 'path_search.yaml#/~1search~1aggregation'
+  /message/{message_id}':
+    $ref: 'path_message.yaml#/~1message~1{message_id}'
+  /message/{message_id}/envelope':
+    $ref: 'path_message.yaml#/~1message~1{message_id}~1envelope'
+  /message/{message_id}/download':
+    $ref: 'path_message.yaml#/~1message~1{message_id}~1download'
+  /message/{message_id}/raw':
+    $ref: 'path_message.yaml#/~1message~1{message_id}~1raw'
+  /message/{message_id}/part/{partNum}':
+    $ref: 'path_message.yaml#/~1message~1{message_id}~1part~1{partNum}'
+  /message/{message_id}/report-as-spam':
+    $ref: 'path_message.yaml#/~1message~1{message_id}~1report-as-spam'
+  /message/{message_id}/report-as-non-spam':
+    $ref: 'path_message.yaml#/~1message~1{message_id}~1report-as-non-spam'
+  /network-list:
+    $ref: 'path_network-list.yaml#/~1network-list'
+  /network-list/{list_type}:
+    $ref: 'path_network-list.yaml#/~1network-list~1{list_type}'
+  /network-list/domain/{domain_id}:
+    $ref: 'path_network-list.yaml#/~1network-list~1domain~1{domain_id}'
+  /network-list/domain/{domain_id}/{list_type}:
+    $ref: 'path_network-list.yaml#/~1network-list~1domain~1{domain_id}~1{list_type}'
+  /store/archive/resource:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource'
+  /store/archive/resource/test:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1test'
+  /store/archive/resource/{resource_id}:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}'
+  /store/archive/resource/{resource_id}/mount:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}~1mount'
+  /store/archive/resource/{resource_id}/unmount:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}~1unmount'
+  /store/archive/resource/{resource_id}/storage:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}~1storage'
+  /store/archive/resource/{resource_id}/storage/mount:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}~1storage~1mount'
+  /store/archive/resource/{resource_id}/storage/unmount:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}~1storage~1unmount'
+  /store/archive/resource/{resource_id}/storage/{storage_id}:
+    $ref: 'path_store.yaml#/~1store~1archive~1resource~1{resource_id}~1storage~1{storage_id}'
+  /store/archive/policy:
+    $ref: 'path_store.yaml#/~1store~1archive~1policy'
+  /store/archive/policy/{policy_id}:
+    $ref: 'path_store.yaml#/~1store~1archive~1policy~1{policy_id}'
+  /store/archive/policy/{policy_id}/execute:
+    $ref: 'path_store.yaml#/~1store~1archive~1policy~1{policy_id}~1execute'
+  /store/archive/policy/{policy_id}/abort:
+    $ref: 'path_store.yaml#/~1store~1archive~1policy~1{policy_id}~1abort'
+  /store/archive/{domain_id}/policy:
+    $ref: 'path_store.yaml#/~1store~1archive~1{domain_id}~1policy'
+  /store/archive/{domain_id}/policy/{policy_id}:
+    $ref: 'path_store.yaml#/~1store~1archive~1{domain_id}~1policy~1{policy_id}'
+  /store/archive/{domain_id}/policy/{policy_id}/execute:
+    $ref: 'path_store.yaml#/~1store~1archive~1{domain_id}~1policy~1{policy_id}~1execute'
+  /store/archive/{domain_id}/policy/{policy_id}/abort:
+    $ref: 'path_store.yaml#/~1store~1archive~1{domain_id}~1policy~1{policy_id}~1abort'
+  /store/export/list:
+    $ref: 'path_store.yaml#/~1store~1export~1list'
+  /store/export/pst:
+    $ref: 'path_store.yaml#/~1store~1export~1pst'
+  /store/export/{id}:
+    $ref: 'path_store.yaml#/~1store~1export~1{id}'
+  /store/export/{id}/download:
+    $ref: 'path_store.yaml#/~1store~1export~1{id}~1download'
+  /store/export/{id}/abort:
+    $ref: 'path_store.yaml#/~1store~1export~1{id}~1abort'
+  /store/import/list:
+    $ref: 'path_store.yaml#/~1store~1import~1list'
+  /store/import/pst:
+    $ref: 'path_store.yaml#/~1store~1import~1pst'
+  /store/import/eml:
+    $ref: 'path_store.yaml#/~1store~1import~1eml'
+  /store/import/{id}:
+    $ref: 'path_store.yaml#/~1store~1import~1{id}'
+  /store/import/{id}/abort:
+    $ref: 'path_store.yaml#/~1store~1import~1{id}~1abort'
+  /filter/list:
+    $ref: 'path_filter.yaml#/~1filter~1list'
+  /filter/mailets:
+    $ref: 'path_filter.yaml#/~1filter~1mailets'
+  /filter/matchers:
+    $ref: 'path_filter.yaml#/~1filter~1matchers'
+  /filter/validateConfigure:
+    $ref: 'path_filter.yaml#/~1filter~1validateConfigure'
+  /filter/update:
+    $ref: 'path_filter.yaml#/~1filter~1update'
+  /filter/lock:
+    $ref: 'path_filter.yaml#/~1filter~1lock'
+  /filter/account/{account_id}:
+    $ref: 'path_filter.yaml#/~1filter~1account~1{account_id}'
+  /filter/account/{account_id}/lock:
+    $ref: 'path_filter.yaml#/~1filter~1account~1{account_id}~1lock'
+  /filter/account/{account_id}/lock/{lock_id}:
+    $ref: 'path_filter.yaml#/~1filter~1account~1{account_id}~1lock~1{lock_id}'
+  /filter/group/{group_id}/pre:
+    $ref: 'path_filter.yaml#/~1filter~1group~1{group_id}~1pre'
+  /filter/group/{group_id}/pre/lock:
+    $ref: 'path_filter.yaml#/~1filter~1group~1{group_id}~1pre~1lock'
+  /filter/group/{group_id}/pre/lock/{lock_id}:
+    $ref: 'path_filter.yaml#/~1filter~1group~1{group_id}~1pre~1lock~1{lock_id}'
+  /filter/group/{group_id}/post:
+    $ref: 'path_filter.yaml#/~1filter~1group~1{group_id}~1post'
+  /filter/group/{group_id}/post/lock:
+    $ref: 'path_filter.yaml#/~1filter~1group~1{group_id}~1post~1lock'
+  /filter/group/{group_id}/post/lock/{lock_id}:
+    $ref: 'path_filter.yaml#/~1filter~1group~1{group_id}~1post~1lock~1{lock_id}'
+  /filter/system/pre:
+    $ref: 'path_filter.yaml#/~1filter~1system~1pre'
+  /filter/system/pre/lock:
+    $ref: 'path_filter.yaml#/~1filter~1system~1pre~1lock'
+  /filter/system/pre/lock/{lock_id}:
+    $ref: 'path_filter.yaml#/~1filter~1system~1pre~1lock~1{lock_id}'
+  /filter/system/post:
+    $ref: 'path_filter.yaml#/~1filter~1system~1post'
+  /filter/system/post/lock:
+    $ref: 'path_filter.yaml#/~1filter~1system~1post~1lock'
+  /filter/system/post/lock/{lock_id}:
+    $ref: 'path_filter.yaml#/~1filter~1system~1post~1lock~1{lock_id}'
+  /filter/available-patterns:
+    $ref: 'path_filter.yaml#/~1filter~1available-patterns'
+  /log/access:
+    $ref: 'path_log.yaml#/~1log~1access'
+  /log/access/{account_id}:
+    $ref: 'path_log.yaml#/~1log~1access~1{account_id}'
+  /log/archive:
+    $ref: 'path_log.yaml#/~1log~1archive'
+  /log/security:
+    $ref: 'path_log.yaml#/~1log~1security'
+  /log/logging:
+    $ref: 'path_log.yaml#/~1log~1logging'
+  /log/logging/{logger_name}:
+    $ref: 'path_log.yaml#/~1log~1logging~1{logger_name}'
+  /smtp/list:
+    $ref: 'path_smtp.yaml#/~1smtp~1list'
+  /smtp/server/{server_name}:
+    $ref: 'path_smtp.yaml#/~1smtp~1server~1{server_name}'
+  /smtp/server/{server_name}/start:
+    $ref: 'path_smtp.yaml#/~1smtp~1server~1{server_name}~1start'
+  /smtp/server/{server_name}/stop:
+    $ref: 'path_smtp.yaml#/~1smtp~1server~1{server_name}~1stop'
+  /smtp/dos:
+    $ref: 'path_smtp.yaml#/~1smtp~1dos'
+  /smtp/dos/rule:
+    $ref: 'path_smtp.yaml#/~1smtp~1dos~1rule'
+  /smtp/dos/rule/{ip_address}/{prefix_length}:
+    $ref: 'path_smtp.yaml#/~1smtp~1dos~1rule~1{ip_address}~1{prefix_length}'
+  /smtp/dos/blockage:
+    $ref: 'path_smtp.yaml#/~1smtp~1dos~1blockage'
+  /smtp/dos/blockage/{ip_address}:
+    $ref: 'path_smtp.yaml#/~1smtp~1dos~1blockage~1{ip_address}'
+  /delivery:
+    $ref: 'path_delivery.yaml#/~1delivery'
+  /delivery/stop:
+    $ref: 'path_delivery.yaml#/~1delivery~1stop'
+  /delivery/start:
+    $ref: 'path_delivery.yaml#/~1delivery~1start'
+  /delivery/status:
+    $ref: 'path_delivery.yaml#/~1delivery~1status'
+  /delivery/gateway:
+    $ref: 'path_delivery.yaml#/~1delivery~1gateway'
+  /delivery/gateway/{domain_name}:
+    $ref: 'path_delivery.yaml#/~1delivery~1gateway~1{domain_name}'
+  /delivery/forward:
+    $ref: 'path_delivery.yaml#/~1delivery~1forward'
+  /function-control:
+    $ref: 'path_functionControl.yaml#/~1function-control'
+  /update/asrc-pattern-version:
+    $ref: 'path_update.yaml#/~1update~1asrc-pattern-version'
+  /update/current-version:
+    $ref: 'path_update.yaml#/~1update~1current-version'
+  /update/list:
+    $ref: 'path_update.yaml#/~1update~1list'
+  /update/{version}/:
+    $ref: 'path_update.yaml#/~1update~1{version}~1'
+  /update/{version}/download:
+    $ref: 'path_update.yaml#/~1update~1{version}~1download'
+  /update/{version}/status:
+    $ref: 'path_update.yaml#/~1update~1{version}~1status'
+  /update/{version}/install:
+    $ref: 'path_update.yaml#/~1update~1{version}~1install'
+  /audit:
+    $ref: 'path_audit.yaml#/~1audit'
+  /quarantine/{id}:
+    $ref: 'path_quarantine.yaml#/~1quarantine~1{id}'
+  /system:
+    $ref: 'path_system.yaml#/~1system'
+  /system/antivirus/list:
+    $ref: 'path_system.yaml#/~1system~1antivirus~1list'
+  /system/antivirus/{antivirus_name}:
+    $ref: 'path_system.yaml#/~1system~1antivirus~1{antivirus_name}'
+  /system/antivirus/{antivirus_name}/schedule:
+    $ref: 'path_system.yaml#/~1system~1antivirus~1{antivirus_name}~1schedule'
+  /system/antivirus/{antivirus_name}/update:
+    $ref: 'path_system.yaml#/~1system~1antivirus~1{antivirus_name}~1update'
+  /system/antivirus/{antivirus_name}/start:
+    $ref: 'path_system.yaml#/~1system~1antivirus~1{antivirus_name}~1start'
+  /system/antivirus/{antivirus_name}/stop:
+    $ref: 'path_system.yaml#/~1system~1antivirus~1{antivirus_name}~1stop'
+  /system/auth-sources:
+    $ref: 'path_system.yaml#/~1system~1auth-sources'
+  /system/network:
+    $ref: 'path_system.yaml#/~1system~1network'
+  /system/hostname:
+    $ref: 'path_system.yaml#/~1system~1hostname'
+  /system/hosts:
+    $ref: 'path_system.yaml#/~1system~1hosts'
+  /system/dns:
+    $ref: 'path_system.yaml#/~1system~1dns'
+  /system/time:
+    $ref: 'path_system.yaml#/~1system~1time'
+  /system/mail-parser:
+    $ref: 'path_system.yaml#/~1system~1mail-parser'
+  /system/index-errors:
+    $ref: 'path_system.yaml#/~1system~1index-errors'
+  /system/index-errors/{message_id}/delete:
+    $ref: 'path_system.yaml#/~1system~1index-errors~1{message_id}~1delete'
+  /system/index-errors/{message_id}/reindex:
+    $ref: 'path_system.yaml#/~1system~1index-errors~1{message_id}~1reindex'
+  /system/mail-queue/:
+    $ref: 'path_system.yaml#/~1system~1mail-queue~1'
+  /system/mail-queue/{queue_name}:
+    $ref: 'path_system.yaml#/~1system~1mail-queue~1{queue_name}'
+  /system/schedule-import:
+    $ref: 'path_system.yaml#/~1system~1schedule-import'
+  /system/schedule-import/{schedule_id}:
+    $ref: 'path_system.yaml#/~1system~1schedule-import~1{schedule_id}'
+  /system/schedule-import/{schedule_id}/import:
+    $ref: 'path_system.yaml#/~1system~1schedule-import~1{schedule_id}~1import'
+  /system/reindex/{message_id}:
+    $ref: 'path_system.yaml#/~1system~1reindex~1{message_id}'
+  /preference/account/{account_id}/{email}/{key}:
+    $ref: 'path_preference.yaml#/~1preference~1account~1{account_id}~1{email}~1{key}'
+  /preference/account/{account_id}/{email}:
+    $ref: 'path_preference.yaml#/~1preference~1account~1{account_id}~1{email}'
+  /preference/domain/{domain_id}:
+    $ref: 'path_preference.yaml#/~1preference~1domain~1{domain_id}'
+  /preference/domain/{domain_id}/{key}:
+    $ref: 'path_preference.yaml#/~1preference~1domain~1{domain_id}~1{key}'
+  /preference/domain/{domain_id}/{key}/resolution:
+    $ref: 'path_preference.yaml#/~1preference~1domain~1{domain_id}~1{key}~1resolution'
+  /preference/system:
+    $ref: 'path_preference.yaml#/~1preference~1system'
+  /preference/system/{key}:
+    $ref: 'path_preference.yaml#/~1preference~1system~1{key}'
+  /preference/system/{key}/resolution:
+    $ref: 'path_preference.yaml#/~1preference~1system~1{key}~1resolution'
+  /cryptography/server-certificate:
+    $ref: 'path_cryptography.yaml#/~1cryptography~1server-certificate'
+  /user/synchronization:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization'
+  /user/synchronization/{retrieve_id}:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1{retrieve_id}'
+  /user/synchronization/connection-test:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1connection-test'
+  /user/synchronization/retrieve/preview:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1retrieve~1preview'
+  /user/synchronization/retrieve:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1retrieve'
+  /user/synchronization/{retrieve_id}/retrieve/preview:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1{retrieve_id}~1retrieve~1preview'
+  /user/synchronization/{retrieve_id}/retrieve:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1{retrieve_id}~1retrieve'
+  /user/synchronization/domain/{domain_id}:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}'
+  /user/synchronization/domain/{domain_id}/{retrieve_id}:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}~1{retrieve_id}'
+  /user/synchronization/domain/{domain_id}/connection-test:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}~1connection-test'
+  /user/synchronization/domain/{domain_id}/retrieve/preview:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}~1retrieve~1preview'
+  /user/synchronization/domain/{domain_id}/retrieve:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}~1retrieve'
+  /user/synchronization/domain/{domain_id}/{retrieve_id}/retrieve/preview:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}~1{retrieve_id}~1retrieve~1preview'
+  /user/synchronization/domain/{domain_id}/{retrieve_id}/retrieve:
+    $ref: 'path_user-sync.yaml#/~1user~1synchronization~1domain~1{domain_id}~1{retrieve_id}~1retrieve'

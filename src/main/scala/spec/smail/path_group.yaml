@@ -1,0 +1,304 @@
+/group/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: flakeId
+                  parent_id:
+                    type: string
+                    format: flakeId
+    description: List group IDs along with its parent ID.
+    tags:
+      - Group
+'/group/list/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: flakeId
+                  parent_id:
+                    type: string
+                    format: flakeId
+    description: List group IDs along with its parent ID of given domain.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+/group:
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeId'
+      '400':
+        description: 'error: 8, 9, 10, 1002, 1006, 1007, 1012, 1030'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Create new group.
+    tags:
+      - Group
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Group'
+      description: group
+      required: true
+'/group/{group_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GroupWithId'
+      '400':
+        description: 'error: 8, 9, 1002, 1006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get group
+    description: Return the speicified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Move group
+    description: Move group
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              parent_id:
+                type: string
+      description: move target parent id
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006, 1010, 1018'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Remove group
+    description: >
+      Remove the specified group, will remove all descendant groups if
+      specified with includingSubGroups = true.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - name: including-sub
+        in: query
+        description: 'whether remove sub group, default to false'
+        required: false
+        schema:
+          type: boolean
+          default: false
+'/group/email/{email}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GroupWithId'
+      '400':
+        description: 'error: 8, 9, 1002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return the group having specified *email*.
+    tags:
+      - Group
+    parameters:
+      - name: email
+        in: path
+        description: any email of a group
+        required: true
+        schema:
+          type: string
+'/group/{group_id}/email':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Emails'
+      '400':
+        description: 'error: 8, 9, 1002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return the emails of specified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+'/group/{group_id}/aliases':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+              example:
+                - rd
+                - rd01
+    description: Return the alias name of specified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+  put:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006, 21000, 21002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Add alias name for specified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/RecipientRewriteFrom'
+      description: new alias
+      required: true
+'/group/{group_id}/aliases/{alias_name}':
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006, 21001, 21002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete alias name from specified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: 'parameters.yaml#/aliasNamePath'
+'/group/{group_id}/manager':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    description: Return the managers of specified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+'/group/{group_id}/rename':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Rename specified group.
+    tags:
+      - Group
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+      description: new group name
+      required: true
+schemas:
+  Group:
+    type: object
+    properties:
+      name:
+        type: string
+      parent_id:
+        type: string
+      synchronize_type:
+        type: string
+        enum:
+          - sync_ldap
+          - sync_db
+          - manual
+          - system
+  GroupWithId:
+    type: object
+    allOf:
+      - $ref: '#/schemas/Group'
+      - $ref: 'schemas.yaml#/FlakeId'

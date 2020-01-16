@@ -1,0 +1,418 @@
+/smtp/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SmtpServerList'
+    description: List smtp server and current state
+    tags:
+      - SMTP
+'/smtp/server/{server_name}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SmtpConfig'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get configuration
+    description: Return specified SMTP server configuration.
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/smtpServerPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update configuration
+    description: >
+      Update specified SMTP server configuration with specified parameters,
+      unassigned field will *not* be updated.
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/smtpServerPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/SmtpConfig'
+      required: true
+'/smtp/server/{server_name}/start':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Starts specified SMTP server
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/smtpServerPath'
+'/smtp/server/{server_name}/stop':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Stops specified SMTP server
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/smtpServerPath'
+/smtp/dos:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/DosProtectionConfig'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return dos protection configuration
+    tags:
+      - SMTP
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 23000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update dos protection configuration
+    tags:
+      - SMTP
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/DosProtectionConfig'
+      required: true
+/smtp/dos/rule:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/DosProtectionRule'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: >-
+      Return dos protection rules, please notice that unit of duration is
+      millisecond.
+    tags:
+      - SMTP
+  put:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 23000, 23002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Add dos protection rules
+    tags:
+      - SMTP
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/DosProtectionRule'
+      required: true
+'/smtp/dos/rule/{ip_address}/{prefix_length}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 23001, 23002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update dos protection rules
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/ipAddressPath'
+      - $ref: '#/parameters/prefixLengthPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/DosDetectionRule'
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 23001, 23002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete dos protection rules
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/ipAddressPath'
+      - $ref: '#/parameters/prefixLengthPath'
+/smtp/dos/blockage:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/DosBlockage'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return dos blockage information
+    tags:
+      - SMTP
+'/smtp/dos/blockage/{ip_address}':
+  delete:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Remove ip address from dos block list
+    tags:
+      - SMTP
+    parameters:
+      - $ref: '#/parameters/ipAddressPath'
+schemas:
+  DosBlockage:
+    type: object
+    properties:
+      ip_address:
+        type: string
+      comment:
+        type: string
+  DosDetectionRule:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      duration:
+        description: 'duration of detection rule, in millisecond'
+        type: integer
+        format: int64
+      threshold:
+        type: integer
+      comment:
+        type: string
+  DosProtectionConfig:
+    type: object
+    properties:
+      expiry_unit:
+        type: string
+      expiry:
+        type: integer
+      notification:
+        type: array
+        items:
+          type: string
+          format: email
+  DosProtectionRule:
+    type: object
+    allOf:
+      - $ref: '#/schemas/DosIpNetwork'
+      - $ref: '#/schemas/DosDetectionRule'
+  DosIpNetwork:
+    type: object
+    properties:
+      ip_address:
+        type: string
+      prefix_length:
+        type: integer
+  SmtpConfig:
+    type: object
+    properties:
+      bound_addresses:
+        type: string
+      connection_back_log:
+        type: integer
+      connection_limit:
+        type: integer
+      connection_limit_per_ip:
+        type: integer
+      connection_timeout:
+        type: integer
+      authorized_addresses:
+        type: string
+      auth_required:
+        type: string
+        enum:
+          - true
+          - false
+          - announce
+      verify_identity:
+        type: boolean
+      max_message_size:
+        type: integer
+      address_brackets_enforcement:
+        type: boolean
+      helo_enforcement:
+        type: boolean
+      use_start_tls:
+        type: boolean
+      use_ssl:
+        type: boolean
+      handlers:
+        type: array
+        items:
+          type: object
+          properties:
+            class:
+              type: string
+            config:
+              type: object
+            enabled:
+              type: boolean
+    example:
+      bound_addresses: '0.0.0.0:25'
+      connection_back_log: 200
+      connection_limit: 0
+      connection_limit_per_ip: 0
+      connection_timeout: 360
+      authorized_addresses: 127.0.0.0/8
+      auth_required: 'false'
+      verify_identity: false
+      max_message_size: 0
+      address_brackets_enforcement: false
+      helo_enforcement: false
+      use_start_tls: false
+      use_ssl: false
+      handlers:
+        - class: com.sn.mailplatform.antispam.smtp.fastfail.SpfBuilder
+          config:
+            failAction: disconnect
+            softfailAction: disconnect
+            neutralAction: none
+          enabled: true
+        - class: com.sn.mailplatform.antispam.smtp.fastfail.DnsRblBuilder
+          config:
+            getDetail: false
+            domainzones:
+              blacklist:
+                - host: bl.spamcop.net.
+                  enabled: true
+                - host: cbl.abuseat.org.
+                  enabled: true
+                - host: pbl.spamhaus.org.
+                  enabled: true
+                - host: psbl.surriel.com.
+                  enabled: true
+        - class: com.sn.mailplatform.antispam.smtp.fastfail.InvalidRcptRatioBuilder
+          config:
+            applyToAllDomain: false
+            invalidRecipientRatio: 99
+            temporaryFailListTtl: 300
+          enabled: true
+        - class: >-
+            com.sn.mailplatform.antispam.smtp.fastfail.ConnectionPerIpPerTimeLimitBuilder
+          config:
+            connectionPerIp: 40
+            interval: 60
+          enabled: false
+        - class: >-
+            com.sn.mailplatform.antispam.smtp.fastfail.ValidSenderDomainBuilder
+          enabled: false
+        - class: com.sn.mailplatform.antispam.smtp.fastfail.WhitelistBuilder
+          enabled: false
+        - class: com.sn.mailplatform.antispam.smtp.fastfail.BlacklistBuilder
+          enabled: false
+  SmtpServerList:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+        is_running:
+          type: boolean
+    example:
+      - name: smtpserver
+        is_running: true
+parameters:
+  ipAddressPath:
+    name: ip_address
+    in: path
+    description: ip address
+    required: true
+    schema:
+      type: string
+  prefixLengthPath:
+    name: prefix_length
+    in: path
+    description: ip prefix length
+    required: true
+    schema:
+      type: string
+  smtpServerPath:
+    name: server_name
+    in: path
+    description: name of smtp server
+    required: true
+    schema:
+      type: string

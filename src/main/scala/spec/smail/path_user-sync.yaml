@@ -1,0 +1,1162 @@
+'/user/synchronization':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/RuleListEntry'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Return system retrieve rules
+    tags:
+      - User
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RuleId'
+      '400':
+        description: 'error: 8, 24000, 24001, 24002, 24004, 4, 5, 11'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Add system retrieve rule
+    tags:
+      - User
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Rule'
+      description: rule to be added
+      required: true
+'/user/synchronization/{retrieve_id}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 24000, 24001, 24002, 24004, 4, 5, 11'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update system retrieve rule of specified id
+    tags:
+      - User
+    parameters:
+      - $ref: '#/parameters/retrieveRuleIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Rule'
+      description: rule to be updated
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 24000, 24001, 24002, 24004, 4, 5, 11'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Delete system retrieve rule
+    description: ''
+    tags:
+      - User
+    parameters:
+      - $ref: '#/parameters/retrieveRuleIdPath'
+'/user/synchronization/connection-test':
+  post:
+    responses:
+      '200':
+        description: Connection test result
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ConnectionTestResult'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Test connection with remote server
+    tags:
+      - User
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/ConnectionParameter'
+      description: ldap/jdbc connection test parameters
+      required: true
+'/user/synchronization/retrieve/preview':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/Result'
+      '400':
+        description: 'error: 8, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: >
+      Preview the result of retrieve group and users using all rules
+    tags:
+      - User
+'/user/synchronization/retrieve':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SystemResults'
+      '400':
+        description: 'error: 8, 1001, 1002, 1003, 1004, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Retrieve group and users using all rules
+    tags:
+      - User
+'/user/synchronization/{retrieve_id}/retrieve/preview':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Result'
+      '400':
+        description: 'error: 8, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Preview the result of retrieve group and users using specified rule
+    tags:
+      - User
+    parameters:
+      - $ref: '#/parameters/retrieveRuleIdPath'
+'/user/synchronization/{retrieve_id}/retrieve':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SystemResult'
+      '400':
+        description: 'error: 8, 1001, 1002, 1003, 1004, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Retrieve group and users using specified rule
+    tags:
+      - User
+    parameters:
+      - $ref: '#/parameters/retrieveRuleIdPath'
+'/user/synchronization/domain/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/RuleListEntry'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Return retrieve rules
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RuleId'
+      '400':
+        description: 'error: 8, 24000, 24001, 24002, 24004, 4, 5, 11'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Add retrieve rule
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Rule'
+      description: rule to be added
+      required: true
+'/user/synchronization/domain/{domain_id}/{retrieve_id}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 24000, 24001, 24002, 24004, 4, 5, 11'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update retrieve rule of specified id in the specified domain
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/retrieveRuleIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Rule'
+      description: rule to be updated
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 24000, 24001, 24002, 24004, 4, 5, 11'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Delete retrieve rule
+    description: ''
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/retrieveRuleIdPath'
+'/user/synchronization/domain/{domain_id}/connection-test':
+  post:
+    responses:
+      '200':
+        description: Connection test result
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ConnectionTestResult'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Test connection with remote server
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/ConnectionParameter'
+      description: ldap/jdbc connection test parameters
+      required: true
+'/user/synchronization/domain/{domain_id}/retrieve/preview':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/Result'
+      '400':
+        description: 'error: 8, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: >
+      Preview the result of retrieve group and users using all rules
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+'/user/synchronization/domain/{domain_id}/retrieve':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/Result'
+      '400':
+        description: 'error: 8, 1001, 1002, 1003, 1004, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Retrieve group and users using all rules
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+'/user/synchronization/domain/{domain_id}/{retrieve_id}/retrieve/preview':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Result'
+      '400':
+        description: 'error: 8, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Preview the result of retrieve group and users using specified rule
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/retrieveRuleIdPath'
+'/user/synchronization/domain/{domain_id}/{retrieve_id}/retrieve':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Result'
+      '400':
+        description: 'error: 8, 1001, 1002, 1003, 1004, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1024, 1025, 1026, 1027, 1028, 1029, 1030, 1031, 1032, 1033, 24004, 24006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Retrieve group and users using specified rule
+    tags:
+      - User
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/retrieveRuleIdPath'
+schemas:
+  LdapConnectParameter:
+    type: object
+    properties:
+      server:
+        type: string
+      port:
+        type: integer
+      use_ssl:
+        type: boolean
+      account:
+        type: string
+      password:
+        type: string
+    required:
+      - server
+      - port
+      - account
+      - password
+      - use_ssl
+    example:
+      server: test.server
+      port: 389
+      use_ssl: false
+      account: user
+      password: pass
+  DbConnectParameter:
+    type: object
+    properties:
+      url:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+    required:
+      - url
+      - username
+      - password
+    example:
+      url: jdbc:mysql://127.0.0.1:3306/taiping?serverTimezone=UTC
+      username: user
+      password: pass
+  ConnectionParameter:
+    properties:
+      retrieve_type:
+        type: string
+        enum:
+          - ldap
+          - db
+      rule:
+        oneOf:
+          - $ref: '#/schemas/LdapConnectParameter'
+          - $ref: '#/schemas/DbConnectParameter'
+  ConnectionTestResult:
+    oneOf:
+      - $ref: '#/schemas/ConnectionTestSuccess'
+      - $ref: '#/schemas/StatusFailure'
+  ConnectionTestSuccess:
+    type: object
+    properties:
+      success:
+        type: object
+  FieldReference:
+    type: object
+    properties:
+      account:
+        type: string
+      name:
+        type: string
+      title:
+        type: string
+      mail:
+        type: string
+      enabled:
+        type: string
+  DomainReference:
+    type: object
+    properties:
+      source:
+        type: string
+      group_key:
+        type: string
+      domain:
+        type: string
+      company:
+        type: string
+      contact_email:
+        type: string
+      alias_limit:
+        type: integer
+      quota_limit:
+        type: integer
+      user_limit:
+        type: integer
+      language:
+        type: string
+      administrator:
+        type: string
+        format: flakeId
+      expiration_date:
+        type: number
+        format: long
+    required:
+      - source
+      - group_key
+      - domain
+      - company
+      - contact_email
+      - alias_limit
+      - quota_limit
+      - user_limit
+      - language
+      - administrator
+      - expiration_date
+  GroupReference:
+    type: object
+    properties:
+      source:
+        type: string
+      key:
+        type: string
+      name:
+        type: string
+      parent:
+        type: string
+      group_mail_address:
+        type: string
+    required:
+      - source
+      - key
+      - name
+      - parent
+      - group_mail_address
+  UserReference:
+    type: object
+    properties:
+      source:
+        type: string
+      account:
+        type: string
+      name:
+        type: string
+      group:
+        type: string
+      mail:
+        type: string
+      enabled:
+        type: string
+    required:
+      - source
+      - account
+      - name
+      - group
+      - mail
+      - enabled
+  DbDataSource:
+    type: object
+    properties:
+      url:
+        type: string
+      username:
+        type: string
+      password:
+        type: string
+    required:
+      - url
+      - username
+      - password
+  LdapDataSource:
+    type: object
+    properties:
+      server:
+        type: string
+      port:
+        type: integer
+      use_ssl:
+        type: boolean
+      account:
+        type: string
+      password:
+        type: string
+      base_dn:
+        type: string
+      filter:
+        type: string
+      extract_member:
+        type: boolean
+      group_rule:
+        type: object
+        properties:
+          rule_type:
+            type: string
+          parameter:
+            type: string
+          prefix:
+            type: string
+    required:
+      - server
+      - port
+      - use_ssl
+      - account
+      - password
+      - base_dn
+      - extract_member
+      - group_rule
+  SynchronizeOption:
+    type: object
+    properties:
+      remove_non_exists:
+        type: boolean
+      ignore_remove_list:
+        description: >-
+          username in the list will not be removed even if this user is no
+          longer exists in ldap server.
+        type: array
+        items:
+          type: string
+      ignore_sync_list:
+        description: >-
+          username in the list will not be imported during ldap
+          synchronization.
+        type: array
+        items:
+          type: string
+  DbRule:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      domain_reference:
+        $ref: '#/schemas/DomainReference'
+      group_reference:
+        $ref: '#/schemas/GroupReference'
+      user_reference:
+        $ref: '#/schemas/UserReference'
+      source:
+        $ref: '#/schemas/DbDataSource'
+      synchronize_option:
+        $ref: '#/schemas/SynchronizeOption'
+      schedule:
+        $ref: 'schemas.yaml#/UserDefinedSchedule'
+      threshold:
+        type: integer
+      default_role:
+        type: array
+        items:
+          type: string
+          format: flakeId
+    required:
+      - enabled
+      - group_reference
+      - user_reference
+      - source
+      - synchronize_option
+      - schedule
+      - threshold
+      - default_role
+    example:
+      enabled: true
+      domain_reference:
+        source: domain_view
+        group_key: ORGANIZATION_ID
+        company: NAME
+        contact_email: ''
+        alias_limit: 0
+        quota_limit: 0
+        user_limit: 0
+        language: zh_CN
+        administrator: '4194304'
+        expiration_date: 0
+      group_reference:
+        source: group_view
+        key: ID
+        name: ORGANIZATION_NAME
+        parent: SUPER_ORGANIZATION_ID
+        group_mail_address: ''
+      user_reference:
+        source: user_view
+        account: ID
+        name: REAL_NAME
+        group: ORGANIZATION_ID
+        mail: USER_LOGIN_NAME
+        enabled: ''
+      source:
+        url: jdbc:mysql://127.0.0.1:3306/taiping?serverTimezone=UTC
+        username: user
+        password: pass
+      synchronize_option:
+        remove_non_exists: true
+        ignore_remove_list:
+          - user1
+        ignore_sync_list:
+          - user2
+      schedule:
+        interval: daily
+        date: 0
+        weekday: 0
+        hour: 0
+        time_zone: Etc/UTC
+      threshold: 0
+      default_role:
+        - '85985318578159616'
+  LdapRule:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      reference:
+        $ref: '#/schemas/FieldReference'
+      source:
+        $ref: '#/schemas/LdapDataSource'
+      synchronize_option:
+        $ref: '#/schemas/SynchronizeOption'
+      schedule:
+        $ref: 'schemas.yaml#/UserDefinedSchedule'
+      threshold:
+        type: integer
+      default_role:
+        type: array
+        items:
+          type: string
+          format: flakeId
+    required:
+      - enabled
+      - reference
+      - source
+      - synchronize_option
+      - schedule
+      - threshold
+      - default_role
+    example:
+      enabled: true
+      reference:
+        account: cn
+        name: description
+        title: title
+        mail: mail
+        sub_mail: proxyaddresses
+        enabled: userAccountCont
+      source:
+        server: 192.168.214.1
+        port: 389
+        use_ssl: false
+        account: qcadm
+        password: arborabc
+        base_dn: 'OU=eng_test01,DC=dc,DC=qc,DC=softnext,DC=com,DC=tw'
+        filter: (objectClass=*)
+        extract_member: true
+        group_rule:
+          rule_type: BY_OU
+          parameter: ''
+          prefix: ''
+      synchronize_option:
+        remove_non_exists: true
+        ignore_remove_list:
+          - user1
+        ignore_sync_list:
+          - user2
+      schedule:
+        interval: daily
+        date: 0
+        weekday: 0
+        hour: 0
+        time_zone: Etc/UTC
+      threshold: 0
+      default_role:
+        - '85985318578159616'
+  Rule:
+    type: object
+    properties:
+      retrieve_type:
+        type: string
+        enum:
+          - ldap
+          - db
+      rule:
+        oneOf:
+          - $ref: '#/schemas/LdapRule'
+          - $ref: '#/schemas/DbRule'
+  RuleId:
+    type: object
+    properties:
+      id:
+        type: string
+        format: flakeId
+    example:
+      id: 85985311571159620
+  LastStatus:
+    type: object
+    properties:
+      status:
+        type: object
+        properties:
+          success:
+            type: boolean
+          timestamp:
+            type: integer
+            format: long
+    example:
+      status:
+        success: true
+        timestamp: 1500880524000
+  RuleListEntry:
+    allOf:
+      - $ref: '#/schemas/RuleId'
+      - $ref: '#/schemas/Rule'
+      - $ref: '#/schemas/LastStatus'
+  Status:
+    oneOf:
+      - $ref: '#/schemas/StatusSuccess'
+      - $ref: '#/schemas/StatusFailure'
+  StatusSuccess:
+    type: object
+    properties:
+      success:
+        type: object
+        properties:
+          domain_added:
+            type: integer
+          domain_modified:
+            type: integer
+          domain_deleted:
+            type: integer
+          group_added:
+            type: integer
+          group_deleted:
+            type: integer
+          user_added:
+            type: integer
+          user_modified:
+            type: integer
+          user_deleted:
+            type: integer
+    example:
+      success:
+        domain_added: 2
+        domain_modified: 0
+        domain_deleted: 0
+        group_added: 1
+        group_deleted: 0
+        user_added: 2
+        user_modified: 0
+        user_deleted: 0
+  StatusFailure:
+    type: object
+    properties:
+      failure:
+        type: object
+        properties:
+          type:
+            type: string
+            enum:
+              - connection_failed
+              - bind_failed
+              - retrieve_failed
+              - exceed_threshold
+              - unsupported_protocol
+          message:
+            type: string
+  Result:
+    type: object
+    properties:
+      id:
+        type: string
+        format: flakeId
+        description: rule id
+      status:
+        $ref: '#/schemas/Status'
+      domains:
+        type: object
+        properties:
+          add:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+          delete:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+          modify:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+      groups:
+        type: object
+        properties:
+          add:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+          delete:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+      users:
+        type: object
+        properties:
+          add:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+          delete:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+          modify:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+    example:
+      id: 85985311571159620
+      status:
+        success:
+          domain_added: 2
+          domain_modified: 0
+          domain_deleted: 0
+          group_added: 1
+          group_deleted: 0
+          user_added: 2
+          user_modified: 0
+          user_deleted: 0
+      domain:
+        add:
+          - 85985311273452620
+        modify: []
+        delete: []
+      groups:
+        add:
+          - 85985311571159620
+        delete: []
+      users:
+        add:
+          - 85985311571159620
+        modify: []
+        delete: []
+  SystemResults:
+    type: object
+    properties:
+      results:
+        type: array
+        items:
+          $ref: '#/schemas/Result'
+      failures:
+        $ref: '#/schemas/SystemSyncFailures'
+    example:
+      results:
+        - id: 85985311571159620
+          status:
+            domain_added: 2
+            domain_modified: 0
+            domain_deleted: 0
+            group_added: 1
+            group_deleted: 0
+            user_added: 2
+            user_modified: 0
+            user_deleted: 0
+          domain:
+            add:
+              - 85985311273452620
+            modify: []
+            delete: []
+          groups:
+            add:
+              - 85985311571159620
+            delete: []
+          users:
+            add:
+              - 85985311571159620
+            modify: []
+            delete: []
+  SystemResult:
+    type: object
+    properties:
+      result:
+        $ref: '#/schemas/Result'
+      failures:
+        $ref: '#/schemas/SystemSyncFailures'
+    example:
+      result:
+        id: 85985311571159620
+        status:
+          domain_added: 2
+          domain_modified: 0
+          domain_deleted: 0
+          group_added: 1
+          group_deleted: 0
+          user_added: 2
+          user_modified: 0
+          user_deleted: 0
+        domain:
+          add:
+            - 85985311273452620
+          modify: []
+          delete: []
+        groups:
+          add:
+            - 85985311571159620
+          delete: []
+        users:
+          add:
+            - 85985311571159620
+          modify: []
+          delete: []
+  SystemSyncFailures:
+    type: object
+    properties:
+      initial_processor:
+        type: array
+        items:
+          type: object
+          properties:
+            domain_id:
+              type: string
+              format: flakeId
+            error:
+              type: integer
+              enum:
+                - 1003
+                - 6002
+                - 6003
+                - 6004
+                - 6005
+                - 6006
+                - 6007
+                - 6008
+                - 6009
+                - 6010
+                - 6011
+                - 6012
+                - 6013
+                - 6014
+                - 6015
+                - 6017
+      clean_processor:
+        type: array
+        items:
+          type: object
+          properties:
+            domain_id:
+              type: string
+              format: flakeId
+            error:
+              type: integer
+              enum:
+                - 1003
+                - 6002
+                - 6003
+                - 6004
+                - 6005
+                - 6006
+                - 6007
+                - 6008
+                - 6009
+                - 6010
+                - 6011
+                - 6012
+                - 6013
+                - 6014
+                - 6015
+      clean_archive_policy:
+        type: array
+        items:
+          type: object
+          properties:
+            domain_id:
+              type: string
+              format: flakeId
+            error:
+              type: array
+              items:
+                type: object
+                properties:
+                  policy_id:
+                    type: string
+                    format: flakeId
+                  error:
+                    type: integer
+                    enum:
+                      - 18000
+                      - 18001
+                      - 18002
+                      - 18003
+                      - 18004
+                      - 18005
+                      - 18006
+                      - 18007
+                      - 18008
+                      - 18009
+                      - 18010
+                      - 18011
+                      - 18012
+                      - 18013
+                      - 18014
+                      - 18015
+                      - 18016
+                      - 18017
+                      - 18018
+                      - 18019
+                      - 18020
+                      - 18021
+                      - 18022
+                      - 18023
+                      - 18024
+                      - 18025
+                      - 18026
+                      - 18027
+                      - 18028
+      clean_archive_resource:
+        type: array
+        items:
+          type: object
+          properties:
+            domain_id:
+              type: string
+              format: flakeId
+            error:
+              type: array
+              items:
+                type: object
+                properties:
+                  resource_id:
+                    type: string
+                    format: flakeId
+                  error:
+                    type: integer
+                    enum:
+                      - 18000
+                      - 18001
+                      - 18002
+                      - 18003
+                      - 18004
+                      - 18005
+                      - 18006
+                      - 18007
+                      - 18008
+                      - 18009
+                      - 18010
+                      - 18011
+                      - 18012
+                      - 18013
+                      - 18014
+                      - 18015
+                      - 18016
+                      - 18017
+                      - 18018
+                      - 18019
+                      - 18020
+                      - 18021
+                      - 18022
+                      - 18023
+                      - 18024
+                      - 18025
+                      - 18026
+                      - 18027
+                      - 18028
+      clean_group_alias:
+        type: array
+        items:
+          type: object
+          properties:
+            domain_id:
+              type: string
+              format: flakeId
+            error:
+              type: array
+              items:
+                type: object
+                properties:
+                  key:
+                    type: string
+                  error:
+                    type: integer
+                    enum:
+                      - 21000
+                      - 21001
+                      - 21002
+                      - 21003
+                      - 21004
+parameters:
+  retrieveRuleIdPath:
+    name: retrieve_id
+    in: path
+    required: true
+    schema:
+      type: string

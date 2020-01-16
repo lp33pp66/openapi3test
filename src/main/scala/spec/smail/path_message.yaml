@@ -1,0 +1,441 @@
+'/message/{message_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Message'
+      '400':
+        description: 'error: 8, 9, 7000, 7001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return entire message contents with specified message ID.
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+'/message/{message_id}/envelope':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/MessageEnvelope'
+      '400':
+        description: 'error: 8, 9, 7000, 7001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return message digest with specified message ID.
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+'/message/{message_id}/download':
+  get:
+    responses:
+      '200':
+        description: download message
+        content:
+          text/plain:
+            schema:
+              type: string
+              format: binary
+      '400':
+        description: 'error: 8, 9, 7000, 7001'
+        content:
+          text/plain:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Download message with specified message ID.
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+'/message/{message_id}/raw':
+  get:
+    responses:
+      '200':
+        description: raw message
+        content:
+          text/plain:
+            schema:
+              type: string
+              format: binary
+      '400':
+        description: 'error: 8, 9, 7000, 7001'
+        content:
+          text/plain:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return raw message with specified message ID.
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+'/message/{message_id}/part/{partNum}':
+  get:
+    responses:
+      '200':
+        description: return part at specified `partNum`
+        content:
+          text/plain:
+            schema:
+              type: string
+              format: binary
+      '400':
+        description: 'error: 8, 9, 7000, 7001'
+        content:
+          text/plain:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: >-
+      Return part at specified `partNum` of specified message ID.
+
+      If query parameter `raw` set to `false`, the body of MIME part at `partNum` will be content transfer decoded and only body of the `partNum` part will be returned.
+
+      If query parameter `raw` set to `true`, the body of MIME part at `partNum` and **nested MIME part** will be returned as it is.
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+      - $ref: '#/parameters/partNumPath'
+      - in: query
+        name: raw
+        schema:
+          type: boolean
+          default: false
+        description: Whether returns MIME part at partNum as raw
+'/message/{message_id}/report-as-spam':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+    description: |
+      Report specified mail as spam
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+'/message/{message_id}/report-as-non-spam':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+    description: |
+      Report specified mail as misjudged spam mail
+    tags:
+      - Message
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+schemas:
+  Message:
+    type: object
+    properties:
+      id:
+        type: string
+      from:
+        type: string
+      to:
+        type: string
+      date:
+        type: object
+        properties:
+          timestamp:
+            type: string
+          valid:
+            type: boolean
+            description: whether returned timestamp is from *correctly* parsed mail header
+      subject:
+        type: string
+      header:
+        type: string
+      parts:
+        $ref: '#/schemas/MessageParts'
+    example:
+      id: <524903a4.06a3420a.62b2.ffff85bbSMTPIN_ADDED_MISSING@mx.google.com>
+      from: <estatement@citibank.com.tw>
+      to: aaa@test.com
+      date:
+        timestamp: '1380152103'
+        valid: true
+      subject: =?UTF-8?Q?Credit_Card_Electronic_Statement?=
+      header: >-
+        Received: by 10.15.32.200 with SMTP id a48csp78713eev; Sun, 29 Sep
+        2013 21:52:58 -0700 (PDT)
+      parts:
+        - part: "1"
+          content_type: "multipart/alternative"
+          headers: {}
+        - part: "2.1"
+          content_type: "text/plain"
+          headers: {}
+          body:
+            text: "abc"
+        - part: "2.2"
+          content_type: "text/plain"
+          headers: {}
+          body:
+            attachment:
+              meta:
+                content_type: application/pdf
+                position: "2.2"
+                disposition_type: attachment
+                name: estatement.pdf
+                status: normal
+  MessageParts:
+    type: array
+    items:
+      type: object
+      properties:
+        part:
+          type: string
+        content_type:
+          type: string
+        headers:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        body:
+          oneOf:
+            - $ref: '#/schemas/MessageBodyText'
+            - $ref: '#/schemas/MessageBodyAttachment'
+      required:
+        - part
+        - content_type
+        - headers
+    example:
+      - part: "1"
+        content_type: "multipart/alternative"
+        headers: {}
+      - part: "2.1"
+        content_type: "text/plain"
+        headers: {}
+        body:
+          text: "abc"
+      - part: "2.2"
+        content_type: "text/plain"
+        headers: {}
+        body:
+          attachment:
+            meta:
+              content_type: application/pdf
+              disposition_type: attachment
+              name: estatement.pdf
+  MessageBodyText:
+    type: object
+    properties:
+      text:
+        type: string
+  MessageBodyAttachment:
+    type: object
+    properties:
+      attachment:
+        type: object
+        properties:
+          meta:
+            type: object
+            properties:
+              disposition_type:
+                type: string
+              name:
+                type: string
+              content_id:
+                type: string
+  MessageEnvelope:
+    type: object
+    properties:
+      sender:
+        type: object
+        properties:
+          mail_address:
+            type: string
+            format: email
+          group:
+            type: string
+            format: flakeId
+      recipient:
+        type: object
+        properties:
+          mail_address:
+            type: string
+            format: email
+          group:
+            type: string
+            format: flakeId
+      status:
+        type: string
+        enum:
+          - Sent
+          - Quarantined
+          - Discarded
+          - Delayed
+          - Bounced
+          - Imported
+      short_attributes:
+        type: object
+        properties:
+          subject:
+            type: string
+          attachments:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                disposition:
+                  type: string
+          meta:
+            type: object
+            properties:
+              time:
+                type: string
+                format: integer
+              date:
+                type: string
+                format: integer
+              ip:
+                type: string
+              hostname:
+                type: string
+              size:
+                type: string
+                format: integer
+              block_cause:
+                type: string
+              comment:
+                type: string
+              bcc:
+                type: array
+                items:
+                  type: string
+              recipient_count:
+                type: integer
+              process_nodes:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    processor_id:
+                      $ref: 'schemas.yaml#/FilterProcessorId'
+                    filter_id:
+                      type: string
+                      format: flake id
+                    revision:
+                      type: integer
+                      format: long
+                    timestamp:
+                      type: integer
+                      format: long
+                    node_type:
+                      type: string
+                      enum:
+                        - matcher
+                        - mailet
+                    matched:
+                      type: boolean
+              source_tag:
+                type: string
+              import_info:
+                type: object
+                properties:
+                  owner:
+                    type: string
+                    format: flake id
+                  extracted_recipients:
+                    type: array
+                    items:
+                      type: string
+                  to_domain:
+                    type: array
+                    items:
+                      type: string
+                  to_group:
+                    type: array
+                    items:
+                      type: string
+                  extracted_group:
+                    type: array
+                    items:
+                      type: string
+                  extracted_domain:
+                    type: array
+                    items:
+                      type: string
+                  from_domain:
+                    type: string
+                    format: flake id
+                  from_group:
+                    type: string
+                    format: flake id
+              smtp_tx_id:
+                type: string
+    example:
+      sender:
+        mail_address: <estatement@citibank.com.tw>
+        group: '85985318578159616'
+      recipient:
+        mail_address: aaa@test.com
+        group: '85985318578159616'
+      status: SENT
+      short_attributes:
+        subject: =?UTF-8?Q?Credit_Card_Electronic_Statement?=
+        attachments:
+          - name: estatement.pdf
+            disposition: attachment
+          - name: payment slip.pdf
+            disposition: inline
+        meta:
+          time: '380152103'
+          date: '380152103'
+          ip: 210.63.32.50
+          hostname: citi.estmt.com.tw
+          size: '1222583'
+          block_cause: ASRC_pattern_811 matched
+          comment: ''
+          bcc:
+            - bcc_1@test.com
+          recipient_count: 2
+          process_nodes:
+            - processor_id:
+                type: SystemProcessorId
+                prefix: post
+              filter_id: '1235123'
+              revision: 5
+              timestamp: 1523244585457
+              node_type: matcher
+              matched: true
+          source_tag: 'import_source_tag1'
+          import_info:
+            owner: '85985318578159616'
+            extracted_recipients:
+              - user1@test.com
+              - user2@test.com
+            to_domain:
+              - '85985318578159616'
+            to_group:
+              - '85985318578159616'
+            extracted_domain:
+              - '85985318578159616'
+            extracted_group:
+              - '85985318578159616'
+            from_domain: '85985318578159616'
+            from_group: '85985318578159616'
+parameters:
+  partNumPath:
+    name: partNum
+    in: path
+    description: "`partNum` of a attachment in message"
+    required: true
+    schema:
+      type: string

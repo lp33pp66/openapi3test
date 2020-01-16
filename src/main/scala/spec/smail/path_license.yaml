@@ -1,0 +1,140 @@
+/license:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/License'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get license infomation
+    description: Return license information.
+    tags:
+      - License
+/license/feature:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/LicenseFeature'
+    summary: Get license feature information
+    description: Return license feature information.
+    tags:
+      - License
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update license
+    description: Update license
+    tags:
+      - License
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/LicenseUpdate'
+      required: true
+schemas:
+  License:
+    type: object
+    properties:
+      is_valid:
+        type: boolean
+      good_after_time:
+        type: string
+        format: integer
+      good_before_time:
+        type: string
+        format: integer
+      quota:
+        type: object
+        properties:
+          account:
+            type: integer
+          group:
+            type: integer
+          domain:
+            type: integer
+          host:
+            type: integer
+          archive:
+            type: integer
+      feature:
+        type: object
+        additionalProperties:
+          type: string
+          format: integer
+      serial_number:
+        type: string
+    example:
+      is_valid: true
+      good_after_time: '14344443780000'
+      good_before_time: '1479970681000'
+      quota:
+        account: 1
+        group: 1
+      feature:
+        trial: {}
+        mail: '1479970681000'
+        filter: '1479970681000'
+      serial_number: L9zCHeh9epKbr84cVBqzKD67VdcMLVZwAF6gwwat
+  LicenseFeature:
+    type: object
+    properties:
+      feature:
+        type: object
+        additionalProperties:
+          type: string
+          format: integer
+    example:
+      feature:
+        trial: {}
+        mail: '1479970681000'
+        filter: '1479970681000'
+  LicenseUpdate:
+    type: object
+    properties:
+      license:
+        type: string
+        format: PGP ASCII armored
+    example:
+      license: |
+        -----BEGIN PGP MESSAGE-----
+        Version: BCPG v1.54
+
+        owJ4nJvAy8zAwXh+SULV2wvXuxhPH7ieJJ6TmZyaV5yqm5mel1+UqpuWmZOal5ib
+        GuG/ILuaSwEIlJJLi0vyc1OLlBSsgJx4kKySDkQqLTWxpLQoFSQDUQwWzU3MzEEV
+        AgsDzU3KAastKSpN1UGVTM/PT4lPSk0DuiE+JbEErMzE0NDMxNTIxAAE4MprETqV
+        SooyEwlbhdDKhWQAxMrEtJLUIriNRshS+FwDVZdZXFyKUGGILAoJrkyU4CoszS9J
+        RAusxOTk/NK8ErANEOdx1XJ1MkWzMDByMLiyMoEiwk4GFKQFOYklQBflKmhA40yh
+        GBhpmXnpmgo2yPIOxflpJXmpFSV6yfm5eiXldgxcnAKwSN+xQYBhpcjh+syiQ/cW
+        vgs4v+0++6W3TLIv2WVk576N65LZbB+e252r5fG8O9C76emam30sCuwvpR92yMbX
+        nws52q6Y/O+nnXVstJ9jLx/bRbfU1Wtjc/r/Ldl3+7JT1LboMtZy+c1/Ns13C0m6
+        vCzg5t76xfM1qq5IJkl3Tw24u/HSV+MTdyapWUw/sCz51vnqiwl2F70svzd5PLi7
+        qN8n4JxcTG+w2PODt541X3G4ISKodTJ1wclFeQ7uB/wUjsXrVtbsO6d6+pPg4491
+        1n9eRBTzBZ61tCsQtA3csNGx+rL8z9X3aub43ZJwXBJ55anI9bIwq8NelUcC3tuZ
+        K64PEL8VdeCg7xT/3hfv/jV6bHFxLeY5UbsmvX+OrP+VXwLbuyUeStY0cP7wkEqO
+        292eFG3Gm140uzjyxXoT8aNP/FRTLkucTe0SNJtk5nktffP7Y/+PvDhjIKbqJsm3
+        Uunq6q6ay4k1rlHr1m5PetSw5krMpc1vL1wO9q4SmCW690jWlmuFv9V26u47+spD
+        6tqS43l6mlPcjr93VT+4I6hnbovcoXP8aw8Vv353bP93gx/cs+J36+/VPJ4Ycne7
+        rOCisnvL2Tq/u/2dc4GjqPWUa6njo3UX3kywEJ6ncvdevtyUi1d552X+S+S57tr0
+        +hurwvwTAuYpjX9mC1vZX2mp8NuV9YVLJjA99ZKmTFZQaULV9Vk77b6VVq3vZHxS
+        F9kCAKK/lI8=
+        =/BXq
+        -----END PGP MESSAGE-----

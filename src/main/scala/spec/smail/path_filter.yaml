@@ -1,0 +1,879 @@
+/filter/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ManageableFilter'
+    description: >
+      List group ID of manageable filter and whether user can manage system
+      filter.
+
+      Returns JSON with "group" and "system" properties, "group" is an array
+      contains
+
+      JSONs with "id" and "permission" properties. "system" is a string
+      contains permission.
+
+      If there is no "system" properties, it means current user has no
+      permission to manage system filter.
+
+      Permission string can be "view" or "update", "update" implies "view".
+    tags:
+      - Filter
+/filter/mailets:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/MailetSchema'
+    description: List usable mailet schemas
+    tags:
+      - Filter
+/filter/matchers:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/MailetSchema'
+    description: List usable matcher schemas
+    tags:
+      - Filter
+/filter/validateConfigure:
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 6000, 6016'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Validate mailet/matcher configure
+    tags:
+      - Filter
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              class:
+                type: string
+              config:
+                type: string
+      description: Validate mailet/matcher configure request
+      required: true
+/filter/update:
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                revision:
+                  type: integer
+                  description: revision ID after success update
+      '400':
+        description: 'error: 8, 9, 6002, 6003, 6004, 6005, 6006, 6007, 6008, 6009, 6012'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update filters
+    tags:
+      - Filter
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              op:
+                description: Filter update operations
+                type: array
+                items:
+                  $ref: '#/schemas/FilterUpdateOp'
+              revision:
+                description: Revision ID of this request based on
+                type: string
+                format: integer
+              locks:
+                description: IDs of lock currently acquired
+                type: array
+                items:
+                  type: string
+                  format: flake id
+            required:
+              - op
+              - revision
+              - locks
+      description: Filter update request
+      required: true
+/filter/lock:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/FilterLockEntry'
+    description: Get current locks
+    tags:
+      - Filter
+'/filter/account/{account_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetFilterResponse'
+    summary: Get filter definition
+    description: >
+      Return filter definition of specified account filter which will be
+      presented as a filter node array.
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: '#/parameters/filterRevQuery'
+'/filter/account/{account_id}/lock':
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6011'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Attempt to acquire lock for account filter
+    description: >
+      Attempt to acquire lock for specified account filter, return lock ID and
+      expiry
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+'/filter/account/{account_id}/lock/{lock_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RefreshFilterLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6014'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Refresh expiry for lock
+    description: |
+      Refresh lock for specified account filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: '#/parameters/filterLockIdPath'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 6009, 6014, 6015'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Unlock for account filter
+    description: |
+      Unlock for specified account filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: '#/parameters/filterLockIdPath'
+'/filter/group/{group_id}/pre':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetFilterResponse'
+    summary: Get filter definition
+    description: >
+      Return filter definition of specified pre-group filter which will be
+      presented as a filter node array.
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: '#/parameters/filterRevQuery'
+'/filter/group/{group_id}/pre/lock':
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6011'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Attempt to acquire lock for group filter
+    description: >
+      Attempt to acquire lock for specified pre-group filter, return lock ID
+      and expiry
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+'/filter/group/{group_id}/pre/lock/{lock_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RefreshFilterLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6014'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Refresh expiry for lock
+    description: |
+      Refresh lock for specified pre-group filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: '#/parameters/filterLockIdPath'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 6009, 6014, 6015'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Unlock for pre-group filter
+    description: |
+      Unlock for specified pre-group filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: '#/parameters/filterLockIdPath'
+'/filter/group/{group_id}/post':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetFilterResponse'
+    summary: Get filter definition
+    description: >
+      Return filter definition of specified post-group filter which will be
+      presented as a filter node array.
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: '#/parameters/filterRevQuery'
+'/filter/group/{group_id}/post/lock':
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6011'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Attempt to acquire lock for group filter
+    description: >
+      Attempt to acquire lock for specified post-group filter, return lock ID
+      and expiry
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+'/filter/group/{group_id}/post/lock/{lock_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RefreshFilterLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6014'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Refresh expiry for lock
+    description: |
+      Refresh lock for specified post-group filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: '#/parameters/filterLockIdPath'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 6009, 6014, 6015'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Unlock for post-group filter
+    description: |
+      Unlock for specified post-group filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+      - $ref: '#/parameters/filterLockIdPath'
+/filter/system/pre:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetFilterResponse'
+    summary: Get filter definition
+    description: >
+      Return filter definition of specified pre-system filter which will be
+      presented as a filter node array.
+    tags:
+      - Filter
+    parameters:
+      - $ref: '#/parameters/filterRevQuery'
+/filter/system/pre/lock:
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6011'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Attempt to acquire lock for system filter
+    description: >
+      Attempt to acquire lock for specified pre-system filter, return lock ID
+      and expiry
+    tags:
+      - Filter
+'/filter/system/pre/lock/{lock_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RefreshFilterLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6014'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Refresh expiry for lock
+    description: |
+      Refresh lock for specified pre-system filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: '#/parameters/filterLockIdPath'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 6009, 6014, 6015'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Unlock for pre-system filter
+    description: |
+      Unlock for specified pre-system filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: '#/parameters/filterLockIdPath'
+/filter/system/post:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetFilterResponse'
+    summary: Get filter definition
+    description: >
+      Return filter definition of specified post-system filter which will be
+      presented as a filter node array.
+    tags:
+      - Filter
+    parameters:
+      - $ref: '#/parameters/filterRevQuery'
+/filter/system/post/lock:
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/GetLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6011'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Attempt to acquire lock for system filter
+    description: >
+      Attempt to acquire lock for specified post-system filter, return lock ID
+      and expiry
+    tags:
+      - Filter
+'/filter/system/post/lock/{lock_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RefreshFilterLockResponse'
+      '400':
+        description: 'error: 8, 9, 6009, 6014'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Refresh expiry for lock
+    description: |
+      Refresh lock for specified post-system filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: '#/parameters/filterLockIdPath'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 6009, 6014, 6015'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Unlock for post-system filter
+    description: |
+      Unlock for specified post-system filter/lock
+    tags:
+      - Filter
+    parameters:
+      - $ref: '#/parameters/filterLockIdPath'
+/filter/available-patterns:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/AvailablePatterns'
+    description: Get available data patterns
+    tags:
+      - Filter
+schemas:
+  AvailablePatterns:
+    type: array
+    items:
+      type: string
+    example:
+      - identityCardNumber
+      - passportNumber
+      - mobileNumber
+      - telephoneNumber
+      - email
+      - address
+      - birthdate
+      - creditCardNumber
+      - bankAccount
+      - education
+      - marriage
+      - name
+      - passport
+  FilterLockEntry:
+    type: object
+    properties:
+      until:
+        type: integer
+        description: expiry in milliseconds
+      lock:
+        type: string
+        format: flake id
+        description: lock ID
+      account:
+        type: string
+        format: flake id
+        description: lock holder
+      processor_id:
+        $ref: 'schemas.yaml#/FilterProcessorId'
+  AccountProcessorId:
+    allOf:
+      - $ref: 'schemas.yaml#/FilterProcessorId'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: flake id
+        required:
+          - id
+  GroupProcessorId:
+    allOf:
+      - $ref: 'schemas.yaml#/FilterProcessorId'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: flake id
+          prefix:
+            type: string
+            enum:
+              - pre
+              - post
+        required:
+          - id
+          - prefix
+  SystemProcessorId:
+    allOf:
+      - $ref: 'schemas.yaml#/FilterProcessorId'
+      - type: object
+        properties:
+          prefix:
+            type: string
+            enum:
+              - pre
+              - post
+        required:
+          - prefix
+  FilterUpdateOp:
+    type: object
+    discriminator:
+      propertyName: op_type
+    properties:
+      processor_id:
+        $ref: 'schemas.yaml#/FilterProcessorId'
+      op_type:
+        type: string
+    required:
+      - processor_id
+      - op_type
+  GetFilterResponse:
+    type: object
+    properties:
+      nodes:
+        $ref: '#/schemas/Filter'
+      revision:
+        type: integer
+  Filter:
+    type: array
+    items:
+      $ref: '#/schemas/FilterNode'
+  FilterNode:
+    type: object
+    discriminator:
+      propertyName: node_type
+    properties:
+      id:
+        type: string
+        format: flake id
+      class:
+        type: string
+      config:
+        oneOf:
+          - type: string
+          - type: object
+      node_type:
+        type: string
+        enum:
+          - mailet
+          - matcher
+      enabled:
+        type: boolean
+    example:
+      id: '363569213333307392'
+      node_type: matcher
+      class: com.sn.mailplatform.matcher.StandardMatcher
+      config:
+        name: audit test
+        sender:
+          - test@test.com
+        userId: '85985318578159616'
+        subject:
+          - ^(?!prefix)
+      enabled: true
+  matcher:
+    allOf:
+      - $ref: '#/schemas/FilterNode'
+      - type: object
+        properties:
+          match:
+            $ref: '#/schemas/Filter'
+          mismatch:
+            $ref: '#/schemas/Filter'
+  mailet:
+    allOf:
+      - $ref: '#/schemas/FilterNode'
+  GetLockResponse:
+    type: object
+    properties:
+      lock:
+        type: string
+        format: flake id
+        description: lock ID
+      until:
+        type: integer
+        description: expiry in milliseconds
+  MailetSchema:
+    type: object
+    properties:
+      class:
+        type: string
+      name:
+        type: string
+      schema:
+        type: object
+      form:
+        type: object
+  ManageableFilter:
+    type: object
+    properties:
+      group:
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: string
+              format: flake id
+            permission:
+              type: string
+      system:
+        type: string
+    example:
+      group:
+        - id: '363569213341696006'
+          permission: update
+        - id: '364334185898311680'
+          permission: view
+      system: view
+  RefreshFilterLockResponse:
+    type: object
+    properties:
+      until:
+        type: integer
+        description: expiry in milliseconds
+  AddFilterNodeOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+      - type: object
+        properties:
+          node_type:
+            $ref: '#/schemas/FilterNodeType'
+          class:
+            type: string
+          config:
+            type: object
+          position:
+            $ref: '#/schemas/FilterNodePos'
+        required:
+          - node_type
+          - class
+          - config
+          - position
+  RemoveFilterNodeOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+      - type: object
+        properties:
+          filter_id:
+            type: string
+            format: flake id
+        required:
+          - filter_id
+  UpdateFilterNodeOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+      - type: object
+        properties:
+          filter_id:
+            type: string
+            format: flake id
+          node_type:
+            $ref: '#/schemas/FilterNodeType'
+          class:
+            type: string
+          config:
+            type: object
+        required:
+          - filter_id
+          - node_type
+          - class
+          - config
+  MoveFilterNodeOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+      - type: object
+        properties:
+          filter_id:
+            type: string
+            format: flake id
+          position:
+            $ref: '#/schemas/FilterNodePos'
+        required:
+          - filter_id
+          - position
+  MoveFilterNodeToOppositeOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+      - type: object
+        properties:
+          filter_id:
+            type: string
+            format: flake id
+          position:
+            $ref: '#/schemas/FilterNodePos'
+        required:
+          - filter_id
+          - position
+  RemoveFilterProcessorOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+  ToggleFilterNodeOp:
+    allOf:
+      - $ref: '#/schemas/FilterUpdateOp'
+      - type: object
+        properties:
+          filter_id:
+            type: string
+            format: flake id
+          enabled:
+            type: boolean
+        required:
+          - filter_id
+          - enabled
+  FilterNodeType:
+    type: string
+    enum:
+      - matcher
+      - mailet
+  FilterNodePos:
+    type: object
+    properties:
+      init:
+        type: array
+        items:
+          type: object
+          properties:
+            leaf:
+              type: string
+              enum:
+                - mismatch
+                - match
+            index:
+              type: integer
+      tail:
+        type: integer
+    example:
+      init:
+        - index: 1
+          leaf: match
+        - index: 2
+          leaf: mismatch
+      tail: 2
+parameters:
+  filterLockIdPath:
+    name: lock_id
+    in: path
+    description: Id of lock
+    required: true
+    schema:
+      type: string
+      format: flakeId
+  filterRevQuery:
+    name: revision
+    in: query
+    description: >-
+      The revision of filter to return, return newest if this pararmeter is
+      not assigned.
+    schema:
+      type: string

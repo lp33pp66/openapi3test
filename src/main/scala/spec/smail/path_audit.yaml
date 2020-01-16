@@ -1,0 +1,96 @@
+/audit:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/AuditReports'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Return all auditee mails corresponding to current user
+    tags:
+      - Audit
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 3000, 3001, 7000, 7001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Submit audit report to make audit decisions
+    tags:
+      - Audit
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/AuditReport'
+      required: true
+schemas:
+  AuditReport:
+    type: object
+    properties:
+      id:
+        type: string
+      result:
+        $ref: '#/schemas/AuditResult'
+    example:
+      id: '1'
+      result: pass
+  AuditResult:
+    type: string
+    enum:
+      - wait
+      - pass
+      - reject
+      - delete
+  AuditReports:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+        audit_results:
+          type: array
+          items:
+            type: object
+            properties:
+              auditor:
+                type: string
+                format: flakeId
+              result:
+                $ref: '#/schemas/AuditResult'
+        condition:
+          type: string
+          enum:
+            - any
+            - all
+            - custom
+        cause:
+          description: description of the cause of this mail to be audited
+          type: string
+        default_result:
+          $ref: '#/schemas/AuditResult'
+        result_time:
+          description: deadline of when system apply default result
+          type: string
+          format: integer
+    example:
+      - id: '1'
+        audit_results:
+          - auditor: ccf773c1-be31-4570-8773-72e10a006bca
+            result: Pass
+        condition: Any
+        cause: Audit rule 1
+        default_result: Reject
+        result_time: '1415862784000'

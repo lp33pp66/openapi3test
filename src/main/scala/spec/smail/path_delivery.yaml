@@ -1,0 +1,453 @@
+/delivery:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/DeliveryConfig'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get configuration
+    description: |
+      Return delivery configuration.
+      Bounce attachment: none / heads / message
+    tags:
+      - Delivery
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update configuration
+    description: Update delivery configuration with specified parameters.
+    tags:
+      - Delivery
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/DeliveryConfig'
+      required: true
+/delivery/stop:
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Stop delivery service
+    tags:
+      - Delivery
+/delivery/start:
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Start delivery service
+    tags:
+      - Delivery
+/delivery/status:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/DeliveryStatus'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return current deliver status
+    tags:
+      - Delivery
+/delivery/gateway:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Deliverys'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: List gateway settings
+    description: Return gateway settings manageable by current user
+    tags:
+      - Delivery
+'/delivery/gateway/{domain_name}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update gateway setting for specific domain
+    description: Update gateway setting manageable by current user
+    tags:
+      - Delivery
+    parameters:
+      - $ref: '#/parameters/domainNamePath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              values:
+                $ref: '#/schemas/DeliverySetting'
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Delete gateway setting for specific domain
+    description: Delete gateway setting manageable by current user
+    tags:
+      - Delivery
+    parameters:
+      - $ref: '#/parameters/domainNamePath'
+/delivery/forward:
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ForwardResponse'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Forward stored mails of given id and return sending results
+    tags:
+      - Delivery
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/ForwardConfig'
+      required: true
+schemas:
+  DeliveryConfig:
+    type: object
+    properties:
+      worker_threads:
+        type: integer
+      bounce_sender:
+        type: string
+      bounce_prefix:
+        type: string
+      bounce_attachment:
+        type: string
+      bounce_message:
+        type: string
+      deliver_settings:
+        type: object
+        properties:
+          default:
+            $ref: '#/schemas/DeliverySetting'
+        additionalProperties:
+          $ref: '#/schemas/DeliverySetting'
+    example:
+      worker_threads: 1
+      bounce_sender: postmaster
+      bounce_prefix: ''
+      bounce_attachment: message
+      bounce_message: ''
+      deliver_settings:
+        default:
+          is_debug: false
+          max_retries: 5
+          delay_times:
+            - 1800
+            - 1800
+            - 7200
+            - 14400
+            - 21600
+          smtp_timeout: 180000
+          send_partial: false
+          connection_timeout: 60000
+          gateway_server:
+            - 1.2.3.4
+            - 1.2.3.5
+          auth_user: ''
+          auth_pass: ''
+          bind_address: ''
+          def_props: {}
+          dns_problem_retry: 0
+          helo_name: ''
+          use_priority: false
+          start_tls: false
+          is_ssl_enable: false
+        abc.com:
+          is_debug: false
+          max_retries: 5
+          delay_times:
+            - 1800
+            - 1800
+            - 7200
+            - 14400
+            - 21600
+          smtp_timeout: 180000
+          send_partial: false
+          connection_timeout: 60000
+          gateway_server:
+            - 2.2.3.4
+            - 2.2.3.5
+          auth_user: abc
+          auth_pass: com
+          bind_address: ''
+          def_props: {}
+          dns_problem_retry: 0
+          helo_name: ''
+          use_priority: false
+          start_tls: true
+          is_ssl_enable: true
+  DeliverySetting:
+    type: object
+    properties:
+      is_debug:
+        type: boolean
+      max_retries:
+        type: integer
+        description: >-
+          an Integer for the number of times an attempt is made to deliver a particular mail.
+      delay_times:
+        type: array
+        items:
+          type: integer
+          description: >-
+            a String defining the delays between delivery attempts.
+      smtp_timeout:
+        type: integer
+        description:  >-
+          socket read timeout value in milliseconds.
+          This timeout is implemented by java.net.Socket.
+          Default is infinite timeout.
+      send_partial:
+        type: boolean
+        description:  >-
+          if set to true, and a message has some valid and some invalid addresses,
+          send the message anyway, reporting the partial failure with a SendFailedException.
+          If set to false (the default), the message is not sent to any of the recipients if there is an invalid recipient address.
+      connection_timeout:
+        type: integer
+        description:  >-
+          socket connection timeout value in milliseconds.
+          This timeout is implemented by java.net.Socket. Default is infinite timeout.
+      gateway_server:
+        type: array
+        items:
+          type: string
+          description:  >-
+            a String containing a comma separated list of patterns defining the gateway servers to be used to deliver mail regardless of the recipient address.
+            If multiple gateway servers are defined, each will be tried in definition order until delivery is successful.
+            If none are successful, the mail is bounced.
+      auth_user:
+        type: string
+        description: >-
+          username used for simple authentication
+      auth_pass:
+        type: string
+        description: >-
+          password used for simple authentication
+      bind_address:
+        type: string
+        description:  >-
+          local address (host name) to bind to when creating the SMTP socket.
+          Defaults to the address picked by the Socket class. Should not normally need to be set,
+          but useful with multi-homed hosts where it's important to pick a particular local address to bind to.
+      def_props:
+        type: object
+        description: >-
+          extra user-defined javamail session properties
+      dns_problem_retry:
+        type: integer
+        description: >-
+          an Integer for the retry number of times to resolve hostname through DNS.
+      helo_name:
+        type: string
+        description: >-
+          a String containing the name used in the SMTP HELO and EHLO commands.
+      use_priority:
+        type: boolean
+        description: >-
+          if set to true, the mail will be enqueue with LOW-PRIORITY during retries.
+      start_tls:
+        type: boolean
+        description:  >-
+          a Boolean (true/false) indicating whether the STARTTLS command
+          (if supported by the server) to switch the connection to a TLS-protected connection before issuing any login commands.
+          Default is false.
+      is_ssl_enable:
+        type: boolean
+        description:  >-
+          a Boolean (true/false) indicating whether to use SSL to connect and use the SSL port unless explicitly overridden. Default is false.
+  DeliveryStatus:
+    type: object
+    properties:
+      is_running:
+        type: boolean
+    example:
+      is_running: true
+  Deliverys:
+    type: object
+    additionalProperties:
+      $ref: '#/schemas/DeliverySetting'
+    example:
+      abc.com:
+        is_debug: false
+        max_retries: 5
+        delay_times:
+          - 1800
+          - 1800
+          - 7200
+          - 14400
+          - 21600
+        smtp_timeout: 180000
+        send_partial: false
+        connection_timeout: 60000
+        gateway_server:
+          - 2.2.3.4
+          - 2.2.3.5
+        auth_user: abc
+        auth_pass: com
+        bind_address: ''
+        def_props: {}
+        dns_problem_retry: 0
+        helo_name: ''
+        use_priority: false
+        start_tls: true
+        is_ssl_enable: true
+      cde.com:
+        is_debug: false
+        max_retries: 5
+        delay_times:
+          - 1800
+          - 1800
+          - 7200
+          - 14400
+          - 21600
+        smtp_timeout: 180000
+        send_partial: false
+        connection_timeout: 60000
+        gateway_server:
+          - 3.2.3.4
+          - 3.2.3.5
+        auth_user: ''
+        auth_pass: ''
+        bind_address: ''
+        def_props: {}
+        dns_problem_retry: 0
+        helo_name: ''
+        use_priority: false
+        start_tls: false
+        is_ssl_enable: false
+  ForwardConfig:
+    type: object
+    required:
+      - id
+      - recipient
+    properties:
+      id:
+        type: array
+        items:
+          type: string
+      recipient:
+        type: string
+      new_envelope:
+        type: object
+        properties:
+          sender_name:
+            type: string
+          sender:
+            type: string
+          subject:
+            type: string
+          subject_prefix:
+            type: string
+    example:
+      id:
+        - 283068201250586620
+        - 283069243572879360
+      recipient: unaltered
+      new_envelope:
+        sender_name: userName
+        sender: user@abc.com
+        subject: forwardSubject
+        subject_prefix: [FW]
+  ForwardResponse:
+    type: array
+    items:
+      type: object
+      required:
+        - id
+        - success
+      properties:
+        id:
+          type: string
+          format: flakeId
+          description: mail id
+        success:
+          type: boolean
+          description: whether forward for this mail success or not
+        message:
+          type: string
+          description: fail message
+    example:
+      - id: 283069243572879360
+        success: true
+      - id: 283068201250586620
+        success: false
+        cause: failed to get mail from store
+parameters:
+  domainNamePath:
+    name: domain_name
+    in: path
+    description: name of domain
+    required: true
+    schema:
+      type: string

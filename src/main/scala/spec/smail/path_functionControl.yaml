@@ -1,0 +1,73 @@
+/function-control:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/FunctionControl'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get system function control scope settings
+    tags:
+      - FunctionControl
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 5000, 19003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Set system function control scopes
+    description: |
+      Set system function control scope settings
+    tags:
+      - FunctionControl
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/FunctionControl'
+'/function-control/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/FunctionControl'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get system function control scope settings for domain
+    tags:
+      - FunctionControl
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+schemas:
+  FunctionControl:
+    type: object
+    properties:
+      import:
+        $ref: '#/schemas/FunctionControlScope'
+      synchronization:
+        $ref: '#/schemas/FunctionControlScope'
+      archive:
+        $ref: '#/schemas/FunctionControlScope'
+  FunctionControlScope:
+    type: string
+    enum:
+      - system
+      - domain

@@ -1,0 +1,340 @@
+'/preference/account/{account_id}/{email}/{key}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ScopedPreference'
+      '400':
+        description: 'error: 8, 9, 10, 5002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get user preferences
+    description: >-
+      Return user preferences, using email to map and return domain predefined
+      preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+      - $ref: '#/parameters/settingKeyPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 5000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Set user preference
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+      - $ref: '#/parameters/settingKeyPath'
+    requestBody:
+      $ref: '#/requestBodies/Body'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 5000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete preferences setting
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+      - $ref: '#/parameters/settingKeyPath'
+'/preference/account/{account_id}/{email}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/ScopedPreferenceWithKey'
+    description: List user preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+'/preference/domain/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ScopedPreferenceWithKey'
+    description: List preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+'/preference/domain/{domain_id}/{key}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ScopedPreference'
+      '400':
+        description: 'error: 8, 9, 10, 5002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get domain preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/settingKeyPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 5000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Set domain preferences
+    description: Set domain preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/settingKeyPath'
+    requestBody:
+      $ref: '#/requestBodies/Body'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 5000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete preferences setting
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/settingKeyPath'
+'/preference/domain/{domain_id}/{key}/resolution':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 5001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update domain preference resolution
+    description: Update domain preference resolution
+    tags:
+      - Preference
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: '#/parameters/settingKeyPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/PreferenceResolution'
+/preference/system:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ScopedPreferenceWithKey'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: List preferences
+    tags:
+      - Preference
+'/preference/system/{key}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/ScopedPreference'
+            examples:
+              response:
+                value:
+                  example_1:
+                    value:
+                      language: en
+                      expireSystemLogDays: 365
+                      expireAccessLogDays: 365
+                      expireQuarantineDays: 3
+                    scope: system
+                    resolution: intact
+                  example_2:
+                    value:
+                      email: notification@mp.com
+                      name: notification
+                      bccPrefix: '[BCC] '
+                      urlHost: hostname
+                      useHttps: false
+                      resendTimeHour: 1
+                    scope: system
+                    resolution: intact
+      '400':
+        description: 'error: 8, 9, 5002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get system preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: '#/parameters/settingKeyPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 5000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Set system preferences
+    description: Set system preferences
+    tags:
+      - Preference
+    parameters:
+      - $ref: '#/parameters/settingKeyPath'
+    requestBody:
+      $ref: '#/requestBodies/Body'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 5000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete preferences setting
+    tags:
+      - Preference
+    parameters:
+      - $ref: '#/parameters/settingKeyPath'
+'/preference/system/{key}/resolution':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 5001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update system preference resolution
+    description: Update system preference resolution
+    tags:
+      - Preference
+    parameters:
+      - $ref: '#/parameters/settingKeyPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/PreferenceResolution'
+schemas:
+  PreferenceResolution:
+    type: object
+    properties:
+      resolution:
+        type: string
+        enum:
+          - override
+          - fallback
+          - intact
+  ScopedPreference:
+    allOf:
+      - type: object
+        properties:
+          value:
+            type: object
+          scope:
+            type: string
+            enum:
+              - user
+              - domain
+              - system
+      - $ref: '#/schemas/PreferenceResolution'
+  ScopedPreferenceWithKey:
+    allOf:
+      - type: object
+        properties:
+          key:
+            type: string
+      - $ref: '#/schemas/ScopedPreference'
+    example:
+      - key: archiveSettings
+        value:
+          path: /data
+          defaultName: myarchive
+        scope:
+          domain
+        resolution:
+          fallback
+parameters:
+  settingKeyPath:
+    name: key
+    in: path
+    description: key of a setting
+    required: true
+    schema:
+      type: string
+requestBodies:
+  Body:
+    content:
+      application/json:
+        schema:
+          type: object
+    description: a json object
+    required: true

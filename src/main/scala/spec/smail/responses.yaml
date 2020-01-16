@@ -1,0 +1,10 @@
+Success:
+  description: Success
+  content:
+    application/json:
+      schema:
+        $ref: 'schemas.yaml#/Success'
+      examples:
+        response:
+          value:
+            success: true

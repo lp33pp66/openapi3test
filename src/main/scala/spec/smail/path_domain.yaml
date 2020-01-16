@@ -1,0 +1,855 @@
+/domain/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    description: List domain IDs.
+    tags:
+      - Domain
+/domain:
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeId'
+      '400':
+        description: 'error: 8, 9, 10, 1006, 1007, 1013, 1014, 1015, 1028, 1029, 6017'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Create new domain.
+    tags:
+      - Domain
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Domain'
+      description: domain to be added
+      required: true
+'/domain/group/{group_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeId'
+      '400':
+        description: 'error: 8, 9, 1003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return the root domain of specified *group*.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+'/domain/group/{group_id}/name':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: string
+              example:
+                example.com
+      '400':
+        description: 'error: 8, 9, 1003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return the root domain name of specified *group*.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/groupIdPath'
+'/domain/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/DomainWithId'
+      '400':
+        description: 'error: 8, 9, 1003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get domain
+    description: Return the specified domain information.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006, 1007, 1014, 1015, 1028'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update domain
+    description: >
+      Update domain by providing complete or partial domain information
+
+      notice: id is unchangeable and hostname should be manipulated through
+      host in domain apis.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/DomainUpdate'
+      description: domain to be added
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1003, 1006, 1010, 1016, 1019, 1020, 1021, 1022, 1023, 1034, 1047'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Delete domain
+    description: Delete domain and all groups within it.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+'/domain/{domain_id}/reset':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+    summary: Reset domain filters to default state.
+    description: Re-initialize filters to default configurations of specified domain.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+'/domain/{domain_id}/auth-sources':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'schemas.yaml#/DomainAuthSource'
+    summary: Get authentication sources for specific domain
+    description: Return authentication sources for specified domain.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006, 1017'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update authentication sources for specified domain
+    description: Update authentication sources for specified domain.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: 'schemas.yaml#/DomainAuthSource'
+      description: authentication source array
+      required: true
+'/domain/{domain_id}/mass-mail':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RevisionBasedMassMailPreventionConfig'
+      '400':
+        description: 'error: 8, 9, 26000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return mass mail prevention configuration
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update mass mail prevention configuration
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: '#/schemas/RevisionBasedMassMailPreventionConfig'
+              - $ref: '#/schemas/MassMailPreventionLock'
+      required: true
+'/domain/{domain_id}/mass-mail/blockage':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/MassMailBlockage'
+    description: Return mass mail blockage information
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: 'Remove ip, sender or subject from mass mail block list'
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/MassMailBlockage'
+      required: true
+'/domain/{domain_id}/mass-mail/sender-whitelist':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Emails'
+    description: Return mass mail sender whitelist information
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+'/domain/{domain_id}/mass-mail/sender-whitelist/{email}':
+  put:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Add email address into mass mail sender whitelist
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update mass mail sender whitelist email address
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+                format: email
+      required: true
+  delete:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Remove email address from mass mail sender whitelist
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/emailPath'
+'/domain/{domain_id}/user-aliases':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/RecipientRewriteRule'
+    summary: Return recipient rewrite rules of specified domain
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  put:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 21000, 21003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Add recipient rewrite rule to specified domain
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/RecipientRewriteRule'
+      description: rule to be added
+      required: true
+'/domain/{domain_id}/user-aliases/{alias_name}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 21001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update recipient rewrite rule of specified email in the specified domain
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/aliasNamePath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/RecipientRewriteTo'
+      description: updated rule
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10, 21001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete recipient rewrite rule of specified email in the specified domain
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/aliasNamePath'
+'/domain/{domain_id}/user-aliases/{alias_name}/available':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 10'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Check if alias name is usable
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/aliasNamePath'
+'/domain/{domain_id}/schedule-import':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/ScheduleImportResponse'
+    description: Listing schedule imap / pop3 import config and status for specified domain if existed
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/ScheduleId'
+      '400':
+        description: 'error: 4, 5, 8, 9, 27003, 27004, 27005'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Add imap / pop3 scheduled import configuration for specified domain.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      $ref: 'requestBodies.yaml#/ScheduleImportConfig'
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/ScheduleId'
+      '400':
+        description: 'error: 27000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Test imap / pop3 scheduled import configuration for specified domain.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      $ref: 'requestBodies.yaml#/ImapPop3Config'
+'/domain/{domain_id}/schedule-import/{schedule_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 4, 5, 8 ,9, 27003, 27004, 27005'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Update imap / pop3 scheduled import configuration for specified domain.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/scheduleIdPath'
+    requestBody:
+      $ref: 'requestBodies.yaml#/ScheduleImportConfig'
+  delete:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9, 27006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Delete imap / pop3 scheduled import configuration.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/scheduleIdPath'
+'/domain/{domain_id}/schedule-import/{schedule_id}/import':
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 27001, 27002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Trigger imap / pop3 scheduled import immediately.
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+      - $ref: 'parameters.yaml#/scheduleIdPath'
+'/domain/{domain_id}/trap':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/EmailTrapConfig'
+      '400':
+        description: 'error: 8, 25000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return email trap configuration
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+    description: Update email trap configuration
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/EmailTrapConfig'
+      required: true
+'/domain/{domain_id}/trap/blockage':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/EmailTrapBlockage'
+    description: Return email trap blockage information
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        description: Success
+    description: Remove trap from email trap block list
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/EmailTrapBlockage'
+      required: true
+'/domain/{domain_id}/threat/behavior':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RevisionBasedThreatBehavior'
+    description: Return domain specific threat behavior settings
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+  post:
+    responses:
+      '200':
+        description: Success
+    description: Update domain specific threat behavior settings
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: '#/schemas/RevisionBasedThreatBehavior'
+              - $ref: '#/schemas/ThreatBehaviorLock'
+      required: true
+schemas:
+  Domain:
+    type: object
+    allOf:
+      - $ref: '#/schemas/DomainUpdate'
+  DomainUpdate:
+    type: object
+    properties:
+      name:
+        type: string
+      company:
+        type: string
+      contact:
+        type: string
+      phone:
+        type: string
+      email:
+        type: string
+      expire_date:
+        type: integer
+        format: long
+      language:
+        type: string
+      admin:
+        type: string
+      user_limit:
+        type: integer
+      alias_limit:
+        type: integer
+      quota_limit:
+        type: integer
+      logo_url:
+        type: string
+      host_name:
+        type: array
+        items:
+          type: string
+    example:
+      name: example.com
+      company: example
+      contact: John Doe
+      phone: '12345678'
+      email: john@example.com
+      expire_date: 1461832570000
+      language: en
+      host_name:
+        - h1
+        - h2
+      administrator: '4194308'
+      user_limit: 10000
+      alias_limit: 10000
+      quota_limit: 1000
+      logo_url: 'http://example.com/logo'
+  DomainWithId:
+    type: object
+    allOf:
+      - $ref: '#/schemas/Domain'
+      - $ref: 'schemas.yaml#/FlakeId'
+  EmailTrapBlockage:
+    type: object
+    properties:
+      ip:
+        type: string
+      sender:
+        type: string
+      subject:
+        type: string
+  EmailTrapConfig:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      honeypot:
+        type: array
+        items:
+          type: string
+          format: email
+      include_ip:
+        type: boolean
+      include_sender:
+        type: boolean
+      include_subject:
+        type: boolean
+      notification:
+        type: array
+        items:
+          type: string
+          format: email
+  MassMailBlockage:
+    type: object
+    properties:
+      basis:
+        description: 'basis of blockage, could be one of ip, sender or subject'
+        type: string
+      value:
+        type: string
+  MassMailPreventionLock:
+    type: object
+    properties:
+      locks:
+        type: string
+        format: flakeId
+  RecipientRewriteRule:
+    allOf:
+      - $ref: 'schemas.yaml#/RecipientRewriteFrom'
+      - $ref: '#/schemas/RecipientRewriteTo'
+  RecipientRewriteTo:
+    type: object
+    properties:
+      comment:
+        type: string
+      to:
+        type: array
+        items:
+          type: string
+          format: email
+  RevisionBasedMassMailPreventionConfig:
+    type: object
+    properties:
+      config:
+        $ref: '#/schemas/MassMailPreventionConfig'
+      revision:
+        type: integer
+        format: long
+  MassMailPreventionConfig:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      direction:
+        description: default is outbound.
+        type: array
+        items:
+          $ref: 'schemas.yaml#/MailFlowDirection'
+      duration:
+        description: 'duration of detection rule, in minute'
+        type: integer
+      ip_threshold:
+        type: integer
+      sender_threshold:
+        type: integer
+      subject_threshold:
+        type: integer
+      expiry_unit:
+        type: string
+      expiry:
+        type: integer
+      action:
+        $ref: '#/schemas/MassMailPreventionReaction'
+      authed_action:
+        $ref: '#/schemas/MassMailPreventionReaction'
+    example:
+      enabled: true
+      direction:
+        - outbound
+      duration: 5
+      ip_threshold: 100
+      sender_threshold: 10
+      expiry_unit: Hour
+      expiry: 1
+      action: block
+      authed_action: bypass
+  MassMailPreventionReaction:
+    type: string
+    enum:
+      - bypass
+      - block
+      - bounce
+  RevisionBasedThreatBehavior:
+    type: object
+    properties:
+      config:
+        $ref: '#/schemas/ThreatBehavior'
+      revision:
+        type: integer
+        format: long
+  ThreatBehavior:
+    type: object
+    properties:
+      notice:
+        type: string
+        enum:
+          - quarantine
+          - threat
+          - disabled
+      replace_url:
+        type: string
+        enum:
+          - disabled
+          - threat
+          - all
+      resendable:
+        type: boolean
+  ThreatBehaviorLock:
+    type: object
+    properties:
+      locks:
+        type: string
+        format: flakeId

@@ -1,0 +1,22 @@
+'/quarantine/{id}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 7000, 7001, 13000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Release quarantined mail
+    description: Release quarantined mail (usually quarantined by anti-spam filters).
+    tags:
+      - Quarantine
+    parameters:
+      - in: path
+        name: id
+        required: true
+        description: Mail id to be released.
+        schema:
+          type: string

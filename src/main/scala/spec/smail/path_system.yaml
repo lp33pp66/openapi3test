@@ -1,0 +1,929 @@
+/system:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SystemInfo'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get system information
+    tags:
+      - System
+/system/antivirus/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+              example:
+                - eset
+                - kaspersky
+                - clamav
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: get installed antivirus engine list
+    tags:
+      - System
+'/system/antivirus/{antivirus_name}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/AntivirusInfo'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: get specified antivirus info
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+'/system/antivirus/{antivirus_name}/schedule':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/UserDefinedSchedule'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: get specified antivirus update schedule
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: set specified antivirus update schedule
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+'/system/antivirus/{antivirus_name}/update':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/IsRunning'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return if specified antivirus update process is running.
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Trigger specified antivirus update.
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+'/system/antivirus/{antivirus_name}/start':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Start specified antivirus service.
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+'/system/antivirus/{antivirus_name}/stop':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Stop specified antivirus service.
+    tags:
+      - System
+    parameters:
+      - $ref: '#/parameters/antivirusNamePath'
+'/system/auth-sources':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: 'schemas.yaml#/DomainAuthSource'
+    summary: Get authentication sources for system
+    description: Return authentication sources for system.
+    tags:
+      - System
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1006, 1017'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update authentication sources for system
+    description: Update authentication sources for system.
+    tags:
+      - System
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: 'schemas.yaml#/DomainAuthSource'
+      description: authentication source array
+      required: true
+/system/network:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/NetworkInfo'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get networking information
+    tags:
+      - System
+/system/hostname:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Hostname'
+      '400':
+        description: 'error: 8, 9, 19001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get hostname
+    tags:
+      - System
+/system/hosts:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Hosts'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get hosts
+    tags:
+      - System
+/system/dns:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Dns'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get dns
+    tags:
+      - System
+/system/time:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Time'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get time
+    tags:
+      - System
+/system/mail-parser:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/MailParserConfig'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get current mail parser config
+    tags:
+      - System
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 23003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update mail parser config
+    tags:
+      - System
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/MailParserConfig'
+      required: true
+/system/index-errors:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/IndexErrors'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: List index error events
+    tags:
+      - System
+'/system/index-errors/{message_id}/delete':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete index error event
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+    tags:
+      - System
+    requestBody:
+      $ref: '#/requests/IndexErrorsType'
+'/system/index-errors/{message_id}/reindex':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Rerun index by index error event
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+    tags:
+      - System
+    requestBody:
+      $ref: '#/requests/IndexErrorsType'
+'/system/mail-queue/':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+    description: List mail queues
+    tags:
+      - System
+'/system/mail-queue/{queue_name}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/QueueSize'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Get queue size of specified queue
+    parameters:
+      - $ref: '#/parameters/queueNamePath'
+    tags:
+      - System
+'/system/schedule-import':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/ScheduleImportResponse'
+    description: Listing *all* schedule imap / pop3 import config and status
+    tags:
+      - System
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/ScheduleId'
+      '400':
+        description: 'error: 4, 5, 8, 9, 27003, 27004, 27005'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Add imap / pop3 scheduled import configuration for system.
+    tags:
+      - System
+    requestBody:
+      $ref: 'requestBodies.yaml#/ScheduleImportConfig'
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/ScheduleId'
+      '400':
+        description: 'error: 27000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Test imap / pop3 scheduled import configuration for system.
+    tags:
+      - System
+    requestBody:
+      $ref: 'requestBodies.yaml#/ImapPop3Config'
+'/system/schedule-import/{schedule_id}':
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 4, 5, 8 ,9, 27003, 27004, 27005'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Update imap / pop3 scheduled import configuration for system.
+    tags:
+      - System
+    parameters:
+      - $ref: 'parameters.yaml#/scheduleIdPath'
+    requestBody:
+      $ref: 'requestBodies.yaml#/ScheduleImportConfig'
+  delete:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 9, 27006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Delete system imap / pop3 scheduled import configuration.
+    tags:
+      - System
+    parameters:
+      - $ref: 'parameters.yaml#/scheduleIdPath'
+'/system/schedule-import/{schedule_id}/import':
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 8, 27001, 27002'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: |
+      Trigger system imap / pop3 scheduled import immediately.
+    tags:
+      - System
+    parameters:
+      - $ref: 'parameters.yaml#/scheduleIdPath'
+'/system/reindex/{message_id}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Rerun index by a message id
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+    tags:
+      - System
+    requestBody:
+      $ref: '#/requests/ReparseReq'
+schemas:
+  AntivirusInfo:
+    allOf:
+      - $ref: '#/schemas/IsRunning'
+    type: object
+    properties:
+      engine:
+        type: string
+      signature:
+        type: string
+      last_update_attempt:
+        type: integer
+        format: long
+      last_update:
+        type: integer
+        format: long
+      license_expire_date:
+        type: integer
+        format: long
+    example:
+      is_running: true
+      engine: 4.5.9
+      signature: 16513 (20171203)
+      last_update_attempt: 1512355420000
+      last_update: 1512355420000
+      expire_date: 1541030400000
+  Dns:
+    type: object
+    example:
+      nameserver:
+        - 8.8.4.4
+        - 8.8.8.8
+    properties:
+      nameserver:
+        type: array
+        items:
+          type: string
+          format: ip
+  Hostname:
+    type: object
+    example:
+      hostname: hostname
+    properties:
+      hostname:
+        type: object
+  Hosts:
+    type: object
+    example:
+      readonly:
+        - ip: 1.2.3.4
+          canonical: canonical_hostname
+          aliases:
+            - alias1
+            - alias2
+      writable:
+        - ip: 1.2.3.4
+          canonical: canonical_hostname
+          aliases:
+            - alias1
+            - alias2
+    properties:
+      readonly:
+        $ref: '#/schemas/HostsUpdate'
+      writable:
+        $ref: '#/schemas/HostsUpdate'
+  HostsUpdate:
+    type: array
+    example:
+      - ip: 1.2.3.4
+        canonical: canonical_hostname
+        aliases:
+          - alias1
+          - alias2
+    items:
+      type: object
+      properties:
+        ip:
+          type: string
+          format: ip
+        canonical:
+          type: string
+        aliases:
+          type: array
+          items:
+            type: string
+  IndexErrors:
+    allOf:
+      - $ref: '#/schemas/IndexErrorsType'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: flake id
+  IndexErrorsType:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - index
+          - delete
+      index:
+        type: string
+        enum:
+          - index
+          - quarantine
+    required:
+      - type
+      - index
+  IsRunning:
+    type: object
+    properties:
+      is_running:
+        type: boolean
+    example:
+      is_running: true
+  MailParserConfig:
+    type: object
+    properties:
+      using_smtp_message_size:
+        type: boolean
+        description: >-
+          whether limit using SMTP message size, this is pure flag for
+          frontend noting, has no effect on server.
+      extract_limit:
+        type: integer
+        format: positive integer
+        description: parser extraction limit in bytes
+      files_in_archive_limit:
+        type: integer
+        format: positive integer
+        description: files limit in a single archiving file attachment
+      attachment_parsing_timeout_second:
+        type: integer
+        format: positive integer
+        description: single attachment parsing timeout
+    required:
+      - using_smtp_message_size
+      - extract_limit
+      - files_in_archive_limit
+      - attachment_parsing_timeout_second
+  NetworkInfo:
+    type: object
+    properties:
+      interfaces:
+        type: array
+        items:
+          $ref: '#/schemas/NetworkNic'
+      default_gateway:
+        type: string
+        format: ip
+      ipv6_default_gateway:
+        type: string
+        format: ipv6
+      ipv6:
+        type: boolean
+    example:
+      interfaces:
+        - name: eth0
+          ipv4:
+            - address: 1.2.3.4
+              prefix_length: 24
+          ipv6:
+            - address: '2001:db8:a0b:12f0::1'
+              prefix_length: 64
+      default_gateway: 1.1.1.1
+      ipv6: true
+      ipv6_default_gateway: '2607:f0d0:1002:0011:0000:0000:0000:0001'
+  NetworkNic:
+    type: object
+    example:
+      name: eth0
+      ipv4:
+        - address: 1.2.3.4
+          prefix_length: 24
+      ipv6:
+        - address: '2001:db8:a0b:12f0::1'
+          prefix_length: 64
+    properties:
+      name:
+        type: string
+      ipv4:
+        type: array
+        items:
+          type: object
+          properties:
+            address:
+              type: string
+              format: ipv4
+            prefix_length:
+              type: number
+              format: integer
+      ipv6:
+        type: array
+        items:
+          type: object
+          properties:
+            address:
+              type: string
+              format: ipv6
+            prefix_length:
+              type: number
+              format: integer
+  QueueSize:
+    type: object
+    properties:
+      size:
+        type: integer
+        description: queue size
+    required:
+      - size
+  ReparseReq:
+    type: object
+    properties:
+      index:
+        type: string
+        enum:
+          - index
+          - quarantine
+      parser_config:
+        type: object
+        $ref: '#/schemas/MailParserConfig'
+  SystemInfo:
+    type: object
+    properties:
+      os:
+        type: string
+      uptime:
+        type: string
+        format: integer
+      cpu:
+        type: object
+        properties:
+          name:
+            type: string
+          frequency:
+            type: string
+          physical_processor_count:
+            type: integer
+          logical_processor_count:
+            type: integer
+          load_average:
+            type: array
+            items:
+              type: number
+              format: float
+      memory:
+        type: object
+        properties:
+          physical:
+            type: integer
+          physical_used:
+            type: integer
+          swap:
+            type: integer
+          swap_used:
+            type: integer
+      disk:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            size:
+              type: string
+              format: integer
+      file_system:
+        type: array
+        items:
+          type: object
+          properties:
+            mount_point:
+              type: string
+            size:
+              type: string
+              format: integer
+            used:
+              type: string
+              format: integer
+            available:
+              type: string
+              format: integer
+      version:
+        type: object
+        properties:
+          core_version:
+            type: string
+          pattern_version:
+            type: string
+    example:
+      os: GNU/Linux Linux Mint 18 (Sarah) build 4.4.0-21-generic
+      uptime: '2222103'
+      cpu:
+        name: Intel(R) Core(TM)2 Duo CPU T7300  @ 2.00GHz
+        frequency: 2.01 GHz
+        physical_processor_count: 4
+        logical_processor_count: 8
+        load_average:
+          - 2.69
+          - 2.47
+          - 2.38
+      memory:
+        physical: 1922536
+        physical_used: 93352
+        swap: 2064380
+        swap_used: 1024
+      disk:
+        - name: disk0
+          size: '57552036'
+        - name: disk1
+          size: '57551976'
+      file_system:
+        - mount_point: /
+          size: '57551976'
+          used: '481324'
+          available: '56070652'
+        - mount_point: /data
+          size: '57552036'
+          used: '21010012'
+          available: '35070612'
+      version:
+        core_version: 1.0.0
+        pattern_version: '2.180105'
+  Time:
+    example:
+      time: '1477634645'
+      timezone: GMT
+      ntp:
+        enabled: true
+        server:
+          - 0.pool.ntp.org
+          - 1.pool.ntp.org
+          - 2.pool.ntp.org
+          - 3.pool.ntp.org
+    allOf:
+      - $ref: '#/schemas/Timezone'
+      - type: object
+        properties:
+          time:
+            type: string
+            format: integer
+          ntp:
+            type: object
+            properties:
+              enabled:
+                type: boolean
+              server:
+                type: array
+                items:
+                  type: string
+  Timezone:
+    type: object
+    example:
+      timezone: GMT+8
+    properties:
+      timezone:
+        type: string
+requests:
+  IndexErrorsType:
+    content:
+      application/json:
+        schema:
+          $ref: '#/schemas/IndexErrorsType'
+    description: Index error type
+    required: true
+  ReparseReq:
+    content:
+      application/json:
+        schema:
+          $ref: '#/schemas/ReparseReq'
+    description: Reparse index request
+    required: true
+parameters:
+  queueNamePath:
+    name: queue_name
+    in: path
+    required: true
+    description: Queue name
+    schema:
+      type: string
+  antivirusNamePath:
+    name: antivirus_name
+    in: path
+    description: name of antivirus engine
+    required: true
+    schema:
+      type: string      

@@ -1,0 +1,405 @@
+/search:
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SearchResult'
+      '400':
+        description: 'error: 8, 17000, 17001, 17003'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return first page of search results sort by date in descending order.
+    tags:
+      - Search
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              query:
+                type: string
+                description: 'Query string with Lucene query syntax, empty means match all'
+              from:
+                type: number
+                description: >-
+                  The starting point of search results in a page, this is convenient
+                  while you only need to get the last n results, default to 0.
+              size:
+                type: number
+                description: 'Numbers of search results in one page, default to 1000.'
+              index:
+                type: array
+                items:
+                  type: string
+                description: >-
+                  Specify index to search, if no such query parameter means all
+                  indices, use multiple query parameter to specify more than one index
+                  `?index=<index-1>&index=<index-2>`.
+              paging:
+                type: number
+                description: Search result's keep alive time limits in milisecond.
+              sort:
+                type: string
+                enum:
+                  - time_asc
+                  - time_desc
+                  - date_asc
+                  - date_desc
+                  - size_asc
+                  - size_desc
+                description: Search result's sorting type.
+              userId:
+                type: string
+                format: flakeId
+                description: Restrict search target to specified user.
+              source:
+                type: boolean
+                description: Include source in the response or not.
+'/search/scroll':
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SearchResult'
+      '400':
+        description: 'error: 8, 17000'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return next page of search results with specified search ID.
+    tags:
+      - Search
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              id:
+                type: string
+                description: 'Id of a scrolling search'
+              paging:
+                type: number
+                description: Search result's keep alive time limits in milisecond.
+/search/aggregation:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/SearchAggResult'
+      '400':
+        description: 'error: 8, 17000, 17001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return aggregation results
+    tags:
+      - Search
+    parameters:
+      - name: query
+        in: query
+        description: Query string with Lucene query syntax.
+        schema:
+          type: string
+      - name: index
+        in: query
+        description: >-
+          Specify index to search, if no such query parameter means all
+          indices, use multiple query parameter to specify more than one index
+          `?index=<index-1>&index=<index-2>`.
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: userId
+        in: query
+        description: Restrict search target to specified user.
+        required: false
+        schema:
+          type: string
+          format: flakeId
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              aggs:
+                type: object
+                additionalProperties: {}
+                description: >-
+                  ES aggregations, currently top level aggregation only
+                  support single `date_histogram`, sub-aggregation only
+                  support `percentiles`, `sum`, `avg`, `min` and `max`
+      description: aggregations query
+      required: true
+schemas:
+  SearchAggResult:
+    type: object
+    properties:
+      total_hits:
+        type: string
+        format: integer
+      took_millis:
+        type: string
+        format: integer
+      aggregations:
+        type: object
+        additionalProperties: {}
+        format: ES aggregations response
+        description: >-
+          please refer elasitcsearch documentation, this object stores as what
+          "aggs" of ES response stores.
+  SearchResult:
+    type: object
+    required:
+      - took_millis
+      - total_hits
+      - hits
+    properties:
+      id:
+        type: string
+      total_hits:
+        type: string
+        format: integer
+      took_millis:
+        type: string
+        format: integer
+      hits:
+        type: array
+        items:
+          type: object
+          required:
+            - id
+            - index
+            - source
+          properties:
+            id:
+              type: string
+            index:
+              type: string
+            source:
+              type: object
+              required:
+                - meta
+                - message
+              properties:
+                meta:
+                  type: object
+                  required:
+                    - status
+                    - smtp_ip
+                    - smtp_hostname
+                    - smtp_timestamp
+                    - smtp_from
+                    - smtp_to
+                    - smtp_to_count
+                    - smtp_tx_id
+                    - size
+                    - from_group
+                    - from_domain
+                    - to_group
+                    - to_domain
+                    - block_cause
+                    - comment
+                    - bcc
+                    - source_tag
+                  properties:
+                    status:
+                      type: string
+                    smtp_ip:
+                      type: string
+                    smtp_hostname:
+                      type: string
+                    smtp_timestamp:
+                      type: string
+                    smtp_from:
+                      type: string
+                    smtp_to:
+                      type: string
+                    smtp_to_count:
+                      type: integer
+                    smtp_tx_id:
+                      type: string
+                    size:
+                      type: string
+                    from_group:
+                      type: string
+                    from_domain:
+                      type: string
+                    to_group:
+                      type: string
+                    to_domain:
+                      type: string
+                    block_cause:
+                      type: string
+                    comment:
+                      type: string
+                    bcc:
+                      type: array
+                      items:
+                        type: string
+                    source_tag:
+                      type: string
+                    import_info:
+                      type: object
+                      required:
+                        - owner
+                        - extracted_domain
+                        - extracted_group
+                        - to_domain
+                        - to_group
+                        - extracted_recipients
+                        - from_domain
+                        - from_group
+                      properties:
+                        owner:
+                          type: string
+                        extracted_domain:
+                          type: array
+                          items:
+                            type: string
+                        extracted_group:
+                          type: array
+                          items:
+                            type: string
+                        to_domain:
+                          type: array
+                          items:
+                            type: string
+                        to_group:
+                          type: array
+                          items:
+                            type: string
+                        extracted_recipients:
+                          type: array
+                          items:
+                            type: string
+                        from_domain:
+                          type: string
+                        from_group:
+                          type: string
+                message:
+                  type: object
+                  required:
+                    - message_id
+                    - from
+                    - to
+                    - cc
+                    - date
+                    - subject
+                    - attachment
+                    - parse_limit_exceeded
+                    - parse_error
+                  properties:
+                    message_id:
+                      type: string
+                    from:
+                      type: string
+                    to:
+                      type: string
+                    cc:
+                      type: string
+                    date:
+                      type: string
+                    subject:
+                      type: string
+                    attachment:
+                      type: object
+                      required:
+                        - names
+                        - types
+                        - statuses
+                      properties:
+                        names:
+                          type: array
+                          items:
+                            type: string
+                        types:
+                          type: array
+                          items:
+                            type: string
+                        statuses:
+                          type: array
+                          items:
+                            type: string
+                    parse_limit_exceeded:
+                      type: boolean
+                    parse_error:
+                      type: array
+                      description: >-
+                        Error codes of encountered exceptions during mail parsing.
+                        Known error codes:
+                        Exceptional: 1
+                      items:
+                        type: integer
+
+    example:
+      id: '1'
+      total_hits: '5'
+      took_millis: '10'
+      hits:
+        - id: '549857818077822976'
+          index: mp_index_20190226073116
+          source:
+            meta:
+              status: Imported
+              smtp_ip: 192.168.214.37
+              smtp_hostname: mailsrv1.qc.softnext.com.tw
+              smtp_timestamp: '1551166719694'
+              smtp_from: marvin@qc.softnext.com.tw
+              smtp_to: importer@localhost
+              smtp_to_count: 1
+              size: '4945958'
+              from_group: '549857389608697856'
+              from_domain: '549857389608697856'
+              to_group: '4194306'
+              to_domain: '4194306'
+              block_cause: ''
+              comment: ''
+              bcc: []
+              source_tag: 10.9.3.109-smtp
+              import_info:
+                owner: '4194305'
+                extracted_domain:
+                  - '549857389608697856'
+                extracted_group: []
+                to_domain:
+                  - '549857389608697856'
+                to_group: []
+                extracted_recipients:
+                  - sean@qc.softnext.com.tw
+                from_domain: '549857389608697856'
+                from_group: '549857389608697856'
+            message:
+              message_id: "<080120030565591BA.5080806@qc.softnext.com.tw>"
+              from: Eva Lee <marvin@qc.softnext.com.tw>
+              to: sean <sean@qc.softnext.com.tw>
+              cc: ''
+              date: '1528960970000'
+              subject: 1528960970_080120030_###411 tar_#xlsx_3.43MB
+              attachment:
+                names:
+                  - tar_#xlsx_3.43MB.tar
+                types:
+                  - application/x-tar
+                statuses:
+                  - normal
+              parse_limit_exceeded: false
+              parse_error: [1]

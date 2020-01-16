@@ -1,0 +1,57 @@
+/cryptography/server-certificate:
+  get:
+    responses:
+      '200':
+        description: Returns empty object if no certificate defined
+        content:
+          application/json:
+            schema:
+              $ref: '#/ServerCertificateInfo'
+    description: Get server certificate infomation
+    tags:
+      - Cryptograph
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 22006, 22007, 22008, 22009, 22010, 22011, 22012, 22013, 22014, 22015, 22016'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Import certificate for servers
+    description: Import private key and certificate in PEM format for servers
+    tags:
+      - Cryptograph
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/ServerPemCertificateImport'
+      required: true
+ServerPemCertificateImport:
+  type: object
+  required:
+    - pem_key
+    - pem_cert
+  properties:
+    pem_key:
+      type: string
+    pem_cert:
+      type: string
+    key_pass:
+      type: string
+ServerCertificateInfo:
+  type: object
+  properties:
+    not_before:
+      type: integer
+      format: long
+    not_after:
+      type: integer
+      format: long
+    issuer:
+      type: string
+    subject:
+      type: string

@@ -1,0 +1,211 @@
+/host/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/HostList'        
+    description: List host name.
+    tags:
+      - Host
+/host:
+  put:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1003, 1015, 1042, 1044'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Create new host
+    tags:
+      - Host
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Host'
+      description: host to be added
+      required: true
+'/host/{host_name}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/Host'
+      '400':
+        description: 'error: 8, 1005'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get host
+    description: Return the specified host information.
+    tags:
+      - Host
+    parameters:
+      - $ref: '#/parameters/hostPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1003, 1005, 1042, 1043'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update host
+    description: |
+      Update host by providing complete or partial host information
+      notice: name is unchangeable.
+    tags:
+      - Host
+    parameters:
+      - $ref: '#/parameters/hostPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/PartialHost'
+      description: host to be added
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1003, 1005, 1043'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Delete host
+    description: Delete host.
+    tags:
+      - Host
+    parameters:
+      - $ref: '#/parameters/hostPath'
+'/host/{host_name}/email':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Emails'
+    summary: Emails stored in host
+    tags:
+      - Host
+    parameters:
+      - $ref: '#/parameters/hostPath'
+  put:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1005, 1045'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Assign email to be stored in host
+    tags:
+      - Host
+    parameters:
+      - $ref: '#/parameters/hostPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+      description: email
+      required: true
+'/host/{host_name}/email/{email}':
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Unassign email from host
+    tags:
+      - Host
+    parameters:
+      - $ref: '#/parameters/hostPath'
+      - $ref: 'parameters.yaml#/emailPath'
+schemas:
+  Host:
+    type: object
+    allOf:
+      - $ref: '#/schemas/PartialHost'
+      - type: object
+        properties:
+          name:
+            type: string
+      - required:
+        - name
+        - display_name
+        - domain
+    example:
+      name: h1
+      display_name: host1
+      domain:
+        - '85985318578159616'
+  PartialHost:
+    type: object
+    properties:
+      display_name:
+        type: string
+      domain:
+        type: array
+        items:
+          type: string
+    example:
+      display_name: host1
+      domain:
+        - '85985318578159616'
+  HostList:
+    type: array
+    items:
+      type: object
+      properties:
+        name:
+          type: string
+          description: name
+        detail:
+          $ref: '#/schemas/Host'
+      required:
+        - name                   
+    example:
+      - name: h1
+        detail:
+          name: h1
+          display_name: host1
+          domain:
+            - '85985318578159616'
+      - name: h2
+      - name: h3  
+parameters:
+  hostPath:
+    name: host_name
+    in: path
+    description: name of host
+    required: true
+    schema:
+      type: string

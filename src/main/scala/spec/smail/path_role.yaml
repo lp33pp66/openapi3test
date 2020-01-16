@@ -1,0 +1,402 @@
+/role/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    description: List role IDs.
+    tags:
+      - Role
+/role/list-privilege:
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  function:
+                    type: string
+                  permissions:
+                    type: array
+                    items:
+                      type: string
+              example:
+                - function: 'security:role'
+                  permissions:
+                    - listAll
+                    - get
+                    - create
+                - function: 'security:*'
+                  permissions:
+                    - '*'
+    description: List all privileges applicable to targets groups and emails
+    tags:
+      - Role
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              groups:
+                type: array
+                items:
+                  type: string
+              emails:
+                type: array
+                items:
+                  type: string
+      description: target groups and emails
+      required: true
+/role:
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeId'
+      '400':
+        description: 'error: 8, 1031'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Create new role.
+    tags:
+      - Role
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Role'
+      description: new role
+      required: true
+'/role/{role_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/RoleWithId'
+      '400':
+        description: 'error: 8, 1004'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get role
+    description: Return the specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1004'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Rename role
+    description: Rename the specitifed role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+      description: new role name
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1004, 1024, 1032'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Remove role
+    description: Remove the specitifed role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+'/role/{role_id}/users':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    summary: List users that assigned with specified role
+    description: List users that assigned with the specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+'/role/{role_id}/permissions':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/Permission'
+    summary: Get permissions
+    description: Return permissions of the specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1004, 1033'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Add/delete permission
+    description: Add/delete permission to specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+      - name: delete
+        in: query
+        description: choose add or delete
+        required: false
+        schema:
+          type: boolean
+          default: false
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Permission'
+      description: permission to be added or deleted
+      required: true
+'/role/{role_id}/all-permissions':
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1006'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Remove all permissions of specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+'/role/{role_id}/ui-template':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/UiTemplate'
+      '400':
+        description: 'error: 1046'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get ui-template of specified role
+    description: Return ui-template of specified role
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1004'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update ui-template
+    description: Update ui-template of specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/UiTemplate'
+      description: ui-template to be updated
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1004'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Remove ui-template of role
+    description: Remove ui-template of specified role.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+'/role/{role_id}/{account_id}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1001, 1004'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Assign role to account
+    description: Assign specified role to an account.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+      - $ref: 'parameters.yaml#/accountIdPath'
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 1010'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Remove role from account
+    description: Remove specified role from an account.
+    tags:
+      - Role
+    parameters:
+      - $ref: '#/parameters/roleIdPath'
+      - $ref: 'parameters.yaml#/accountIdPath'
+schemas:
+  Permission:
+    type: object
+    properties:
+      function:
+        type: string
+      group:
+        type: array
+        items:
+          type: string
+      permission:
+        type: array
+        items:
+          type: string
+      email:
+        type: array
+        items:
+          type: string
+      time:
+        type: array
+        items:
+          type: string
+    example:
+      function: 'search:mail'
+      group:
+        - e20da833-c2b6-4bda-962d-12590c52eb87
+      permission:
+        - message
+      email:
+        - '*'
+      time:
+        - start: 1412115000000
+          end: 1412394900000
+        - end: 1412912100000
+  Role:
+    type: object
+    properties:
+      name:
+        type: string
+      owner:
+        type: string
+        format: flakeId
+    example:
+      name: role name
+      owner: '85985318578159616'
+  RoleWithId:
+    allOf:
+      - $ref: '#/schemas/Role'
+      - $ref: 'schemas.yaml#/FlakeId'
+  UiTemplate:
+    type: object
+    properties:
+      l1_menus:
+        type: array
+        items:
+          type: string
+      l2_menus:
+        type: array
+        items:
+          type: string
+      l3_menus:
+        type: array
+        items:
+          type: string
+    example:
+      l1_menus:
+        - system
+        - account
+      l2_menus:
+        - /app/system/infrastructure
+        - /app/system/archiving
+      l3_menus:
+        - mail_search_query
+        - mail_search_view
+parameters:
+  roleIdPath:
+    name: role_id
+    in: path
+    description: Id of a role
+    required: true
+    schema:
+      type: string
+      format: flakeId

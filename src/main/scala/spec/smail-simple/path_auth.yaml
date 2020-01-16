@@ -1,0 +1,110 @@
+/login:
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: string
+                  format: flakeId
+                email:
+                  type: string
+                  format: email
+                session_token:
+                  type: string
+                  format: uuid
+                timestamp:
+                  type: string
+                signature:
+                  type: string
+              example:
+                user_id: '85985318578159616'
+                email: 'admin@example.com'
+                session_token: f90dc4aa-523a-44d3-9b5f-7b9b81baf1b4
+                timestamp: '1209600000'
+                signature: 812721a73f54e58be6472d8ecbb3fec9946ac312
+      '400':
+        description: 'error: 3, 12, 13'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Login
+    tags:
+      - Auth
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - user
+              - password
+            properties:
+              user:
+                type: string
+                description: user name of a account
+              password:
+                type: string
+                description: password of the account
+      required: true
+/logout:
+  post:
+    responses:
+      '200':
+        description: Success
+      '400':
+        description: 'error: 6'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Logout
+    tags:
+      - Auth
+/change-password:
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Success'
+      '400':
+        description: 'error: 3, 1001, 1035, 1036, 1037, 1038, 1039, 1040, 1041'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Change account password
+    description: Change password for a user by their email
+    tags:
+      - Auth
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            required:
+              - user
+              - old_password
+              - new_password
+            properties:
+              user:
+                type: string
+                description: email
+              old_password:
+                type: string
+                description: base64 encoded string
+              new_password:
+                type: string
+                description: base64 encoded string
+            example:
+              user: abc@example.com
+              old_password: MTIz
+              new_password: MzIx

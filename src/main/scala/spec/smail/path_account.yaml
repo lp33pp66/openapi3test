@@ -1,0 +1,449 @@
+/account/list:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    summary: List account ID
+    tags:
+      - Account
+'/account/list/{domain_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    summary: List account ID in domain
+    description: List account IDs within specified domain.
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+/account:
+  put:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeId'
+      '400':
+        description: 'error: 8, 9, 10, 1006, 1007, 1009, 1025, 1026, 1027'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Create new account
+    tags:
+      - Account
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Account'
+      description: account to be added
+      required: true
+'/account/{account_id}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/AccountDetail'
+      '400':
+        description: 'error: 8, 9, 1001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Get account
+    description: Return the specified account.
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+  delete:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeId'
+      '400':
+        description: 'error: 8, 9, 1001, 1006, 1010'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Remove account
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1000, 1001, 1006, 1008, 1026'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update account
+    description: |
+      Update an account by providing complete or partial account information
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/schemas/Account'
+      description: account update information
+      required: true
+'/account/email/{email}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/AccountDetail'
+      '400':
+        description: 'error: 8, 9, 1001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return the account profile having speicified *email*.
+    tags:
+      - Account
+    parameters:
+      - name: email
+        in: path
+        description: any email of a account
+        required: true
+        schema:
+          type: string
+'/account/name/{name}':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: '#/schemas/AccountDetail'
+      '400':
+        description: 'error: 8, 9, 1001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return the account profile having speicified *name*.
+    tags:
+      - Account
+    parameters:
+      - name: name
+        in: path
+        description: name of a account
+        required: true
+        schema:
+          type: string
+/account/name/exists:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                exists:
+                  type: boolean
+              example:
+                exists: true
+      '400':
+        description: 'error: 8, 9, 1001'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Return whether specified *name* has been used
+    tags:
+      - Account
+    parameters:
+      - name: username
+        in: query
+        description: Username to be checked
+        required: true
+        schema:
+          type: string
+'/account/{account_id}/group-expansion':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                including_subGroups:
+                  type: array
+                  items:
+                    type: string
+                    format: flakeId
+                excluding_subGroups:
+                  type: array
+                  items:
+                    type: string
+                    format: flakeId
+    summary: Return account's group expansions
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+  post:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Update account's group expansions
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum:
+                    - add
+                    - delete
+                group_id:
+                  type: string
+                group_type:
+                  type: string
+                  enum:
+                    - include
+                    - exclude
+      description: update action and parameters
+      required: true
+'/account/{account_id}/role':
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/FlakeIdArray'
+    description: Return the roles of the specified account.
+    tags:
+      - Account
+    parameters:
+      - $ref: 'parameters.yaml#/accountIdPath'
+/account/export/csv:
+  post:
+    responses:
+      '200':
+        description: CSV file
+        content:
+          text/csv:
+            schema:
+              type: string
+              format: binary
+    description: Export account group information to CSV format
+    tags:
+      - Account
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/FlakeIdArray'
+      description: list of account id
+      required: true
+'/account/import/csv/{root}':
+  post:
+    responses:
+      '400':
+        description: Unimplemented
+    description: Import account group information from CSV format
+    tags:
+      - Account
+    parameters:
+      - name: root
+        in: path
+        description: root group which all import data will append on
+        required: true
+        schema:
+          type: string
+          format: FlakeId
+    requestBody:
+      content:
+        multipart/form-data:
+          schema:
+            type: object
+            properties:
+              file:
+                description: >-
+                  account group information in CSV format, only accept content
+                  type `text/csv`
+                type: string
+                format: binary
+            required:
+              - file
+/account/domain-aliases:
+  get:
+    responses:
+      '200':
+        description: Success
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/schemas/DomainAlias'
+    summary: Return domain aliases
+    tags:
+      - Account
+'/account/domain-aliases/{from}':
+  post:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9, 1011'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Add/Update domain aliases
+    tags:
+      - Account
+    parameters:
+      - name: from
+        in: path
+        description: domain alias from
+        required: true
+        schema:
+          type: string
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              to:
+                type: string
+                description: domain alias to
+      description: domain alias to
+      required: true
+  delete:
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    summary: Delete domain aliases
+    tags:
+      - Account
+    parameters:
+      - name: from
+        in: path
+        description: domain alias from
+        required: true
+        schema:
+          type: string
+schemas:
+  Account:
+    type: object
+    properties:
+      name:
+        type: string
+      display_name:
+        type: string
+      password:
+        type: string
+      emails:
+        type: array
+        items:
+          type: object
+          properties:
+            address:
+              type: string
+            group:
+              type: string
+              format: flakeId
+      synchronize_type:
+        type: string
+        enum:
+          - manual
+          - sync_ldap
+          - sync_db
+          - system
+    example:
+      name: account name
+      display_name: display name
+      emails:
+        - address: email@example.com
+          group: '85985318528159112'
+        - address: email2@example.com
+          group: '85985318578159616'
+      password: password
+      synchronize_type: manual
+  AccountDetail:
+    type: object
+    allOf:
+      - $ref: '#/schemas/Account'
+      - $ref: 'schemas.yaml#/FlakeId'
+      - type: object
+        properties:
+          created_by:
+            type: string
+  DomainAlias:
+    type: object
+    properties:
+      from:
+        type: string
+      to:
+        type: string
