@@ -626,13 +626,13 @@ schemas:
             type: string
   IndexErrors:
     allOf:
-      - $ref: '#/schemas/IndexErrorsType'
+      - $ref: '#/schemas/IndexErrorsTypeCCC'
       - type: object
         properties:
           id:
             type: string
             format: flake id
-  IndexErrorsType:
+  IndexErrorsTypeCCC:
     type: object
     properties:
       type:
@@ -750,7 +750,7 @@ schemas:
         description: queue size
     required:
       - size
-  ReparseReq:
+  ReparseReqCCC:
     type: object
     properties:
       index:
@@ -902,14 +902,14 @@ requests:
     content:
       application/json:
         schema:
-          $ref: '#/schemas/IndexErrorsType'
+          $ref: '#/schemas/IndexErrorsTypeCCC'
     description: Index error type
     required: true
   ReparseReq:
     content:
       application/json:
         schema:
-          $ref: '#/schemas/ReparseReq'
+          $ref: '#/schemas/ReparseReqCCC'
     description: Reparse index request
     required: true
 parameters:
