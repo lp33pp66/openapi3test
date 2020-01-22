@@ -1,0 +1,245 @@
+'/domain/{domain_id}/mass-mail':
+  post:
+    operationId: domainDomainIdMassMailPost
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Update mass mail prevention configuration
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: '#/schemas/RevisionBasedMassMailPreventionConfig'
+              - $ref: '#/schemas/MassMailPreventionLock'
+      required: true
+'/domain/{domain_id}/threat/behavior':
+  post:
+    operationId: domainDomainIdThreatBehavior
+    responses:
+      '200':
+        description: Success
+    description: Update domain specific threat behavior settings
+    tags:
+      - Domain
+    parameters:
+      - $ref: 'parameters.yaml#/domainIdPath'
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            allOf:
+              - $ref: '#/schemas/RevisionBasedThreatBehavior'
+              - $ref: '#/schemas/ThreatBehaviorLock'
+      required: true
+schemas:
+  Domain:
+    type: object
+    allOf:
+      - $ref: '#/schemas/DomainUpdate'
+  DomainUpdate:
+    type: object
+    properties:
+      name:
+        type: string
+      company:
+        type: string
+      contact:
+        type: string
+      phone:
+        type: string
+      email:
+        type: string
+      expire_date:
+        type: integer
+        format: long
+      language:
+        type: string
+      admin:
+        type: string
+      user_limit:
+        type: integer
+      alias_limit:
+        type: integer
+      quota_limit:
+        type: integer
+      logo_url:
+        type: string
+      host_name:
+        type: array
+        items:
+          type: string
+    example:
+      name: example.com
+      company: example
+      contact: John Doe
+      phone: '12345678'
+      email: john@example.com
+      expire_date: 1461832570000
+      language: en
+      host_name:
+        - h1
+        - h2
+      administrator: '4194308'
+      user_limit: 10000
+      alias_limit: 10000
+      quota_limit: 1000
+      logo_url: 'http://example.com/logo'
+  DomainWithId:
+    type: object
+    allOf:
+      - $ref: '#/schemas/Domain'
+      - $ref: 'schemas.yaml#/FlakeId'
+  EmailTrapBlockage:
+    type: object
+    properties:
+      ip:
+        type: string
+      sender:
+        type: string
+      subject:
+        type: string
+  EmailTrapConfig:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      honeypot:
+        type: array
+        items:
+          type: string
+          format: email
+      include_ip:
+        type: boolean
+      include_sender:
+        type: boolean
+      include_subject:
+        type: boolean
+      notification:
+        type: array
+        items:
+          type: string
+          format: email
+  MassMailBlockage:
+    type: object
+    properties:
+      basis:
+        description: 'basis of blockage, could be one of ip, sender or subject'
+        type: string
+      value:
+        type: string
+  MassMailPreventionLock:
+    type: object
+    properties:
+      locks:
+        type: string
+        format: flakeId
+  RecipientRewriteRule:
+    allOf:
+      - $ref: 'schemas.yaml#/RecipientRewriteFrom'
+      - $ref: '#/schemas/RecipientRewriteTo'
+  RecipientRewriteTo:
+    type: object
+    properties:
+      comment:
+        type: string
+      to:
+        type: array
+        items:
+          type: string
+          format: email
+  RevisionBasedMassMailPreventionConfig:
+    type: object
+    properties:
+      config:
+        $ref: '#/schemas/MassMailPreventionConfig'
+      revision:
+        type: integer
+        format: long
+  MassMailPreventionConfig:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+      direction:
+        description: default is outbound.
+        type: array
+        items:
+          $ref: 'schemas.yaml#/MailFlowDirection'
+      duration:
+        description: 'duration of detection rule, in minute'
+        type: integer
+      ip_threshold:
+        type: integer
+      sender_threshold:
+        type: integer
+      subject_threshold:
+        type: integer
+      expiry_unit:
+        type: string
+      expiry:
+        type: integer
+      action:
+        $ref: '#/schemas/MassMailPreventionReaction'
+      authed_action:
+        $ref: '#/schemas/MassMailPreventionReaction'
+    example:
+      enabled: true
+      direction:
+        - outbound
+      duration: 5
+      ip_threshold: 100
+      sender_threshold: 10
+      expiry_unit: Hour
+      expiry: 1
+      action: block
+      authed_action: bypass
+  MassMailPreventionReaction:
+    type: string
+    enum:
+      - bypass
+      - block
+      - bounce
+  RevisionBasedThreatBehavior:
+    type: object
+    properties:
+      config:
+        $ref: '#/schemas/ThreatBehavior'
+      revision:
+        type: integer
+        format: long
+  ThreatBehavior:
+    type: object
+    properties:
+      notice:
+        type: string
+        enum:
+          - quarantine
+          - threat
+          - disabled
+      replace_url:
+        type: string
+        enum:
+          - disabled
+          - threat
+          - all
+      resendable:
+        type: boolean
+  ThreatBehaviorLock:
+    type: object
+    properties:
+      locks:
+        type: string
+        format: flakeId

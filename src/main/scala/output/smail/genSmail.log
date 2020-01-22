@@ -1,0 +1,1688 @@
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ObjectSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: {id=class StringSchema {
+            class Schema {
+                type: string
+                format: flakeId
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }}
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: {"id":"85985175388815360"}
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class StringSchema {
+    class Schema {
+        type: string
+        format: null
+        $ref: null
+        description: notice that any should be ommitted when used as items of multi-selection checkbox
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ObjectSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: {alias=class StringSchema {
+            class Schema {
+                type: string
+                format: null
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }}
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ObjectSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: {interval=class StringSchema {
+            class Schema {
+                type: string
+                format: null
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, date=class IntegerSchema {
+            class Schema {
+                type: integer
+                format: null
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, weekday=class IntegerSchema {
+            class Schema {
+                type: integer
+                format: null
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, hour=class IntegerSchema {
+            class Schema {
+                type: integer
+                format: null
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, time_zone=class StringSchema {
+            class Schema {
+                type: string
+                format: null
+                $ref: null
+                description: null
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }}
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ObjectSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: [domain]
+        not: null
+        properties: {domain=class StringSchema {
+            class Schema {
+                type: string
+                format: flake id
+                $ref: null
+                description: domain the imported eml will be assigned to
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: null
+                not: null
+                properties: null
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }}
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ObjectSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: [from_domain, to_domain]
+        not: null
+        properties: {from_domain=class ObjectSchema {
+            class Schema {
+                type: object
+                format: null
+                $ref: null
+                description: config for sender part
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: [auto_domain]
+                not: null
+                properties: {auto_domain=class BooleanSchema {
+                    class Schema {
+                        type: boolean
+                        format: null
+                        $ref: null
+                        description: whether automatically assign eml to known domain
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, unknown_domain=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: flake id
+                        $ref: null
+                        description: if given, unknown domain will always to assigned to given domain
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }}
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }, to_domain=class ObjectSchema {
+            class Schema {
+                type: object
+                format: null
+                $ref: null
+                description: config for recipient part
+                title: null
+                multipleOf: null
+                maximum: null
+                exclusiveMaximum: null
+                minimum: null
+                exclusiveMinimum: null
+                maxLength: null
+                minLength: null
+                pattern: null
+                maxItems: null
+                minItems: null
+                uniqueItems: null
+                maxProperties: null
+                minProperties: null
+                required: [auto_domain]
+                not: null
+                properties: {auto_domain=class BooleanSchema {
+                    class Schema {
+                        type: boolean
+                        format: null
+                        $ref: null
+                        description: whether automatically assign eml to known domain
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }, unknown_domain=class StringSchema {
+                    class Schema {
+                        type: string
+                        format: flake id
+                        $ref: null
+                        description: if given, unknown domain will always to assigned to given domain
+                        title: null
+                        multipleOf: null
+                        maximum: null
+                        exclusiveMaximum: null
+                        minimum: null
+                        exclusiveMinimum: null
+                        maxLength: null
+                        minLength: null
+                        pattern: null
+                        maxItems: null
+                        minItems: null
+                        uniqueItems: null
+                        maxProperties: null
+                        minProperties: null
+                        required: null
+                        not: null
+                        properties: null
+                        additionalProperties: null
+                        nullable: null
+                        readOnly: null
+                        writeOnly: null
+                        example: null
+                        externalDocs: null
+                        deprecated: null
+                        discriminator: null
+                        xml: null
+                    }
+                }}
+                additionalProperties: null
+                nullable: null
+                readOnly: null
+                writeOnly: null
+                example: null
+                externalDocs: null
+                deprecated: null
+                discriminator: null
+                xml: null
+            }
+        }}
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ArraySchema {
+    class Schema {
+        type: array
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: ["85985175388815360","85985318578159616","85985318528159112"]
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+    items: class StringSchema {
+        class Schema {
+            type: string
+            format: flakeId
+            $ref: null
+            description: null
+            title: null
+            multipleOf: null
+            maximum: null
+            exclusiveMaximum: null
+            minimum: null
+            exclusiveMinimum: null
+            maxLength: null
+            minLength: null
+            pattern: null
+            maxItems: null
+            minItems: null
+            uniqueItems: null
+            maxProperties: null
+            minProperties: null
+            required: null
+            not: null
+            properties: null
+            additionalProperties: null
+            nullable: null
+            readOnly: null
+            writeOnly: null
+            example: null
+            externalDocs: null
+            deprecated: null
+            discriminator: null
+            xml: null
+        }
+    }
+} already exists
+[main] WARN  o.o.c.ignore.CodegenIgnoreProcessor - Output directory does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+[main] INFO  o.o.codegen.DefaultGenerator - OpenAPI Generator: scala-akka (client)
+[main] INFO  o.o.codegen.DefaultGenerator - Generator 'scala-akka' is considered stable.
+[main] WARN  o.o.codegen.InlineModelResolver - Found an inline schema without the `title` attribute. Default the model name to InlineObject instead. To have better control of the model naming, define the model separately so that it can be reused throughout the spec.
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - Environment variable SCALA_POST_PROCESS_FILE not defined so the Scala code may not be properly formatted. To define it, try 'export SCALA_POST_PROCESS_FILE=/usr/local/bin/scalafmt' (Linux/Mac)
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown type found in the schema: object
+[main] INFO  o.o.codegen.DefaultGenerator - Model FlakeIdArray not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] WARN  o.o.codegen.utils.ModelUtils - [deprecated] inheritance without use of 'discriminator.propertyName' is deprecated and will be removed in a future release. Generating model for null
+[main] INFO  o.o.codegen.DefaultGenerator - Model Emails not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model ScheduleImportResponse not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] INFO  o.o.codegen.DefaultGenerator - Model HostList not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model MessageParts not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] INFO  o.o.codegen.DefaultGenerator - Model Filter not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model AvailablePatterns not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model Logs not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model ArchiveLogs not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model SecurityLogs not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model SmtpServerList not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model Deliverys not generated since it's an alias to map (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model ForwardResponse not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model AuditReports not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] WARN  o.o.codegen.utils.ModelUtils - [deprecated] inheritance without use of 'discriminator.propertyName' is deprecated and will be removed in a future release. Generating model for null
+[main] INFO  o.o.codegen.DefaultGenerator - Model HostsUpdate not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` long detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` long detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` long detected for type `number`. Defaulting to `number`
+[main] INFO  o.o.codegen.DefaultGenerator - Model FlakeIdArray_2 not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model inline_object_4 (marked as unused due to form parameters) is generated due to the system property skipFormModel=false (default)
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Account.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AccountDetail.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AccountDetailAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AccountEmails.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AntivirusInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveEncryptionConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveMailTypeConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveNotificationConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchivePolicy.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchivePolicyWithId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchivePolicyWithTimeRange.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchivePolicyWithTimeRangeAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveResource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveResourceProtocol.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveResourceStatus.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveResourceWithId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ArchiveStorage.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AsyncExportJobInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AsyncImportJobInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AuditReport.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/AuditResult.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ConnectionParameter.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ConnectionTestResult.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ConnectionTestSuccess.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DbConnectParameter.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DbDataSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DbRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DeliveryConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DeliverySetting.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DeliveryStatus.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Dns.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Domain.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainAlias.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainAuthSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainNetworkListEnum.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainNetworkListUpdate.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainNetworkListUpdateUpdates.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainReference.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainUpdate.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DomainWithId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DosBlockage.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DosDetectionRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DosIpNetwork.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DosProtectionConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/DosProtectionRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Downloaded.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/EmailTrapBlockage.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/EmailTrapConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/EmlConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/EmlConfigConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Error.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ExportId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FieldReference.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FilterLockEntry.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FilterNode.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FilterProcessorId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FilterUpdateOp.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FlakeId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FlakeId2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ForwardConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ForwardConfigNewEnvelope.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FunctionControl.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/FunctionControlScope.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/GetFilterResponse.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/GetLockResponse.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Group.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/GroupReference.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/GroupWithId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Host.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/HostAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Hostname.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Hosts.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImapPop3Config.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportEml.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportFilterRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportMailFilter.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportMatcherConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportPst.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportPstAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportToDomainConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportToDomainConfig2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportToSystemConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportToSystemConfig2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportToSystemConfigFromDomain.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ImportToSystemConfigToDomain.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/IndexErrors.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/IndexErrorsAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/IndexErrorsTypeSSS.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InitialAccount.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InitialData.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InitialDomain.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject1.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject10.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject11.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject12.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject13.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject14.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject15.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject16.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject17.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject18.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject19.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject3.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject4.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject5.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject6.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject7.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject8.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineObject9.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse200.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse2001.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse2002.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse2003.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse2004.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse2005.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/InlineResponse2006.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/IsRunning.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LastStatus.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LastStatusStatus.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LdapConnectParameter.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LdapDataSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LdapDataSourceGroupRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LdapReferenceSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LdapRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LdapSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/License.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LicenseFeature.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LicenseQuota.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LicenseUpdate.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/LogicQuantifier.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MailFlowDirection.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MailFlowDirection2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MailParserConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MailetSchema.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ManageableFilter.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ManageableFilterGroup.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MassMailBlockage.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MassMailPreventionConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MassMailPreventionLock.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MassMailPreventionReaction.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MatchDateRange.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MatchFlowDirection.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MatchGroup.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MatchSizeRange.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MatchString.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Message.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageBodyAttachment.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageBodyAttachmentAttachment.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageBodyAttachmentAttachmentMeta.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageBodyText.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageDate.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelope.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelopeSender.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelopeShortAttributes.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelopeShortAttributesAttachments.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelopeShortAttributesMeta.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelopeShortAttributesMetaImportInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageEnvelopeShortAttributesMetaProcessNodes.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/MessageStoreSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/NetworkInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/NetworkNic.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/NetworkNicIpv4.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/NetworkNicIpv6.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/NodeId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/PartialHost.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Permission.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/PreferenceResolution.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/PstConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/PstConfigConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/QueueSize.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RangeQuantifier.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RecipientRewriteFrom.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RecipientRewriteFrom2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RecipientRewriteRule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RecipientRewriteTo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RefreshFilterLockResponse.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ReparseReqSSS.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Result.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ResultDomains.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ResultGroups.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RevisionBasedMassMailPreventionConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RevisionBasedThreatBehavior.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Role.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RoleWithId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Rule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RuleId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/RuleListEntry.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScheduleId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScheduleImportConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScheduleImportConfigWithId.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScheduleImportConfigWithIdAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScopedPreference.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScopedPreferenceAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScopedPreferenceWithKey.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ScopedPreferenceWithKeyAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchAggResult.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResult.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResultHits.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResultSource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResultSourceMessage.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResultSourceMessageAttachment.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResultSourceMeta.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SearchResultSourceMetaImportInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ServerCertificateInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ServerPemCertificateImport.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SmtpConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SmtpConfigHandlers.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SmtpNetworkList.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SmtpNetworkListEnum.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SmtpNetworkListUpdate.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SmtpNetworkListUpdateUpdates.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Status.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/StatusFailure.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/StatusFailureFailure.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/StatusSuccess.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/StatusSuccessSuccess.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Success.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SynchronizeOption.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemInfo.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemInfoCpu.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemInfoDisk.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemInfoFileSystem.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemInfoMemory.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemInfoVersion.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemResult.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemResults.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailures.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresCleanArchivePolicy.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresCleanArchiveResource.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresCleanGroupAlias.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresCleanProcessor.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresError.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresError1.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresError2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/SystemSyncFailuresInitialProcessor.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ThreatBehavior.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/ThreatBehaviorLock.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Time.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/TimeAllOf.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/TimeAllOfNtp.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Timezone.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/UiTemplate.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/UserDefinedSchedule.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/UserDefinedSchedule2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/UserReference.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/Version.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/VersionDetail.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/model/VersionEntry.scala
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /initialize. Renamed to auto-generated operationId: initializePut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /login. Renamed to auto-generated operationId: loginPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /logout. Renamed to auto-generated operationId: logoutPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /change-password. Renamed to auto-generated operationId: change_passwordPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /license. Renamed to auto-generated operationId: licenseGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /license/feature. Renamed to auto-generated operationId: licenseFeatureGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /license/feature. Renamed to auto-generated operationId: licenseFeaturePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/list. Renamed to auto-generated operationId: domainListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /domain. Renamed to auto-generated operationId: domainPut
+[main] WARN  o.o.codegen.utils.ModelUtils - [deprecated] inheritance without use of 'discriminator.propertyName' is deprecated and will be removed in a future release. Generating model for Domain
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/group/{group_id}. Renamed to auto-generated operationId: domainGroupGroupIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/group/{group_id}/name. Renamed to auto-generated operationId: domainGroupGroupIdNameGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}. Renamed to auto-generated operationId: domainDomainIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}. Renamed to auto-generated operationId: domainDomainIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /domain/{domain_id}. Renamed to auto-generated operationId: domainDomainIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/reset. Renamed to auto-generated operationId: domainDomainIdResetPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/auth-sources. Renamed to auto-generated operationId: domainDomainIdAuthSourcesGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/auth-sources. Renamed to auto-generated operationId: domainDomainIdAuthSourcesPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/mass-mail. Renamed to auto-generated operationId: domainDomainIdMassMailGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/mass-mail. Renamed to auto-generated operationId: domainDomainIdMassMailPost
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedMassMailPreventionConfig. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedMassMailPreventionConfig. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedMassMailPreventionConfig. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - The following schema has undefined (null) baseType. It could be due to form parameter defined in OpenAPI v2 spec with incorrect consumes. A correct 'consumes' for form parameters should be 'application/x-www-form-urlencoded' or 'multipart/?'
+[main] WARN  o.o.codegen.DefaultCodegen - schema: class ComposedSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+    allOf: [class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/RevisionBasedMassMailPreventionConfig
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }, class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/MassMailPreventionLock
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }]
+    anyOf: null
+    oneOf: null
+}
+[main] WARN  o.o.codegen.DefaultCodegen - codegenModel is null. Default to UNKNOWN_BASE_TYPE
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/mass-mail/blockage. Renamed to auto-generated operationId: domainDomainIdMassMailBlockageGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/mass-mail/blockage. Renamed to auto-generated operationId: domainDomainIdMassMailBlockagePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/mass-mail/sender-whitelist. Renamed to auto-generated operationId: domainDomainIdMassMailSenderWhitelistGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /domain/{domain_id}/mass-mail/sender-whitelist/{email}. Renamed to auto-generated operationId: domainDomainIdMassMailSenderWhitelistEmailPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/mass-mail/sender-whitelist/{email}. Renamed to auto-generated operationId: domainDomainIdMassMailSenderWhitelistEmailPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /domain/{domain_id}/mass-mail/sender-whitelist/{email}. Renamed to auto-generated operationId: domainDomainIdMassMailSenderWhitelistEmailDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/user-aliases. Renamed to auto-generated operationId: domainDomainIdUserAliasesGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /domain/{domain_id}/user-aliases. Renamed to auto-generated operationId: domainDomainIdUserAliasesPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/user-aliases/{alias_name}. Renamed to auto-generated operationId: domainDomainIdUserAliasesAliasNamePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /domain/{domain_id}/user-aliases/{alias_name}. Renamed to auto-generated operationId: domainDomainIdUserAliasesAliasNameDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/user-aliases/{alias_name}/available. Renamed to auto-generated operationId: domainDomainIdUserAliasesAliasNameAvailablePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/schedule-import. Renamed to auto-generated operationId: domainDomainIdScheduleImportGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /domain/{domain_id}/schedule-import. Renamed to auto-generated operationId: domainDomainIdScheduleImportPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/schedule-import. Renamed to auto-generated operationId: domainDomainIdScheduleImportPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/schedule-import/{schedule_id}. Renamed to auto-generated operationId: domainDomainIdScheduleImportScheduleIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /domain/{domain_id}/schedule-import/{schedule_id}. Renamed to auto-generated operationId: domainDomainIdScheduleImportScheduleIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/schedule-import/{schedule_id}/import. Renamed to auto-generated operationId: domainDomainIdScheduleImportScheduleIdImportPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/trap. Renamed to auto-generated operationId: domainDomainIdTrapGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/trap. Renamed to auto-generated operationId: domainDomainIdTrapPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/trap/blockage. Renamed to auto-generated operationId: domainDomainIdTrapBlockageGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/trap/blockage. Renamed to auto-generated operationId: domainDomainIdTrapBlockagePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /domain/{domain_id}/threat/behavior. Renamed to auto-generated operationId: domainDomainIdThreatBehaviorGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /domain/{domain_id}/threat/behavior. Renamed to auto-generated operationId: domainDomainIdThreatBehaviorPost
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedThreatBehavior. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedThreatBehavior. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedThreatBehavior. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - The following schema has undefined (null) baseType. It could be due to form parameter defined in OpenAPI v2 spec with incorrect consumes. A correct 'consumes' for form parameters should be 'application/x-www-form-urlencoded' or 'multipart/?'
+[main] WARN  o.o.codegen.DefaultCodegen - schema: class ComposedSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+    allOf: [class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/RevisionBasedThreatBehavior
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }, class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/ThreatBehaviorLock
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }]
+    anyOf: null
+    oneOf: null
+}
+[main] WARN  o.o.codegen.DefaultCodegen - codegenModel is null. Default to UNKNOWN_BASE_TYPE
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /host/list. Renamed to auto-generated operationId: hostListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /host. Renamed to auto-generated operationId: hostPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /host/{host_name}. Renamed to auto-generated operationId: hostHostNameGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /host/{host_name}. Renamed to auto-generated operationId: hostHostNamePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /host/{host_name}. Renamed to auto-generated operationId: hostHostNameDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /host/{host_name}/email. Renamed to auto-generated operationId: hostHostNameEmailGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /host/{host_name}/email. Renamed to auto-generated operationId: hostHostNameEmailPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /host/{host_name}/email/{email}. Renamed to auto-generated operationId: hostHostNameEmailEmailDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/list. Renamed to auto-generated operationId: accountListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/list/{domain_id}. Renamed to auto-generated operationId: accountListDomainIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /account. Renamed to auto-generated operationId: accountPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/{account_id}. Renamed to auto-generated operationId: accountAccountIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /account/{account_id}. Renamed to auto-generated operationId: accountAccountIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /account/{account_id}. Renamed to auto-generated operationId: accountAccountIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/email/{email}. Renamed to auto-generated operationId: accountEmailEmailGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/name/{name}. Renamed to auto-generated operationId: accountNameNameGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/name/exists. Renamed to auto-generated operationId: accountNameExistsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/{account_id}/group-expansion. Renamed to auto-generated operationId: accountAccountIdGroupExpansionGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /account/{account_id}/group-expansion. Renamed to auto-generated operationId: accountAccountIdGroupExpansionPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/{account_id}/role. Renamed to auto-generated operationId: accountAccountIdRoleGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /account/export/csv. Renamed to auto-generated operationId: accountExportCsvPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /account/import/csv/{root}. Renamed to auto-generated operationId: accountImportCsvRootPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /account/domain-aliases. Renamed to auto-generated operationId: accountDomainAliasesGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /account/domain-aliases/{from}. Renamed to auto-generated operationId: accountDomainAliasesFromPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /account/domain-aliases/{from}. Renamed to auto-generated operationId: accountDomainAliasesFromDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/list. Renamed to auto-generated operationId: groupListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/list/{domain_id}'. Renamed to auto-generated operationId: groupListDomainIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /group. Renamed to auto-generated operationId: groupPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/{group_id}'. Renamed to auto-generated operationId: groupGroupIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /group/{group_id}'. Renamed to auto-generated operationId: groupGroupIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /group/{group_id}'. Renamed to auto-generated operationId: groupGroupIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/email/{email}'. Renamed to auto-generated operationId: groupEmailEmailGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/{group_id}/email'. Renamed to auto-generated operationId: groupGroupIdEmailGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/{group_id}/aliases'. Renamed to auto-generated operationId: groupGroupIdAliasesGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /group/{group_id}/aliases'. Renamed to auto-generated operationId: groupGroupIdAliasesPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /group/{group_id}/aliases/{alias_name}'. Renamed to auto-generated operationId: groupGroupIdAliasesAliasNameDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /group/{group_id}/manager'. Renamed to auto-generated operationId: groupGroupIdManagerGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /group/{group_id}/rename'. Renamed to auto-generated operationId: groupGroupIdRenamePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /role/list. Renamed to auto-generated operationId: roleListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /role/list-privilege. Renamed to auto-generated operationId: roleListPrivilegePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /role. Renamed to auto-generated operationId: rolePut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /role/{role_id}'. Renamed to auto-generated operationId: roleRoleIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /role/{role_id}'. Renamed to auto-generated operationId: roleRoleIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /role/{role_id}'. Renamed to auto-generated operationId: roleRoleIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /role/{role_id}/users'. Renamed to auto-generated operationId: roleRoleIdUsersGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /role/{role_id}/permissions'. Renamed to auto-generated operationId: roleRoleIdPermissionsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /role/{role_id}/permissions'. Renamed to auto-generated operationId: roleRoleIdPermissionsPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /role/{role_id}/all-permissions'. Renamed to auto-generated operationId: roleRoleIdAllPermissionsDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /role/{role_id}/ui-template'. Renamed to auto-generated operationId: roleRoleIdUiTemplateGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /role/{role_id}/ui-template'. Renamed to auto-generated operationId: roleRoleIdUiTemplatePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /role/{role_id}/ui-template'. Renamed to auto-generated operationId: roleRoleIdUiTemplateDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /role/{role_id}/{account_id}'. Renamed to auto-generated operationId: roleRoleIdAccountIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /role/{role_id}/{account_id}'. Renamed to auto-generated operationId: roleRoleIdAccountIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /search. Renamed to auto-generated operationId: searchPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /search/scroll. Renamed to auto-generated operationId: searchScrollPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /search/aggregation. Renamed to auto-generated operationId: searchAggregationGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /message/{message_id}'. Renamed to auto-generated operationId: messageMessageIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /message/{message_id}/envelope'. Renamed to auto-generated operationId: messageMessageIdEnvelopeGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /message/{message_id}/download'. Renamed to auto-generated operationId: messageMessageIdDownloadGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /message/{message_id}/raw'. Renamed to auto-generated operationId: messageMessageIdRawGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /message/{message_id}/part/{partNum}'. Renamed to auto-generated operationId: messageMessageIdPartPartNumGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /message/{message_id}/report-as-spam'. Renamed to auto-generated operationId: messageMessageIdReportAsSpamPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /message/{message_id}/report-as-non-spam'. Renamed to auto-generated operationId: messageMessageIdReportAsNonSpamPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /network-list. Renamed to auto-generated operationId: network_listGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /network-list. Renamed to auto-generated operationId: network_listPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /network-list/{list_type}. Renamed to auto-generated operationId: network_listListTypeGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /network-list/domain/{domain_id}. Renamed to auto-generated operationId: network_listDomainDomainIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /network-list/domain/{domain_id}. Renamed to auto-generated operationId: network_listDomainDomainIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /network-list/domain/{domain_id}/{list_type}. Renamed to auto-generated operationId: network_listDomainDomainIdListTypeGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/archive/resource. Renamed to auto-generated operationId: storeArchiveResourceGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /store/archive/resource. Renamed to auto-generated operationId: storeArchiveResourcePut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/resource/test. Renamed to auto-generated operationId: storeArchiveResourceTestPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/resource/{resource_id}. Renamed to auto-generated operationId: storeArchiveResourceResourceIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /store/archive/resource/{resource_id}. Renamed to auto-generated operationId: storeArchiveResourceResourceIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/resource/{resource_id}/mount. Renamed to auto-generated operationId: storeArchiveResourceResourceIdMountPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/resource/{resource_id}/unmount. Renamed to auto-generated operationId: storeArchiveResourceResourceIdUnmountPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/archive/resource/{resource_id}/storage. Renamed to auto-generated operationId: storeArchiveResourceResourceIdStorageGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/resource/{resource_id}/storage/mount. Renamed to auto-generated operationId: storeArchiveResourceResourceIdStorageMountPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/resource/{resource_id}/storage/unmount. Renamed to auto-generated operationId: storeArchiveResourceResourceIdStorageUnmountPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/archive/resource/{resource_id}/storage/{storage_id}. Renamed to auto-generated operationId: storeArchiveResourceResourceIdStorageStorageIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/archive/policy. Renamed to auto-generated operationId: storeArchivePolicyGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /store/archive/policy. Renamed to auto-generated operationId: storeArchivePolicyPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /store/archive/policy/{policy_id}. Renamed to auto-generated operationId: storeArchivePolicyPolicyIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/policy/{policy_id}/execute. Renamed to auto-generated operationId: storeArchivePolicyPolicyIdExecutePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/policy/{policy_id}/abort. Renamed to auto-generated operationId: storeArchivePolicyPolicyIdAbortPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/archive/{domain_id}/policy. Renamed to auto-generated operationId: storeArchiveDomainIdPolicyGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /store/archive/{domain_id}/policy. Renamed to auto-generated operationId: storeArchiveDomainIdPolicyPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /store/archive/{domain_id}/policy/{policy_id}. Renamed to auto-generated operationId: storeArchiveDomainIdPolicyPolicyIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/{domain_id}/policy/{policy_id}/execute. Renamed to auto-generated operationId: storeArchiveDomainIdPolicyPolicyIdExecutePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/archive/{domain_id}/policy/{policy_id}/abort. Renamed to auto-generated operationId: storeArchiveDomainIdPolicyPolicyIdAbortPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/export/list. Renamed to auto-generated operationId: storeExportListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/export/pst. Renamed to auto-generated operationId: storeExportPstPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/export/{id}. Renamed to auto-generated operationId: storeExportIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /store/export/{id}. Renamed to auto-generated operationId: storeExportIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/export/{id}/download. Renamed to auto-generated operationId: storeExportIdDownloadGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/export/{id}/abort. Renamed to auto-generated operationId: storeExportIdAbortPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/import/list. Renamed to auto-generated operationId: storeImportListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/import/pst. Renamed to auto-generated operationId: storeImportPstPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/import/eml. Renamed to auto-generated operationId: storeImportEmlPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /store/import/{id}. Renamed to auto-generated operationId: storeImportIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Unknown `format` integer detected for type `number`. Defaulting to `number`
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /store/import/{id}. Renamed to auto-generated operationId: storeImportIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /store/import/{id}/abort. Renamed to auto-generated operationId: storeImportIdAbortPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/list. Renamed to auto-generated operationId: filterListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/mailets. Renamed to auto-generated operationId: filterMailetsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/matchers. Renamed to auto-generated operationId: filterMatchersGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/validateConfigure. Renamed to auto-generated operationId: filterValidateConfigurePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/update. Renamed to auto-generated operationId: filterUpdatePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/lock. Renamed to auto-generated operationId: filterLockGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/account/{account_id}. Renamed to auto-generated operationId: filterAccountAccountIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /filter/account/{account_id}/lock. Renamed to auto-generated operationId: filterAccountAccountIdLockPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/account/{account_id}/lock/{lock_id}. Renamed to auto-generated operationId: filterAccountAccountIdLockLockIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /filter/account/{account_id}/lock/{lock_id}. Renamed to auto-generated operationId: filterAccountAccountIdLockLockIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/group/{group_id}/pre. Renamed to auto-generated operationId: filterGroupGroupIdPreGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /filter/group/{group_id}/pre/lock. Renamed to auto-generated operationId: filterGroupGroupIdPreLockPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/group/{group_id}/pre/lock/{lock_id}. Renamed to auto-generated operationId: filterGroupGroupIdPreLockLockIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /filter/group/{group_id}/pre/lock/{lock_id}. Renamed to auto-generated operationId: filterGroupGroupIdPreLockLockIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/group/{group_id}/post. Renamed to auto-generated operationId: filterGroupGroupIdPostGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /filter/group/{group_id}/post/lock. Renamed to auto-generated operationId: filterGroupGroupIdPostLockPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/group/{group_id}/post/lock/{lock_id}. Renamed to auto-generated operationId: filterGroupGroupIdPostLockLockIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /filter/group/{group_id}/post/lock/{lock_id}. Renamed to auto-generated operationId: filterGroupGroupIdPostLockLockIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/system/pre. Renamed to auto-generated operationId: filterSystemPreGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /filter/system/pre/lock. Renamed to auto-generated operationId: filterSystemPreLockPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/system/pre/lock/{lock_id}. Renamed to auto-generated operationId: filterSystemPreLockLockIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /filter/system/pre/lock/{lock_id}. Renamed to auto-generated operationId: filterSystemPreLockLockIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/system/post. Renamed to auto-generated operationId: filterSystemPostGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /filter/system/post/lock. Renamed to auto-generated operationId: filterSystemPostLockPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /filter/system/post/lock/{lock_id}. Renamed to auto-generated operationId: filterSystemPostLockLockIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /filter/system/post/lock/{lock_id}. Renamed to auto-generated operationId: filterSystemPostLockLockIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /filter/available-patterns. Renamed to auto-generated operationId: filterAvailablePatternsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /log/access. Renamed to auto-generated operationId: logAccessGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /log/access/{account_id}. Renamed to auto-generated operationId: logAccessAccountIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /log/archive. Renamed to auto-generated operationId: logArchiveGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /log/security. Renamed to auto-generated operationId: logSecurityGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /log/logging. Renamed to auto-generated operationId: logLoggingGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /log/logging/{logger_name}. Renamed to auto-generated operationId: logLoggingLoggerNamePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /smtp/list. Renamed to auto-generated operationId: smtpListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /smtp/server/{server_name}. Renamed to auto-generated operationId: smtpServerServerNameGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /smtp/server/{server_name}. Renamed to auto-generated operationId: smtpServerServerNamePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /smtp/server/{server_name}/start. Renamed to auto-generated operationId: smtpServerServerNameStartPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /smtp/server/{server_name}/stop. Renamed to auto-generated operationId: smtpServerServerNameStopPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /smtp/dos. Renamed to auto-generated operationId: smtpDosGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /smtp/dos. Renamed to auto-generated operationId: smtpDosPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /smtp/dos/rule. Renamed to auto-generated operationId: smtpDosRuleGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /smtp/dos/rule. Renamed to auto-generated operationId: smtpDosRulePut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /smtp/dos/rule/{ip_address}/{prefix_length}. Renamed to auto-generated operationId: smtpDosRuleIpAddressPrefixLengthPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /smtp/dos/rule/{ip_address}/{prefix_length}. Renamed to auto-generated operationId: smtpDosRuleIpAddressPrefixLengthDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /smtp/dos/blockage. Renamed to auto-generated operationId: smtpDosBlockageGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /smtp/dos/blockage/{ip_address}. Renamed to auto-generated operationId: smtpDosBlockageIpAddressDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /delivery. Renamed to auto-generated operationId: deliveryGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /delivery. Renamed to auto-generated operationId: deliveryPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /delivery/stop. Renamed to auto-generated operationId: deliveryStopPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /delivery/start. Renamed to auto-generated operationId: deliveryStartPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /delivery/status. Renamed to auto-generated operationId: deliveryStatusGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /delivery/gateway. Renamed to auto-generated operationId: deliveryGatewayGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /delivery/gateway/{domain_name}. Renamed to auto-generated operationId: deliveryGatewayDomainNamePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /delivery/gateway/{domain_name}. Renamed to auto-generated operationId: deliveryGatewayDomainNameDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /delivery/forward. Renamed to auto-generated operationId: deliveryForwardPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /function-control. Renamed to auto-generated operationId: function_controlGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /function-control. Renamed to auto-generated operationId: function_controlPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /update/asrc-pattern-version. Renamed to auto-generated operationId: updateAsrcPatternVersionGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /update/current-version. Renamed to auto-generated operationId: updateCurrentVersionGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /update/list. Renamed to auto-generated operationId: updateListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /update/{version}/. Renamed to auto-generated operationId: updateVersionGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /update/{version}/download. Renamed to auto-generated operationId: updateVersionDownloadPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /update/{version}/status. Renamed to auto-generated operationId: updateVersionStatusGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /update/{version}/install. Renamed to auto-generated operationId: updateVersionInstallPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /audit. Renamed to auto-generated operationId: auditGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /audit. Renamed to auto-generated operationId: auditPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /quarantine/{id}. Renamed to auto-generated operationId: quarantineIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system. Renamed to auto-generated operationId: systemGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/antivirus/list. Renamed to auto-generated operationId: systemAntivirusListGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/antivirus/{antivirus_name}. Renamed to auto-generated operationId: systemAntivirusAntivirusNameGet
+[main] WARN  o.o.codegen.utils.ModelUtils - [deprecated] inheritance without use of 'discriminator.propertyName' is deprecated and will be removed in a future release. Generating model for null
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/antivirus/{antivirus_name}/schedule. Renamed to auto-generated operationId: systemAntivirusAntivirusNameScheduleGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/antivirus/{antivirus_name}/schedule. Renamed to auto-generated operationId: systemAntivirusAntivirusNameSchedulePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/antivirus/{antivirus_name}/update. Renamed to auto-generated operationId: systemAntivirusAntivirusNameUpdateGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/antivirus/{antivirus_name}/update. Renamed to auto-generated operationId: systemAntivirusAntivirusNameUpdatePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/antivirus/{antivirus_name}/start. Renamed to auto-generated operationId: systemAntivirusAntivirusNameStartPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/antivirus/{antivirus_name}/stop. Renamed to auto-generated operationId: systemAntivirusAntivirusNameStopPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/auth-sources. Renamed to auto-generated operationId: systemAuthSourcesGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/auth-sources. Renamed to auto-generated operationId: systemAuthSourcesPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/network. Renamed to auto-generated operationId: systemNetworkGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/hostname. Renamed to auto-generated operationId: systemHostnameGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/hosts. Renamed to auto-generated operationId: systemHostsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/dns. Renamed to auto-generated operationId: systemDnsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/time. Renamed to auto-generated operationId: systemTimeGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/mail-parser. Renamed to auto-generated operationId: systemMailParserGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/mail-parser. Renamed to auto-generated operationId: systemMailParserPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/index-errors. Renamed to auto-generated operationId: systemIndexErrorsGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/index-errors/{message_id}/delete. Renamed to auto-generated operationId: systemIndexErrorsMessageIdDeletePost
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/index-errors/{message_id}/reindex. Renamed to auto-generated operationId: systemIndexErrorsMessageIdReindexPost
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/mail-queue/. Renamed to auto-generated operationId: systemMailQueueGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/mail-queue/{queue_name}. Renamed to auto-generated operationId: systemMailQueueQueueNameGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /system/schedule-import. Renamed to auto-generated operationId: systemScheduleImportGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /system/schedule-import. Renamed to auto-generated operationId: systemScheduleImportPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/schedule-import. Renamed to auto-generated operationId: systemScheduleImportPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/schedule-import/{schedule_id}. Renamed to auto-generated operationId: systemScheduleImportScheduleIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /system/schedule-import/{schedule_id}. Renamed to auto-generated operationId: systemScheduleImportScheduleIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/schedule-import/{schedule_id}/import. Renamed to auto-generated operationId: systemScheduleImportScheduleIdImportPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /system/reindex/{message_id}. Renamed to auto-generated operationId: systemReindexMessageIdPost
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /preference/account/{account_id}/{email}/{key}. Renamed to auto-generated operationId: preferenceAccountAccountIdEmailKeyGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /preference/account/{account_id}/{email}/{key}. Renamed to auto-generated operationId: preferenceAccountAccountIdEmailKeyPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /preference/account/{account_id}/{email}/{key}. Renamed to auto-generated operationId: preferenceAccountAccountIdEmailKeyDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /preference/account/{account_id}/{email}. Renamed to auto-generated operationId: preferenceAccountAccountIdEmailGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /preference/domain/{domain_id}. Renamed to auto-generated operationId: preferenceDomainDomainIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /preference/domain/{domain_id}/{key}. Renamed to auto-generated operationId: preferenceDomainDomainIdKeyGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /preference/domain/{domain_id}/{key}. Renamed to auto-generated operationId: preferenceDomainDomainIdKeyPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /preference/domain/{domain_id}/{key}. Renamed to auto-generated operationId: preferenceDomainDomainIdKeyDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /preference/domain/{domain_id}/{key}/resolution. Renamed to auto-generated operationId: preferenceDomainDomainIdKeyResolutionPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /preference/system. Renamed to auto-generated operationId: preferenceSystemGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /preference/system/{key}. Renamed to auto-generated operationId: preferenceSystemKeyGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /preference/system/{key}. Renamed to auto-generated operationId: preferenceSystemKeyPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /preference/system/{key}. Renamed to auto-generated operationId: preferenceSystemKeyDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /preference/system/{key}/resolution. Renamed to auto-generated operationId: preferenceSystemKeyResolutionPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /cryptography/server-certificate. Renamed to auto-generated operationId: cryptographyServerCertificateGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /cryptography/server-certificate. Renamed to auto-generated operationId: cryptographyServerCertificatePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /user/synchronization. Renamed to auto-generated operationId: userSynchronizationGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /user/synchronization. Renamed to auto-generated operationId: userSynchronizationPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/{retrieve_id}. Renamed to auto-generated operationId: userSynchronizationRetrieveIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /user/synchronization/{retrieve_id}. Renamed to auto-generated operationId: userSynchronizationRetrieveIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/connection-test. Renamed to auto-generated operationId: userSynchronizationConnectionTestPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/retrieve/preview. Renamed to auto-generated operationId: userSynchronizationRetrievePreviewPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/retrieve. Renamed to auto-generated operationId: userSynchronizationRetrievePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/{retrieve_id}/retrieve/preview. Renamed to auto-generated operationId: userSynchronizationRetrieveIdRetrievePreviewPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/{retrieve_id}/retrieve. Renamed to auto-generated operationId: userSynchronizationRetrieveIdRetrievePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /user/synchronization/domain/{domain_id}. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdGet
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: put /user/synchronization/domain/{domain_id}. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdPut
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/domain/{domain_id}/{retrieve_id}. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdRetrieveIdPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: delete /user/synchronization/domain/{domain_id}/{retrieve_id}. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdRetrieveIdDelete
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/domain/{domain_id}/connection-test. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdConnectionTestPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/domain/{domain_id}/retrieve/preview. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdRetrievePreviewPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/domain/{domain_id}/retrieve. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdRetrievePost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/domain/{domain_id}/{retrieve_id}/retrieve/preview. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdRetrieveIdRetrievePreviewPost
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: post /user/synchronization/domain/{domain_id}/{retrieve_id}/retrieve. Renamed to auto-generated operationId: userSynchronizationDomainDomainIdRetrieveIdRetrievePost
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/AccountApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/AuditApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/AuthApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/CryptographApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/DeliveryApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/DomainApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/FilterApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/FunctionControlApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/GroupApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/HostApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/InitializeApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/LicenseApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/LogApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/MessageApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/PreferenceApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/QuarantineApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/RoleApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/SMTPApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/SearchApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/StoreApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/SystemApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/UpdateApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/UserApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/README.md
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/pom.xml
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/build.sbt
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/resources/reference.conf
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/core/ApiRequest.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/core/ApiInvoker.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/core/requests.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/core/ApiSettings.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/src/main/scala/org/openapitools/client/api/EnumsSerializers.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/.openapi-generator-ignore
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smail/.openapi-generator/VERSION

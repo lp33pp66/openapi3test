@@ -1,0 +1,26 @@
+[main] WARN  o.o.c.ignore.CodegenIgnoreProcessor - Output directory does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+[main] INFO  o.o.codegen.DefaultGenerator - OpenAPI Generator: scala-akka (client)
+[main] INFO  o.o.codegen.DefaultGenerator - Generator 'scala-akka' is considered stable.
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - Environment variable SCALA_POST_PROCESS_FILE not defined so the Scala code may not be properly formatted. To define it, try 'export SCALA_POST_PROCESS_FILE=/usr/local/bin/scalafmt' (Linux/Mac)
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/AuthData.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/AuthReq.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/Errors.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/ErrorsErrors.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/RegistData.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/RegistReq.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/UserData.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/model/UserRes.scala
+[main] WARN  o.o.codegen.DefaultCodegen - Empty operationId found for path: get /user. Renamed to auto-generated operationId: userGet
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/api/DefaultApi.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/README.md
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/pom.xml
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/build.sbt
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/resources/reference.conf
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/core/ApiRequest.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/core/ApiInvoker.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/core/requests.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/core/ApiSettings.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/src/main/scala/org/openapitools/client/api/EnumsSerializers.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/.openapi-generator-ignore
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/realworld/.openapi-generator/VERSION

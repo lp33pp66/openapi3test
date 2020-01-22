@@ -1,0 +1,316 @@
+[main] WARN  o.o.c.ignore.CodegenIgnoreProcessor - Output directory does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+[main] INFO  o.o.codegen.DefaultGenerator - OpenAPI Generator: scala-akka (client)
+[main] INFO  o.o.codegen.DefaultGenerator - Generator 'scala-akka' is considered stable.
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - Environment variable SCALA_POST_PROCESS_FILE not defined so the Scala code may not be properly formatted. To define it, try 'export SCALA_POST_PROCESS_FILE=/usr/local/bin/scalafmt' (Linux/Mac)
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/Error.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/IndexErrorsTypeSSS.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/MailFlowDirection.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/MailParserConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/MassMailPreventionConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/MassMailPreventionLock.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/MassMailPreventionReaction.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/ReparseReqSSS.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/RevisionBasedMassMailPreventionConfig.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/RevisionBasedThreatBehavior.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/Success.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/ThreatBehavior.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/model/ThreatBehaviorLock.scala
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/IndexErrorsTypeSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/IndexErrorsTypeSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/IndexErrorsTypeSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.utils.ModelUtils - #/schemas/ReparseReqSSS is not defined
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - Error obtaining the datatype from ref:#/schemas/ReparseReqSSS. Default to 'object'
+[main] WARN  o.o.codegen.utils.ModelUtils - Failed to get the schema name: #/schemas/ReparseReqSSS
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedMassMailPreventionConfig. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedMassMailPreventionConfig. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedMassMailPreventionConfig. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - The following schema has undefined (null) baseType. It could be due to form parameter defined in OpenAPI v2 spec with incorrect consumes. A correct 'consumes' for form parameters should be 'application/x-www-form-urlencoded' or 'multipart/?'
+[main] WARN  o.o.codegen.DefaultCodegen - schema: class ComposedSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+    allOf: [class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/RevisionBasedMassMailPreventionConfig
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }, class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/MassMailPreventionLock
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }]
+    anyOf: null
+    oneOf: null
+}
+[main] WARN  o.o.codegen.DefaultCodegen - codegenModel is null. Default to UNKNOWN_BASE_TYPE
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedThreatBehavior. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedThreatBehavior. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - allOf with multiple schemas defined. Using only the first one: RevisionBasedThreatBehavior. To fully utilize allOf, please use $ref instead of inline schema definition
+[main] WARN  o.o.codegen.DefaultCodegen - The following schema has undefined (null) baseType. It could be due to form parameter defined in OpenAPI v2 spec with incorrect consumes. A correct 'consumes' for form parameters should be 'application/x-www-form-urlencoded' or 'multipart/?'
+[main] WARN  o.o.codegen.DefaultCodegen - schema: class ComposedSchema {
+    class Schema {
+        type: object
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+    allOf: [class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/RevisionBasedThreatBehavior
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }, class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/ThreatBehaviorLock
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }]
+    anyOf: null
+    oneOf: null
+}
+[main] WARN  o.o.codegen.DefaultCodegen - codegenModel is null. Default to UNKNOWN_BASE_TYPE
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/api/DomainApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/api/SystemApi.scala
+[main] WARN  o.o.codegen.utils.URLPathUtils - 'host' (OAS 2.0) or 'servers' (OAS 3.0) not defined in the spec. Default to [http://localhost] for server URL [http://localhost/]
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/README.md
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/pom.xml
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/build.sbt
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/resources/reference.conf
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/core/ApiRequest.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/core/ApiInvoker.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/core/requests.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/core/ApiSettings.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/src/main/scala/org/openapitools/client/api/EnumsSerializers.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/.openapi-generator-ignore
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/smailFail/.openapi-generator/VERSION

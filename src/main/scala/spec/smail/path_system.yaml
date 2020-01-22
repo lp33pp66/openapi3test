@@ -364,7 +364,7 @@
     tags:
       - System
     requestBody:
-      $ref: '#/requests/IndexErrorsType'
+      $ref: '#/requestsEEE/IndexErrorsType'
 '/system/index-errors/{message_id}/reindex':
   post:
     responses:
@@ -382,7 +382,7 @@
     tags:
       - System
     requestBody:
-      $ref: '#/requests/IndexErrorsType'
+      $ref: '#/requestsEEE/IndexErrorsType'
 '/system/mail-queue/':
   get:
     responses:
@@ -538,7 +538,7 @@
     tags:
       - System
     requestBody:
-      $ref: '#/requests/ReparseReq'
+      $ref: '#/requestsEEE/ReparseReq'
 schemas:
   AntivirusInfo:
     allOf:
@@ -626,13 +626,13 @@ schemas:
             type: string
   IndexErrors:
     allOf:
-      - $ref: '#/schemas/IndexErrorsTypeCCC'
+      - $ref: '#/schemas/IndexErrorsTypeSSS'
       - type: object
         properties:
           id:
             type: string
             format: flake id
-  IndexErrorsTypeCCC:
+  IndexErrorsTypeSSS:
     type: object
     properties:
       type:
@@ -750,7 +750,7 @@ schemas:
         description: queue size
     required:
       - size
-  ReparseReqCCC:
+  ReparseReqSSS:
     type: object
     properties:
       index:
@@ -897,19 +897,19 @@ schemas:
     properties:
       timezone:
         type: string
-requests:
+requestsEEE:
   IndexErrorsType:
     content:
       application/json:
         schema:
-          $ref: '#/schemas/IndexErrorsTypeCCC'
+          $ref: '#/schemas/IndexErrorsTypeSSS'
     description: Index error type
     required: true
   ReparseReq:
     content:
       application/json:
         schema:
-          $ref: '#/schemas/ReparseReqCCC'
+          $ref: '#/schemas/ReparseReqSSS'
     description: Reparse index request
     required: true
 parameters:

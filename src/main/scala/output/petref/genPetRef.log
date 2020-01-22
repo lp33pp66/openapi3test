@@ -1,0 +1,318 @@
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class ArraySchema {
+    class Schema {
+        type: array
+        format: null
+        $ref: null
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+    items: class Schema {
+        type: null
+        format: null
+        $ref: #/components/schemas/Pet
+        description: null
+        title: null
+        multipleOf: null
+        maximum: null
+        exclusiveMaximum: null
+        minimum: null
+        exclusiveMinimum: null
+        maxLength: null
+        minLength: null
+        pattern: null
+        maxItems: null
+        minItems: null
+        uniqueItems: null
+        maxProperties: null
+        minProperties: null
+        required: null
+        not: null
+        properties: null
+        additionalProperties: null
+        nullable: null
+        readOnly: null
+        writeOnly: null
+        example: null
+        externalDocs: null
+        deprecated: null
+        discriminator: null
+        xml: null
+    }
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class Schema {
+    type: null
+    format: null
+    $ref: null
+    description: null
+    title: null
+    multipleOf: null
+    maximum: null
+    exclusiveMaximum: null
+    minimum: null
+    exclusiveMinimum: null
+    maxLength: null
+    minLength: null
+    pattern: null
+    maxItems: null
+    minItems: null
+    uniqueItems: null
+    maxProperties: null
+    minProperties: null
+    required: [id, name]
+    not: null
+    properties: {id=class IntegerSchema {
+        class Schema {
+            type: integer
+            format: int64
+            $ref: null
+            description: null
+            title: null
+            multipleOf: null
+            maximum: null
+            exclusiveMaximum: null
+            minimum: null
+            exclusiveMinimum: null
+            maxLength: null
+            minLength: null
+            pattern: null
+            maxItems: null
+            minItems: null
+            uniqueItems: null
+            maxProperties: null
+            minProperties: null
+            required: null
+            not: null
+            properties: null
+            additionalProperties: null
+            nullable: null
+            readOnly: null
+            writeOnly: null
+            example: null
+            externalDocs: null
+            deprecated: null
+            discriminator: null
+            xml: null
+        }
+    }, name=class StringSchema {
+        class Schema {
+            type: string
+            format: null
+            $ref: null
+            description: null
+            title: null
+            multipleOf: null
+            maximum: null
+            exclusiveMaximum: null
+            minimum: null
+            exclusiveMinimum: null
+            maxLength: null
+            minLength: null
+            pattern: null
+            maxItems: null
+            minItems: null
+            uniqueItems: null
+            maxProperties: null
+            minProperties: null
+            required: null
+            not: null
+            properties: null
+            additionalProperties: null
+            nullable: null
+            readOnly: null
+            writeOnly: null
+            example: null
+            externalDocs: null
+            deprecated: null
+            discriminator: null
+            xml: null
+        }
+    }, tag=class StringSchema {
+        class Schema {
+            type: string
+            format: null
+            $ref: null
+            description: null
+            title: null
+            multipleOf: null
+            maximum: null
+            exclusiveMaximum: null
+            minimum: null
+            exclusiveMinimum: null
+            maxLength: null
+            minLength: null
+            pattern: null
+            maxItems: null
+            minItems: null
+            uniqueItems: null
+            maxProperties: null
+            minProperties: null
+            required: null
+            not: null
+            properties: null
+            additionalProperties: null
+            nullable: null
+            readOnly: null
+            writeOnly: null
+            example: null
+            externalDocs: null
+            deprecated: null
+            discriminator: null
+            xml: null
+        }
+    }}
+    additionalProperties: null
+    nullable: null
+    readOnly: null
+    writeOnly: null
+    example: null
+    externalDocs: null
+    deprecated: null
+    discriminator: null
+    xml: null
+} already exists
+[main] WARN  i.s.v.p.p.ExternalRefProcessor - A model for class Schema {
+    type: null
+    format: null
+    $ref: null
+    description: null
+    title: null
+    multipleOf: null
+    maximum: null
+    exclusiveMaximum: null
+    minimum: null
+    exclusiveMinimum: null
+    maxLength: null
+    minLength: null
+    pattern: null
+    maxItems: null
+    minItems: null
+    uniqueItems: null
+    maxProperties: null
+    minProperties: null
+    required: [code, message]
+    not: null
+    properties: {code=class IntegerSchema {
+        class Schema {
+            type: integer
+            format: int32
+            $ref: null
+            description: null
+            title: null
+            multipleOf: null
+            maximum: null
+            exclusiveMaximum: null
+            minimum: null
+            exclusiveMinimum: null
+            maxLength: null
+            minLength: null
+            pattern: null
+            maxItems: null
+            minItems: null
+            uniqueItems: null
+            maxProperties: null
+            minProperties: null
+            required: null
+            not: null
+            properties: null
+            additionalProperties: null
+            nullable: null
+            readOnly: null
+            writeOnly: null
+            example: null
+            externalDocs: null
+            deprecated: null
+            discriminator: null
+            xml: null
+        }
+    }, message=class StringSchema {
+        class Schema {
+            type: string
+            format: null
+            $ref: null
+            description: null
+            title: null
+            multipleOf: null
+            maximum: null
+            exclusiveMaximum: null
+            minimum: null
+            exclusiveMinimum: null
+            maxLength: null
+            minLength: null
+            pattern: null
+            maxItems: null
+            minItems: null
+            uniqueItems: null
+            maxProperties: null
+            minProperties: null
+            required: null
+            not: null
+            properties: null
+            additionalProperties: null
+            nullable: null
+            readOnly: null
+            writeOnly: null
+            example: null
+            externalDocs: null
+            deprecated: null
+            discriminator: null
+            xml: null
+        }
+    }}
+    additionalProperties: null
+    nullable: null
+    readOnly: null
+    writeOnly: null
+    example: null
+    externalDocs: null
+    deprecated: null
+    discriminator: null
+    xml: null
+} already exists
+[main] WARN  o.o.c.ignore.CodegenIgnoreProcessor - Output directory does not exist, or is inaccessible. No file (.openapi-generator-ignore) will be evaluated.
+[main] INFO  o.o.codegen.DefaultGenerator - OpenAPI Generator: scala-akka (client)
+[main] INFO  o.o.codegen.DefaultGenerator - Generator 'scala-akka' is considered stable.
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - Environment variable SCALA_POST_PROCESS_FILE not defined so the Scala code may not be properly formatted. To define it, try 'export SCALA_POST_PROCESS_FILE=/usr/local/bin/scalafmt' (Linux/Mac)
+[main] INFO  o.o.c.languages.AbstractScalaCodegen - NOTE: To enable file post-processing, 'enablePostProcessFile' must be set to `true` (--enable-post-process-file for CLI).
+[main] INFO  o.o.codegen.DefaultGenerator - Model Pets not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.DefaultGenerator - Model Pets_2 not generated since it's an alias to array (without property) and `generateAliasAsModel` is set to false (default)
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/model/Error.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/model/Error2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/model/Pet.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/model/Pet2.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/api/PetsApi.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/README.md
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/pom.xml
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/build.sbt
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/resources/reference.conf
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/core/ApiRequest.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/core/ApiInvoker.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/core/requests.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/core/ApiSettings.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/src/main/scala/org/openapitools/client/api/EnumsSerializers.scala
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/.openapi-generator-ignore
+[main] INFO  o.o.codegen.AbstractGenerator - writing file /home/dada/SoftNext/openApi3test/src/main/scala/output/petref/.openapi-generator/VERSION

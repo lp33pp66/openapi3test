@@ -26,7 +26,4 @@ target/
 
 .bloop/
 .metals/
-
-out/
-
 .hypothesis/

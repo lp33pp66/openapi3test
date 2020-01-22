@@ -1,0 +1,133 @@
+'/system/index-errors/{message_id}/delete':
+  post:
+    operationId: systemIndexErrorsPost
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Delete index error event
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+    tags:
+      - System
+    requestBody:
+      $ref: '#/requestsEEE/IndexErrorsType'
+'/system/index-errors/{message_id}/reindex':
+  post:
+    operationId: systemIndexErrorsMessageIdReindexPost
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Rerun index by index error event
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+    tags:
+      - System
+    requestBody:
+      $ref: '#/requestsEEE/IndexErrorsType'
+'/system/reindex/{message_id}':
+  post:
+    operationId: systemReindexMessageIdPoat
+    responses:
+      '200':
+        $ref: 'responses.yaml#/Success'
+      '400':
+        description: 'error: 8, 9'
+        content:
+          application/json:
+            schema:
+              $ref: 'schemas.yaml#/Error'
+    description: Rerun index by a message id
+    parameters:
+      - $ref: 'parameters.yaml#/messageIdPath'
+    tags:
+      - System
+    requestBody:
+      $ref: '#/requestsEEE/ReparseReq'
+schemas:
+  IndexErrors:
+    allOf:
+      - $ref: '#/schemas/IndexErrorsTypeSSS'
+      - type: object
+        properties:
+          id:
+            type: string
+            format: flake id
+  IndexErrorsTypeSSS:
+    type: object
+    properties:
+      type:
+        type: string
+        enum:
+          - index
+          - delete
+      index:
+        type: string
+        enum:
+          - index
+          - quarantine
+    required:
+      - type
+      - index
+  MailParserConfig:
+    type: object
+    properties:
+      using_smtp_message_size:
+        type: boolean
+        description: >-
+          whether limit using SMTP message size, this is pure flag for
+          frontend noting, has no effect on server.
+      extract_limit:
+        type: integer
+        format: positive integer
+        description: parser extraction limit in bytes
+      files_in_archive_limit:
+        type: integer
+        format: positive integer
+        description: files limit in a single archiving file attachment
+      attachment_parsing_timeout_second:
+        type: integer
+        format: positive integer
+        description: single attachment parsing timeout
+    required:
+      - using_smtp_message_size
+      - extract_limit
+      - files_in_archive_limit
+      - attachment_parsing_timeout_second
+  ReparseReqSSS:
+    type: object
+    properties:
+      index:
+        type: string
+        enum:
+          - index
+          - quarantine
+      parser_config:
+        type: object
+        $ref: '#/schemas/MailParserConfig'
+requestsEEE:
+  IndexErrorsType:
+    content:
+      application/json:
+        schema:
+          $ref: '#/schemas/IndexErrorsTypeSSS'
+    description: Index error type
+    required: true
+  ReparseReq:
+    content:
+      application/json:
+        schema:
+          $ref: '#/schemas/ReparseReqSSS'
+    description: Reparse index request
+    required: true

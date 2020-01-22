@@ -1,0 +1,75 @@
+openapi: 3.0.0
+servers: []
+info:
+  title: Mail Platform API
+  version: 0.0.1
+  description: |
+    Mail Platform API
+    # Beyond OpenAPI
+    [Reference](reference.html) for API which cannot modeled after OpenAPI.
+tags:
+  - name: Initialize
+  - name: Auth
+  - name: Domain
+  - name: Host
+  - name: Account
+  - name: Group
+  - name: Role
+  - name: Search
+  - name: Message
+  - name: Store
+  - name: Filter
+  - name: License
+  - name: Log
+  - name: SMTP
+  - name: Delivery
+  - name: Update
+  - name: Audit
+  - name: Quarantine
+  - name: Report
+  - name: System
+  - name: Preference
+  - name: FunctionControl
+  - name: Cryptograph
+  - name: User
+x-tagGroups:
+  - name: Endpoints
+    tags:
+      - Initialize
+      - Auth
+      - Domain
+      - Host
+      - Account
+      - Group
+      - Role
+      - Search
+      - Message
+      - Store
+      - Filter
+      - License
+      - Log
+      - SMTP
+      - Delivery
+      - Update
+      - Audit
+      - Quarantine
+      - Report
+      - System
+      - Preference
+      - FunctionControl
+      - Cryptograph
+      - User
+paths:
+  # Failed to get the schema name: 3 cases
+  /system/index-errors/{message_id}/delete:
+    $ref: 'path_system.yaml#/~1system~1index-errors~1{message_id}~1delete'
+  /system/index-errors/{message_id}/reindex:
+    $ref: 'path_system.yaml#/~1system~1index-errors~1{message_id}~1reindex'
+  /system/reindex/{message_id}:
+    $ref: 'path_system.yaml#/~1system~1reindex~1{message_id}'
+  
+  # Default to UNKNOWN_BASE_TYPE: 2 cases
+  /domain/{domain_id}/mass-mail:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1mass-mail'
+  /domain/{domain_id}/threat/behavior:
+    $ref: 'path_domain.yaml#/~1domain~1{domain_id}~1threat~1behavior'
